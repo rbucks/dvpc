@@ -1,0 +1,966 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Diablo Valley Pitch Competition — Nov 19, 2026</title>
+<meta name="description" content="A regional business pitch competition for founders across the Diablo Valley — open to community members and a special student track for DVC and local high school students. Final event Nov 19, 2026." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..600&family=IBM+Plex+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #f7f3ec;
+    --bg-2: #efe9de;
+    --ink: #1c1a17;
+    --ink-2: #4a463f;
+    --ink-3: #7a7268;
+    --rule: #d9d1c2;
+    --rule-2: #e7e0d1;
+    --accent: oklch(0.56 0.13 38);      /* terracotta / oxide */
+    --accent-ink: oklch(0.32 0.09 38);
+    --accent-soft: oklch(0.94 0.04 60);
+    --paper: #fdfbf6;
+
+    --serif: "Newsreader", Georgia, "Times New Roman", serif;
+    --sans: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection { background: var(--accent); color: var(--paper); }
+
+  a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { color: var(--accent-ink); }
+
+  h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; letter-spacing: -0.01em; margin: 0; text-wrap: balance; }
+  p { text-wrap: pretty; }
+
+  .mono { font-family: var(--mono); font-size: 0.78em; letter-spacing: 0.02em; text-transform: uppercase; color: var(--ink-3); }
+  .mono-tag { font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); }
+
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+
+  /* ========== TOP BAR ========== */
+  .topbar {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: blur(10px);
+    background: color-mix(in oklab, var(--bg) 86%, transparent);
+    border-bottom: 1px solid var(--rule);
+  }
+  .topbar-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 32px;
+    max-width: 1180px; margin: 0 auto;
+  }
+  .brand {
+    display: flex; align-items: center; gap: 12px;
+    font-family: var(--serif); font-size: 18px;
+  }
+  .brand-mark {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--accent);
+    display: grid; place-items: center;
+    color: var(--paper); font-family: var(--serif); font-style: italic; font-size: 16px;
+    flex: none;
+  }
+  .nav { display: flex; gap: 28px; font-size: 14px; }
+  .nav a { text-decoration: none; color: var(--ink-2); }
+  .nav a:hover { color: var(--ink); }
+  .cta-btn {
+    display: inline-block;
+    padding: 10px 18px;
+    background: var(--ink);
+    color: var(--paper);
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 999px;
+    border: 1px solid var(--ink);
+    transition: background 0.2s;
+  }
+  .cta-btn:hover { background: var(--accent); border-color: var(--accent); color: var(--paper); }
+  .cta-btn.ghost { background: transparent; color: var(--ink); }
+  .cta-btn.ghost:hover { background: var(--ink); color: var(--paper); }
+
+  @media (max-width: 760px) {
+    .nav { display: none; }
+  }
+
+  /* ========== HERO ========== */
+  .hero {
+    padding: 88px 0 56px;
+    border-bottom: 1px solid var(--rule);
+    position: relative;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 56px;
+    align-items: end;
+  }
+  .eyebrow {
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 28px;
+    font-family: var(--mono);
+    font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--accent-ink);
+  }
+  .eyebrow::before {
+    content: ""; width: 36px; height: 1px; background: var(--accent);
+  }
+  .hero h1 {
+    font-size: clamp(48px, 7vw, 96px);
+    line-height: 0.98;
+    letter-spacing: -0.025em;
+    margin-bottom: 28px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent-ink);
+  }
+  .hero-lede {
+    font-size: 19px;
+    color: var(--ink-2);
+    max-width: 52ch;
+    margin-bottom: 32px;
+  }
+  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  .hero-aside {
+    border-left: 1px solid var(--rule);
+    padding-left: 32px;
+    padding-bottom: 8px;
+  }
+  .hero-aside .label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 14px; }
+  .hero-aside .date {
+    font-family: var(--serif);
+    font-size: 56px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+  }
+  .hero-aside .date small { font-size: 22px; color: var(--ink-3); display: block; margin-top: 6px; font-style: italic;}
+  .hero-aside .where {
+    margin-top: 28px; padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    color: var(--ink-2); font-size: 15px;
+  }
+  .hero-aside .where strong { display: block; color: var(--ink); margin-bottom: 4px; font-weight: 500; }
+
+  @media (max-width: 860px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    .hero-aside { border-left: none; padding-left: 0; border-top: 1px solid var(--rule); padding-top: 32px; }
+  }
+
+  /* ========== KEY DATES RAIL ========== */
+  .dates {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 0;
+  }
+  .dates-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid #2c2925;
+  }
+  .date-cell {
+    padding: 36px 32px 40px;
+    border-right: 1px solid #2c2925;
+    position: relative;
+  }
+  .date-cell:last-child { border-right: none; }
+  .date-cell .step {
+    font-family: var(--mono);
+    font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: oklch(0.7 0.08 38);
+    margin-bottom: 18px;
+  }
+  .date-cell h3 {
+    font-size: 32px; line-height: 1.05; margin-bottom: 10px;
+  }
+  .date-cell .when {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--paper);
+    letter-spacing: 0.04em;
+    margin-bottom: 14px;
+  }
+  .date-cell p { color: oklch(0.78 0.01 60); font-size: 14px; margin: 0; }
+
+  @media (max-width: 760px) {
+    .dates-grid { grid-template-columns: 1fr; }
+    .date-cell { border-right: none; border-bottom: 1px solid #2c2925; }
+    .date-cell:last-child { border-bottom: none; }
+  }
+
+  /* ========== SECTIONS ========== */
+  section { padding: 96px 0; border-bottom: 1px solid var(--rule); }
+  .section-head {
+    display: grid; grid-template-columns: 220px 1fr; gap: 56px;
+    margin-bottom: 56px;
+    align-items: start;
+  }
+  .section-head .index { font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-ink); padding-top: 8px; }
+  .section-head h2 {
+    font-size: clamp(36px, 5vw, 56px);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+  }
+  .section-head h2 em { font-style: italic; color: var(--accent-ink); }
+  @media (max-width: 760px) {
+    section { padding: 64px 0; }
+    .section-head { grid-template-columns: 1fr; gap: 16px; margin-bottom: 36px; }
+  }
+
+  /* ========== ABOUT ========== */
+  .about-body {
+    display: grid; grid-template-columns: 220px 1fr; gap: 56px;
+  }
+  .about-body .spacer {} /* offset col */
+  .about-prose { max-width: 64ch; }
+  .about-prose p { font-size: 18px; color: var(--ink-2); margin: 0 0 20px; }
+  .about-prose p.lead { font-family: var(--serif); font-size: 26px; line-height: 1.35; color: var(--ink); margin-bottom: 28px; }
+  .about-prose p.lead em { color: var(--accent-ink); font-style: italic; }
+
+  .cities {
+    margin-top: 40px;
+    padding-top: 28px;
+    border-top: 1px solid var(--rule);
+  }
+  .cities .label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 16px; }
+  .city-list {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    list-style: none; padding: 0; margin: 0;
+  }
+  .city-list li {
+    font-family: var(--serif); font-size: 18px;
+    padding: 6px 14px;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    color: var(--ink);
+  }
+  .city-list li.dvc { background: var(--accent); color: var(--paper); border-color: var(--accent); font-style: italic;}
+  @media (max-width: 760px) {
+    .about-body { grid-template-columns: 1fr; gap: 0; }
+  }
+
+  /* ========== TRACKS ========== */
+  .tracks-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+    margin-top: 0;
+  }
+  .track {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 36px 36px 40px;
+    display: flex; flex-direction: column; gap: 16px;
+    position: relative;
+  }
+  .track.feature { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+  .track.feature .mono-tag { color: oklch(0.78 0.05 38); }
+  .track.feature .track-meta { color: oklch(0.78 0.01 60); border-color: #2c2925; }
+  .track.feature h3 em { color: oklch(0.78 0.1 38); }
+  .track h3 { font-size: 36px; line-height: 1.05; }
+  .track h3 em { font-style: italic; color: var(--accent-ink); }
+  .track p { margin: 0; color: var(--ink-2); }
+  .track.feature p { color: oklch(0.85 0.01 60); }
+  .track-meta {
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+    font-size: 14px;
+  }
+  .track-meta .k { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 4px; }
+  .track-meta .v { color: inherit; }
+
+  @media (max-width: 760px) {
+    .tracks-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ========== TIMELINE ========== */
+  .timeline { position: relative; }
+  .tl-row {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 32px;
+    padding: 28px 0;
+    border-top: 1px solid var(--rule);
+    align-items: start;
+  }
+  .tl-row:last-child { border-bottom: 1px solid var(--rule); }
+  .tl-date {
+    font-family: var(--serif);
+    font-size: 28px;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+  .tl-date small { display: block; font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-top: 6px; font-style: normal;}
+  .tl-body h4 { font-size: 22px; margin-bottom: 6px; }
+  .tl-body p { color: var(--ink-2); margin: 0; max-width: 60ch; }
+  .tl-row.highlight { background: var(--accent-soft); margin: 0 -24px; padding: 28px 24px; border-radius: 4px; border-top: 1px solid transparent; }
+  .tl-row.highlight + .tl-row { border-top: 1px solid var(--rule); }
+
+  @media (max-width: 760px) {
+    .tl-row { grid-template-columns: 1fr; gap: 8px; }
+  }
+
+  /* ========== PRIZES ========== */
+  .prizes-grid {
+    display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 16px;
+  }
+  .prize {
+    border: 1px solid var(--rule);
+    background: var(--paper);
+    padding: 28px 24px 32px;
+    display: flex; flex-direction: column; gap: 8px;
+    border-radius: 4px;
+  }
+  .prize.first { background: var(--accent); color: var(--paper); border-color: var(--accent); }
+  .prize .place { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); }
+  .prize.first .place { color: var(--paper); opacity: 0.85; }
+  .prize .amount {
+    font-family: var(--serif);
+    font-size: 56px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin: 8px 0 4px;
+  }
+  .prize .amount sup { font-size: 24px; vertical-align: top; margin-right: 2px; opacity: 0.7; }
+  .prize .name { font-family: var(--serif); font-style: italic; font-size: 18px; }
+  .prize p { font-size: 14px; color: var(--ink-3); margin: 6px 0 0; }
+  .prize.first p { color: oklch(0.95 0.02 38); }
+
+  @media (max-width: 860px) {
+    .prizes-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 480px) {
+    .prizes-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ========== JUDGING + WINNERS ========== */
+  .two-col {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 56px;
+  }
+  .panel-list {
+    list-style: none; padding: 0; margin: 0;
+  }
+  .panel-list li {
+    padding: 18px 0;
+    border-top: 1px solid var(--rule);
+    display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: baseline;
+  }
+  .panel-list li:last-child { border-bottom: 1px solid var(--rule); }
+  .panel-list .who { font-family: var(--serif); font-size: 22px; }
+  .panel-list .what { font-size: 13px; color: var(--ink-3); text-align: right; max-width: 220px; }
+
+  .winner {
+    padding: 24px 0;
+    border-top: 1px solid var(--rule);
+    display: grid; grid-template-columns: 90px 1fr; gap: 20px;
+  }
+  .winner:last-child { border-bottom: 1px solid var(--rule); }
+  .winner .rank {
+    font-family: var(--serif); font-size: 40px; line-height: 1; color: var(--accent-ink);
+    font-style: italic;
+  }
+  .winner h4 { font-size: 22px; margin-bottom: 4px; }
+  .winner h4 em { font-style: italic; color: var(--ink-3); font-size: 15px; margin-left: 8px; font-family: var(--sans); font-weight: 400;}
+  .winner p { font-size: 14px; color: var(--ink-2); margin: 0; }
+  .winner .founder { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 6px; }
+
+  @media (max-width: 760px) {
+    .two-col { grid-template-columns: 1fr; gap: 40px; }
+    .panel-list .what { text-align: left; max-width: none; }
+    .panel-list li { grid-template-columns: 1fr; }
+  }
+
+  /* ========== CRITERIA ========== */
+  .criteria-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  .criterion .num { font-family: var(--serif); font-style: italic; font-size: 22px; color: var(--accent-ink); margin-bottom: 4px; }
+  .criterion h4 { font-size: 22px; margin-bottom: 8px; }
+  .criterion p { font-size: 14px; color: var(--ink-2); margin: 0; }
+  @media (max-width: 760px) { .criteria-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 480px) { .criteria-grid { grid-template-columns: 1fr; } }
+
+  /* ========== FAQ ========== */
+  .faq details {
+    border-top: 1px solid var(--rule);
+    padding: 24px 0;
+  }
+  .faq details:last-of-type { border-bottom: 1px solid var(--rule); }
+  .faq summary {
+    cursor: pointer;
+    list-style: none;
+    display: flex; justify-content: space-between; align-items: center; gap: 24px;
+    font-family: var(--serif); font-size: 24px; line-height: 1.2;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after {
+    content: "+";
+    font-family: var(--serif);
+    font-size: 28px;
+    color: var(--accent-ink);
+    transition: transform 0.2s;
+    flex: none;
+  }
+  .faq details[open] summary::after { content: "−"; }
+  .faq details p {
+    margin: 16px 0 0;
+    color: var(--ink-2);
+    max-width: 64ch;
+    font-size: 16px;
+  }
+
+  /* ========== APPLY CTA ========== */
+  .apply {
+    background: var(--ink);
+    color: var(--paper);
+    border-bottom: none;
+    padding: 96px 0 96px;
+  }
+  .apply h2 {
+    font-size: clamp(40px, 6vw, 80px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    max-width: 18ch;
+  }
+  .apply h2 em { font-style: italic; color: oklch(0.78 0.1 38); }
+  .apply p { color: oklch(0.78 0.01 60); font-size: 19px; max-width: 56ch; margin: 0 0 32px; }
+  .apply .deadline {
+    display: inline-flex; align-items: center; gap: 12px;
+    font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: oklch(0.85 0.08 38);
+    margin-bottom: 36px;
+  }
+  .apply .deadline::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: oklch(0.78 0.13 38); }
+  .apply-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .apply .cta-btn { background: var(--paper); color: var(--ink); border-color: var(--paper); padding: 14px 24px; font-size: 15px; }
+  .apply .cta-btn:hover { background: var(--accent); border-color: var(--accent); color: var(--paper); }
+  .apply .cta-btn.ghost { background: transparent; color: var(--paper); border-color: oklch(0.5 0 0); }
+  .apply .cta-btn.ghost:hover { background: var(--paper); color: var(--ink); border-color: var(--paper); }
+
+  /* ========== FOOTER ========== */
+  footer {
+    padding: 48px 0 56px;
+    background: var(--bg-2);
+    color: var(--ink-2);
+    font-size: 14px;
+  }
+  .foot-grid {
+    display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+    margin-bottom: 40px;
+  }
+  .foot-grid h5 { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 16px; font-weight: 500; }
+  .foot-grid ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+  .foot-grid a { text-decoration: none; }
+  .foot-grid a:hover { text-decoration: underline; }
+  .foot-bottom {
+    display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    font-family: var(--mono); font-size: 12px; letter-spacing: 0.04em; color: var(--ink-3);
+  }
+  @media (max-width: 760px) { .foot-grid { grid-template-columns: 1fr; gap: 28px; } }
+
+  /* ========== UTILITIES ========== */
+  .placeholder-img {
+    background:
+      repeating-linear-gradient(135deg, transparent 0 14px, color-mix(in oklab, var(--ink) 5%, transparent) 14px 15px),
+      var(--bg-2);
+    border: 1px solid var(--rule);
+    display: grid; place-items: center;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3);
+    aspect-ratio: 4 / 3;
+    border-radius: 4px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ TOP BAR ============ -->
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="#top" class="brand" style="text-decoration:none;">
+      <span class="brand-mark">d</span>
+      <span>Diablo Valley Pitch</span>
+    </a>
+    <nav class="nav">
+      <a href="#about">About</a>
+      <a href="#tracks">Tracks</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#prizes">Prizes</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a href="#apply" class="cta-btn">Apply</a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<a id="top"></a>
+<section class="hero" style="border-top: none;">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">2026 · Inaugural Regional Edition</div>
+        <h1>The pitch competition for <em>the entire&nbsp;Diablo&nbsp;Valley.</em></h1>
+        <p class="hero-lede">
+          Founders, builders, and student entrepreneurs from Lafayette to Oakley — bring your business idea to a live stage of judges, mentors, and neighbors. A regional expansion of the Diablo Valley College pitch competition, now open to the communities that surround it.
+        </p>
+        <div class="hero-actions">
+          <a href="#apply" class="cta-btn">Apply by Oct 26</a>
+          <a href="#about" class="cta-btn ghost">Read the brief</a>
+        </div>
+      </div>
+      <aside class="hero-aside">
+        <div class="label">Live final · save the date</div>
+        <div class="date">Nov 19<small>Thursday evening, 2026</small></div>
+        <div class="where">
+          <strong>Diablo Valley College</strong>
+          Pleasant Hill campus · doors at 5:30pm · pitches begin 6:00pm · open to the public
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ KEY DATES RAIL ============ -->
+<section class="dates" style="padding: 0; border-bottom: none;">
+  <div class="dates-grid">
+    <div class="date-cell">
+      <div class="step">Step 01 — Apply</div>
+      <h3>Submit your idea</h3>
+      <div class="when">Due Mon · Oct 26, 2026 · 11:59pm PT</div>
+      <p>A short written application, a deck, and an optional 1-minute video. No prior experience required.</p>
+    </div>
+    <div class="date-cell">
+      <div class="step">Step 02 — Finalists</div>
+      <h3>10 teams advance</h3>
+      <div class="when">Announced Mon · Nov 2, 2026</div>
+      <p>Selected from a screening panel. Finalists submit a final-draft deck and an optional 1-minute YouTube video.</p>
+    </div>
+    <div class="date-cell">
+      <div class="step">Step 03 — Compete</div>
+      <h3>Live final, on stage</h3>
+      <div class="when">Thu · Nov 19, 2026 · 6:00pm</div>
+      <p>Three minutes to pitch, two minutes of judges' questions. Cash prizes, audience vote, and after-party.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="index">§ 01 — About</div>
+      <h2>Built in the Bay's quieter corner — for the founders <em>actually building&nbsp;here.</em></h2>
+    </div>
+
+    <div class="about-body">
+      <div></div>
+      <div class="about-prose">
+        <p class="lead">
+          What started as a <em>districtwide college</em> pitch competition is opening up. In 2026, anyone living, working, or studying in the Diablo Valley can apply.
+        </p>
+        <p>
+          For the past several years, the Contra Costa Community College District has hosted an annual Business Pitch Competition at DVC's Pleasant Hill campus — an evening of student founders sharing ventures spanning wellness tech, food sustainability, hardware, and student support. Past winners have gone on to pilot with Contra Costa County agencies and BART.
+        </p>
+        <p>
+          This year we're broadening the field. The competition is open to entrepreneurs from across the cities and towns of the Diablo Valley, with a dedicated <strong>Student Track</strong> reserved for DVC students and local high school students. Same stage. Same judges. New range of voices.
+        </p>
+
+        <div class="cities">
+          <div class="label">Open to founders from</div>
+          <ul class="city-list">
+            <li class="dvc">DVC &amp; local high schools</li>
+            <li>Lafayette</li>
+            <li>Walnut Creek</li>
+            <li>Pleasant Hill</li>
+            <li>Concord</li>
+            <li>Clayton</li>
+            <li>Martinez</li>
+            <li>Pittsburg</li>
+            <li>Antioch</li>
+            <li>Oakley</li>
+            <li>Brentwood</li>
+            <li>Danville</li>
+            <li>Alamo</li>
+            <li>Moraga</li>
+            <li>Orinda</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRACKS ============ -->
+<section id="tracks">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="index">§ 02 — Tracks</div>
+      <h2>Two tracks. <em>One stage.</em></h2>
+    </div>
+
+    <div class="tracks-grid">
+      <div class="track">
+        <div class="mono-tag">Track A</div>
+        <h3>Open <em>Community</em></h3>
+        <p>For founders, side-project builders, and small-business operators living or working anywhere in the Diablo Valley. Bring a venture at any stage — pre-launch idea, early MVP, or a real business looking for its next chapter.</p>
+        <div class="track-meta">
+          <div>
+            <div class="k">Eligibility</div>
+            <div class="v">18+ residents of the region</div>
+          </div>
+          <div>
+            <div class="k">Team size</div>
+            <div class="v">1–4 founders</div>
+          </div>
+          <div>
+            <div class="k">Stage</div>
+            <div class="v">Idea → revenue OK</div>
+          </div>
+          <div>
+            <div class="k">Cost</div>
+            <div class="v">Free to apply</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="track feature">
+        <div class="mono-tag">Track B · Featured</div>
+        <h3>Student <em>Track</em></h3>
+        <p>For full-time and dual-enrolled DVC students and current high school students attending school in the region. Same judges, dedicated prize pool, and extra mentoring built around school schedules. This is where Leftoverly, Scholarise, and WellPulse came from.</p>
+        <div class="track-meta">
+          <div>
+            <div class="k">Eligibility</div>
+            <div class="v">DVC + local HS students</div>
+          </div>
+          <div>
+            <div class="k">Team size</div>
+            <div class="v">1–4 founders</div>
+          </div>
+          <div>
+            <div class="k">Mentors</div>
+            <div class="v">Faculty &amp; alumni founders</div>
+          </div>
+          <div>
+            <div class="k">Cost</div>
+            <div class="v">Free to apply</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TIMELINE ============ -->
+<section id="timeline">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="index">§ 03 — Timeline</div>
+      <h2>The road to <em>Nov 19.</em></h2>
+    </div>
+
+    <div class="timeline">
+
+      <div class="tl-row">
+        <div class="tl-date">Sept 15<small>Applications open</small></div>
+        <div class="tl-body">
+          <h4>Applications open</h4>
+          <p>The form goes live. Start a draft, save it, come back. We recommend submitting early — applicants who submit before Oct 12 are eligible for an optional pre-screening review.</p>
+        </div>
+      </div>
+
+      <div class="tl-row highlight">
+        <div class="tl-date">Oct 26<small>Deadline</small></div>
+        <div class="tl-body">
+          <h4>Applications due — 11:59pm PT</h4>
+          <p>Submit a short written application, a deck (PDF or slides link), and an optional 1-minute video. Late submissions are not accepted; the screening panel begins review the same week.</p>
+        </div>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-date">Nov 2<small>Finalists named</small></div>
+        <div class="tl-body">
+          <h4>Up to 10 finalists announced</h4>
+          <p>Each application is reviewed by two members of a multi-person screening panel; highest-scoring teams advance. Finalists submit a final-draft deck and an optional 1-minute public YouTube video.</p>
+        </div>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-date">Nov 2 → 19<small>Mentoring window</small></div>
+        <div class="tl-body">
+          <h4>Two and a half weeks of intensive support</h4>
+          <p>Finalists are paired with mentors and given access to deck reviews, pitch coaching, financial-model review, and dry-run sessions. Optional drop-in office hours every weekday evening at the DVC business department.</p>
+        </div>
+      </div>
+
+      <div class="tl-row highlight">
+        <div class="tl-date">Nov 19<small>Live final</small></div>
+        <div class="tl-body">
+          <h4>The stage. The judges. The prize.</h4>
+          <p>Three minutes to pitch, two minutes of Q&amp;A. Audience vote runs throughout. Winners announced live; reception immediately following with judges, mentors, and the regional founder community.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRIZES ============ -->
+<section id="prizes">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="index">§ 04 — Prizes</div>
+      <h2>Cash prizes, mentorship, and a <em>real audience.</em></h2>
+    </div>
+
+    <div class="prizes-grid">
+      <div class="prize first">
+        <div class="place">Grand Prize</div>
+        <div class="amount"><sup>$</sup>1,000</div>
+        <div class="name">First Place</div>
+        <p>Cash prize, on-stage recognition, and an introduction round to regional investors and small-business advisors.</p>
+      </div>
+      <div class="prize">
+        <div class="place">Runner-up</div>
+        <div class="amount"><sup>$</sup>500</div>
+        <div class="name">Second Place</div>
+        <p>Cash prize and continued mentor matching post-event.</p>
+      </div>
+      <div class="prize">
+        <div class="place">Third</div>
+        <div class="amount"><sup>$</sup>250</div>
+        <div class="name">Third Place</div>
+        <p>Cash prize and recognition.</p>
+      </div>
+      <div class="prize">
+        <div class="place">By audience vote</div>
+        <div class="amount"><sup>$</sup>50</div>
+        <div class="name">People's Choice</div>
+        <p>Live audience vote during the final. Open to all finalists.</p>
+      </div>
+    </div>
+
+    <p style="margin-top:32px; color:var(--ink-3); font-size:14px; max-width:60ch;">
+      Prize amounts shown reflect the 2025 finals; the 2026 regional edition will scale prizes to the expanded field. Final amounts confirmed when finalists are named.
+    </p>
+  </div>
+</section>
+
+<!-- ============ JUDGING + WINNERS ============ -->
+<section id="judges">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="index">§ 05 — How it's judged</div>
+      <h2>Local leaders, working entrepreneurs, real <em>industry seats.</em></h2>
+    </div>
+
+    <div class="two-col">
+      <div>
+        <div class="mono-tag" style="margin-bottom:24px;">Past judges panel · 2025</div>
+        <ul class="panel-list">
+          <li>
+            <div class="who">Kim Trupiano</div>
+            <div class="what">Mayor, City of Clayton</div>
+          </li>
+          <li>
+            <div class="who">Ruby Grover</div>
+            <div class="what">Business leader, Sunvalley Shopping Center</div>
+          </li>
+          <li>
+            <div class="who">Nayab Siddiqui</div>
+            <div class="what">COO, ZAYNA Ventures</div>
+          </li>
+          <li>
+            <div class="who">Dan Siegel</div>
+            <div class="what">Local entrepreneur</div>
+          </li>
+        </ul>
+        <p style="margin-top:20px; color:var(--ink-3); font-size:13px;">2026 panel announced in October.</p>
+      </div>
+
+      <div>
+        <div class="mono-tag" style="margin-bottom:24px;">Scoring criteria</div>
+        <ul class="panel-list">
+          <li><div class="who">Originality</div><div class="what">Is the idea differentiated?</div></li>
+          <li><div class="who">Clarity of concept</div><div class="what">Can a stranger understand it in 60s?</div></li>
+          <li><div class="who">Presentation quality</div><div class="what">Slide design, narrative, delivery</div></li>
+          <li><div class="who">Real-world impact</div><div class="what">Who is helped, and how much</div></li>
+          <li><div class="who">Traction &amp; validation</div><div class="what">Any evidence the idea works</div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PAST WINNERS ============ -->
+<section id="winners">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="index">§ 06 — From last year</div>
+      <h2>Four ventures that <em>walked off this stage.</em></h2>
+    </div>
+
+    <div class="two-col">
+      <div>
+        <div class="winner">
+          <div class="rank">1<sup style="font-size:14px;">st</sup></div>
+          <div>
+            <div class="founder">WellPulse · Anya Gupta · Walnut Creek</div>
+            <h4>WellPulse <em>$1,000</em></h4>
+            <p>An anonymous, QR-code based wellness survey giving organizations real-time insight into mental health trends while protecting individual privacy. Now piloting at the county and BART level.</p>
+          </div>
+        </div>
+        <div class="winner">
+          <div class="rank">2<sup style="font-size:14px;">nd</sup></div>
+          <div>
+            <div class="founder">Leftoverly · Zachary Lee · Concord</div>
+            <h4>Leftoverly <em>$500</em></h4>
+            <p>A platform helping restaurants reduce food waste by selling surplus meals at affordable prices. Founded by a dual-enrolled DVC student and Northgate High School junior.</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="winner">
+          <div class="rank">3<sup style="font-size:14px;">rd</sup></div>
+          <div>
+            <div class="founder">Scholarise · Floris Brussaard · Concord</div>
+            <h4>Scholarise <em>$250</em></h4>
+            <p>A tool helping community college students track scholarships, internships, and coursework as they prepare to transfer to four-year universities. Prize money funded a scholarship for underrepresented transfer students.</p>
+          </div>
+        </div>
+        <div class="winner">
+          <div class="rank" style="font-size:24px; padding-top:14px;">★</div>
+          <div>
+            <div class="founder">Garydian Angel · Anzell Ross · People's Choice</div>
+            <h4>Garydian Angel <em>$50</em></h4>
+            <p>A voice-activated wristband focused on calm, family-centered safety alerts. Selected by audience vote on the night of the competition.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="index">§ 07 — FAQ</div>
+      <h2>Common <em>questions.</em></h2>
+    </div>
+
+    <div class="faq" style="max-width: 880px; margin-left: auto;">
+      <details>
+        <summary>Who can apply?</summary>
+        <p>Anyone 18 or older who lives, works, or studies in the Diablo Valley can apply to the Open Community track. Current DVC students and students attending high schools in the region apply through the Student Track. There are no citizenship or status requirements.</p>
+      </details>
+      <details>
+        <summary>Does my idea need to be a real business already?</summary>
+        <p>No. We accept ventures at any stage — from a single-slide concept to a registered LLC with revenue. Judging weighs originality, clarity, and potential impact more heavily than current traction, especially for early-stage teams.</p>
+      </details>
+      <details>
+        <summary>Can I apply with a co-founder or team?</summary>
+        <p>Yes. Teams of 1–4 are welcome. List every team member on the application; only listed members are eligible to present on stage.</p>
+      </details>
+      <details>
+        <summary>What does the application include?</summary>
+        <p>A short written form (problem, solution, customer, what's different), a pitch deck submitted as a PDF or shareable slide link, and an optional 1-minute video introducing the team. Finalists submit a final-draft deck and an optional 1-minute YouTube video by Nov 2.</p>
+      </details>
+      <details>
+        <summary>What kind of mentoring do finalists get?</summary>
+        <p>Between Nov 2 and Nov 19, every finalist team is matched with one or more mentors drawn from the DVC business faculty, alumni founders, past judges, and the regional founder community. Support includes deck reviews, pitch coaching, financial-model feedback, and live dry-runs in the actual venue.</p>
+      </details>
+      <details>
+        <summary>Do I keep ownership of my idea?</summary>
+        <p>Yes. You retain 100% ownership of your venture, IP, and equity. The competition takes no equity, no fees, and no rights to your work. You grant us the right to use your name, logo, and pitch summary for promotional purposes only.</p>
+      </details>
+      <details>
+        <summary>Is the final event open to the public?</summary>
+        <p>Yes — and we encourage it. The November 19 final is free to attend. Invite your family, your customers, your potential investors, and your skeptics. The audience vote is real.</p>
+      </details>
+      <details>
+        <summary>I have a question that isn't here.</summary>
+        <p>Email the organizing team and we'll get back to you within two business days. Contact details are in the footer below.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ APPLY ============ -->
+<section id="apply" class="apply">
+  <div class="wrap">
+    <div class="deadline">Applications open · close Mon Oct 26</div>
+    <h2>Bring an idea. <em>Leave with a pitch deck, a network, and maybe a check.</em></h2>
+    <p>Whether you're 16 and have an app idea, or 46 and ready to make the side project the main thing — this is the stage. Apply once. We'll do the rest.</p>
+    <div class="apply-actions">
+      <a href="#" class="cta-btn">Start application →</a>
+      <a href="#" class="cta-btn ghost">Email us a question</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="brand" style="margin-bottom:12px;">
+          <span class="brand-mark">d</span>
+          <span>Diablo Valley Pitch Competition</span>
+        </div>
+        <p style="max-width: 44ch; margin: 0; color: var(--ink-3); font-size: 13px;">
+          A regional pitch competition for the Diablo Valley, hosted at Diablo Valley College's Pleasant Hill campus. Built on the foundation of the 4CD Business Pitch Competition.
+        </p>
+      </div>
+      <div>
+        <h5>Event</h5>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#tracks">Tracks</a></li>
+          <li><a href="#timeline">Timeline</a></li>
+          <li><a href="#prizes">Prizes</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li>DVC Business Department</li>
+          <li>321 Golf Club Rd</li>
+          <li>Pleasant Hill, CA 94523</li>
+          <li><a href="#">pitch@diablovalley.example</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2026 Diablo Valley Pitch Competition</div>
+      <div>Hosted on GitHub Pages · last updated May 2026</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
