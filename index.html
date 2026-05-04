@@ -6,27 +6,34 @@
 <title>Diablo Valley Pitch Competition — Nov 19, 2026</title>
 <meta name="description" content="A regional business pitch competition for founders across the Diablo Valley — open to community members and a special student track for DVC and local high school students. Final event Nov 19, 2026." />
 
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="apple-touch-icon" href="assets/favicon-180.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..600&family=IBM+Plex+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800;900&family=Archivo+Narrow:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
   :root {
-    --bg: #f7f3ec;
-    --bg-2: #efe9de;
-    --ink: #1c1a17;
-    --ink-2: #4a463f;
-    --ink-3: #7a7268;
-    --rule: #d9d1c2;
-    --rule-2: #e7e0d1;
-    --accent: oklch(0.56 0.13 38);      /* terracotta / oxide */
-    --accent-ink: oklch(0.32 0.09 38);
-    --accent-soft: oklch(0.94 0.04 60);
-    --paper: #fdfbf6;
+    /* Brand palette — pulled from the logo asset pack */
+    --green: #01775b;        /* deep brand green */
+    --green-deep: #015a45;
+    --sage: #b5dbaf;         /* light sage on green */
+    --sage-soft: #d6ecd2;
+    --navy: #1a3a6c;         /* deep navy */
+    --navy-deep: #122a4e;
+    --periwinkle: #9aa6d6;   /* periwinkle / light navy */
+    --periwinkle-soft: #c5cce8;
+    --paper: #fbfaf5;        /* warm off-white */
+    --bone: #f3f1ea;
+    --ink: #0e1d2c;          /* near-navy text */
+    --ink-2: #36465a;
+    --ink-3: #6b7787;
+    --rule: rgba(26, 58, 108, 0.15);
 
-    --serif: "Newsreader", Georgia, "Times New Roman", serif;
-    --sans: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
-    --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    --display: "Anton", "Archivo Narrow", Impact, sans-serif;
+    --sans: "Archivo", system-ui, -apple-system, sans-serif;
+    --narrow: "Archivo Narrow", "Archivo", sans-serif;
   }
 
   * { box-sizing: border-box; }
@@ -34,7 +41,7 @@
   html { scroll-behavior: smooth; }
 
   body {
-    background: var(--bg);
+    background: var(--paper);
     color: var(--ink);
     font-family: var(--sans);
     font-weight: 400;
@@ -44,362 +51,397 @@
     text-rendering: optimizeLegibility;
   }
 
-  ::selection { background: var(--accent); color: var(--paper); }
+  ::selection { background: var(--green); color: var(--sage); }
 
   a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
-  a:hover { color: var(--accent-ink); }
+  a:hover { color: var(--green); }
 
-  h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; letter-spacing: -0.01em; margin: 0; text-wrap: balance; }
+  h1, h2, h3, h4 {
+    font-family: var(--display);
+    font-weight: 400;
+    letter-spacing: 0.005em;
+    margin: 0;
+    text-wrap: balance;
+    text-transform: uppercase;
+  }
   p { text-wrap: pretty; }
 
-  .mono { font-family: var(--mono); font-size: 0.78em; letter-spacing: 0.02em; text-transform: uppercase; color: var(--ink-3); }
-  .mono-tag { font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); }
+  .mono { font-family: var(--narrow); font-weight: 600; font-size: 0.78em; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); }
+  .mono-tag { font-family: var(--narrow); font-weight: 700; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green); }
 
-  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
 
   /* ========== TOP BAR ========== */
   .topbar {
     position: sticky; top: 0; z-index: 50;
     backdrop-filter: blur(10px);
-    background: color-mix(in oklab, var(--bg) 86%, transparent);
+    background: color-mix(in oklab, var(--paper) 88%, transparent);
     border-bottom: 1px solid var(--rule);
   }
   .topbar-inner {
-    display: flex; align-items: center; justify-content: space-between;
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
     padding: 14px 32px;
-    max-width: 1180px; margin: 0 auto;
+    max-width: 1240px; margin: 0 auto;
   }
   .brand {
     display: flex; align-items: center; gap: 12px;
-    font-family: var(--serif); font-size: 18px;
+    text-decoration: none;
+    color: var(--navy);
+    font-family: var(--narrow); font-weight: 700;
+    font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase;
   }
-  .brand-mark {
-    width: 28px; height: 28px; border-radius: 50%;
-    background: var(--accent);
-    display: grid; place-items: center;
-    color: var(--paper); font-family: var(--serif); font-style: italic; font-size: 16px;
-    flex: none;
-  }
-  .nav { display: flex; gap: 28px; font-size: 14px; }
+  .brand img { width: 34px; height: 34px; display: block; }
+  .nav { display: flex; gap: 28px; font-family: var(--narrow); font-weight: 600; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; }
   .nav a { text-decoration: none; color: var(--ink-2); }
-  .nav a:hover { color: var(--ink); }
+  .nav a:hover { color: var(--green); }
+
   .cta-btn {
     display: inline-block;
-    padding: 10px 18px;
-    background: var(--ink);
-    color: var(--paper);
+    padding: 12px 22px;
+    background: var(--green);
+    color: var(--sage);
     text-decoration: none;
-    font-size: 14px;
-    border-radius: 999px;
-    border: 1px solid var(--ink);
-    transition: background 0.2s;
+    font-family: var(--narrow); font-weight: 700;
+    font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase;
+    border: 2px solid var(--green);
+    transition: all 0.15s;
   }
-  .cta-btn:hover { background: var(--accent); border-color: var(--accent); color: var(--paper); }
-  .cta-btn.ghost { background: transparent; color: var(--ink); }
-  .cta-btn.ghost:hover { background: var(--ink); color: var(--paper); }
+  .cta-btn:hover { background: var(--navy); border-color: var(--navy); color: var(--periwinkle); }
+  .cta-btn.ghost { background: transparent; color: var(--navy); border-color: var(--navy); }
+  .cta-btn.ghost:hover { background: var(--navy); color: var(--periwinkle); }
+  .cta-btn.lg { padding: 16px 28px; font-size: 14px; }
 
-  @media (max-width: 760px) {
+  @media (max-width: 820px) {
     .nav { display: none; }
   }
 
   /* ========== HERO ========== */
   .hero {
-    padding: 88px 0 56px;
-    border-bottom: 1px solid var(--rule);
+    background: var(--green);
+    color: var(--sage);
+    padding: 0;
+    border-bottom: 6px solid var(--navy);
+    overflow: hidden;
     position: relative;
   }
   .hero-grid {
     display: grid;
-    grid-template-columns: 1.3fr 1fr;
-    gap: 56px;
-    align-items: end;
+    grid-template-columns: 1.45fr 1fr;
+    align-items: stretch;
+    min-height: 620px;
   }
+  .hero-left {
+    padding: 80px 56px 80px 32px;
+    display: flex; flex-direction: column; justify-content: center;
+    max-width: 780px;
+    margin-left: auto; width: 100%;
+  }
+  .hero-right {
+    background: var(--navy);
+    color: var(--periwinkle);
+    padding: 80px 48px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-right::before {
+    content: ""; position: absolute; inset: 0;
+    background: url("assets/dvc-logo-simple.svg") no-repeat right -40px bottom -40px / 360px;
+    opacity: 0.15;
+    filter: brightness(2);
+  }
+  .hero-right > * { position: relative; }
+
   .eyebrow {
-    display: flex; align-items: center; gap: 12px;
+    display: flex; align-items: center; gap: 14px;
     margin-bottom: 28px;
-    font-family: var(--mono);
-    font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--accent-ink);
+    font-family: var(--narrow); font-weight: 700;
+    font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--sage);
   }
   .eyebrow::before {
-    content: ""; width: 36px; height: 1px; background: var(--accent);
+    content: ""; width: 36px; height: 2px; background: var(--sage);
   }
   .hero h1 {
-    font-size: clamp(48px, 7vw, 96px);
-    line-height: 0.98;
-    letter-spacing: -0.025em;
+    font-size: clamp(54px, 8vw, 110px);
+    line-height: 0.92;
+    letter-spacing: 0.005em;
     margin-bottom: 28px;
+    color: var(--sage);
   }
-  .hero h1 em {
-    font-style: italic;
-    color: var(--accent-ink);
-  }
+  .hero h1 .accent { color: var(--periwinkle); }
   .hero-lede {
     font-size: 19px;
-    color: var(--ink-2);
-    max-width: 52ch;
-    margin-bottom: 32px;
+    line-height: 1.5;
+    color: var(--sage-soft);
+    max-width: 56ch;
+    margin: 0 0 32px;
   }
   .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .hero .cta-btn { background: var(--sage); color: var(--green-deep); border-color: var(--sage); }
+  .hero .cta-btn:hover { background: var(--periwinkle); color: var(--navy-deep); border-color: var(--periwinkle); }
+  .hero .cta-btn.ghost { background: transparent; color: var(--sage); border-color: var(--sage); }
+  .hero .cta-btn.ghost:hover { background: var(--sage); color: var(--green-deep); }
 
-  .hero-aside {
-    border-left: 1px solid var(--rule);
-    padding-left: 32px;
-    padding-bottom: 8px;
+  .save-the-date {
+    border: 2px solid var(--periwinkle);
+    padding: 24px 24px 26px;
+    display: flex; flex-direction: column; gap: 6px;
+    background: rgba(154, 166, 214, 0.08);
   }
-  .hero-aside .label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 14px; }
-  .hero-aside .date {
-    font-family: var(--serif);
-    font-size: 56px;
-    line-height: 1;
-    letter-spacing: -0.02em;
-    margin-bottom: 8px;
+  .save-the-date .label { font-family: var(--narrow); font-weight: 700; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--periwinkle); margin-bottom: 8px; }
+  .save-the-date .day { font-family: var(--display); font-size: 96px; line-height: 0.9; color: var(--periwinkle); letter-spacing: 0.005em; }
+  .save-the-date .day small { font-family: var(--narrow); font-weight: 700; font-size: 18px; letter-spacing: 0.06em; display: block; margin-top: 8px; color: var(--periwinkle-soft); }
+  .save-the-date .where {
+    margin-top: 18px; padding-top: 18px;
+    border-top: 1px solid rgba(154, 166, 214, 0.3);
+    color: var(--periwinkle-soft); font-size: 14px; line-height: 1.5;
   }
-  .hero-aside .date small { font-size: 22px; color: var(--ink-3); display: block; margin-top: 6px; font-style: italic;}
-  .hero-aside .where {
-    margin-top: 28px; padding-top: 24px;
-    border-top: 1px solid var(--rule);
-    color: var(--ink-2); font-size: 15px;
-  }
-  .hero-aside .where strong { display: block; color: var(--ink); margin-bottom: 4px; font-weight: 500; }
+  .save-the-date .where strong { display: block; color: var(--periwinkle); margin-bottom: 4px; font-family: var(--narrow); font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; font-size: 13px;}
 
-  @media (max-width: 860px) {
-    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
-    .hero-aside { border-left: none; padding-left: 0; border-top: 1px solid var(--rule); padding-top: 32px; }
+  /* Wave pattern under hero */
+  .wave-bar {
+    background: var(--navy);
+    height: 56px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 56' preserveAspectRatio='none'><path d='M0,28 Q25,12 50,28 T100,28 T150,28 T200,28' stroke='%239aa6d6' stroke-width='3' fill='none'/><path d='M0,40 Q25,24 50,40 T100,40 T150,40 T200,40' stroke='%239aa6d6' stroke-width='3' fill='none'/><path d='M0,16 Q25,0 50,16 T100,16 T150,16 T200,16' stroke='%239aa6d6' stroke-width='3' fill='none'/></svg>");
+    background-repeat: repeat-x;
+    background-size: 200px 56px;
+  }
+
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-left { padding: 64px 32px 48px; max-width: none; margin-left: 0; }
+    .hero-right { padding: 48px 32px 64px; }
   }
 
   /* ========== KEY DATES RAIL ========== */
   .dates {
-    background: var(--ink);
-    color: var(--paper);
-    padding: 0;
+    background: var(--navy);
+    color: var(--periwinkle);
   }
   .dates-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    border-top: 1px solid #2c2925;
   }
   .date-cell {
-    padding: 36px 32px 40px;
-    border-right: 1px solid #2c2925;
+    padding: 44px 36px 48px;
+    border-right: 1px solid rgba(154, 166, 214, 0.25);
     position: relative;
   }
   .date-cell:last-child { border-right: none; }
   .date-cell .step {
-    font-family: var(--mono);
-    font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
-    color: oklch(0.7 0.08 38);
+    font-family: var(--narrow); font-weight: 700;
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--periwinkle); opacity: 0.7;
     margin-bottom: 18px;
   }
   .date-cell h3 {
-    font-size: 32px; line-height: 1.05; margin-bottom: 10px;
+    font-size: 38px; line-height: 1; margin-bottom: 14px;
+    color: var(--periwinkle);
   }
   .date-cell .when {
-    font-family: var(--mono);
-    font-size: 13px;
-    color: var(--paper);
-    letter-spacing: 0.04em;
+    font-family: var(--narrow); font-weight: 700;
+    font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--sage);
     margin-bottom: 14px;
   }
-  .date-cell p { color: oklch(0.78 0.01 60); font-size: 14px; margin: 0; }
+  .date-cell p { color: var(--periwinkle-soft); font-size: 14px; margin: 0; line-height: 1.55; }
 
   @media (max-width: 760px) {
     .dates-grid { grid-template-columns: 1fr; }
-    .date-cell { border-right: none; border-bottom: 1px solid #2c2925; }
+    .date-cell { border-right: none; border-bottom: 1px solid rgba(154, 166, 214, 0.25); }
     .date-cell:last-child { border-bottom: none; }
   }
 
   /* ========== SECTIONS ========== */
-  section { padding: 96px 0; border-bottom: 1px solid var(--rule); }
+  section { padding: 100px 0; border-bottom: 1px solid var(--rule); }
   .section-head {
     display: grid; grid-template-columns: 220px 1fr; gap: 56px;
     margin-bottom: 56px;
     align-items: start;
   }
-  .section-head .index { font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-ink); padding-top: 8px; }
+  .section-head .index { font-family: var(--narrow); font-weight: 700; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--green); padding-top: 12px; }
   .section-head h2 {
-    font-size: clamp(36px, 5vw, 56px);
-    line-height: 1.02;
-    letter-spacing: -0.02em;
+    font-size: clamp(44px, 6vw, 72px);
+    line-height: 0.95;
+    color: var(--navy);
   }
-  .section-head h2 em { font-style: italic; color: var(--accent-ink); }
+  .section-head h2 .accent { color: var(--green); }
   @media (max-width: 760px) {
     section { padding: 64px 0; }
-    .section-head { grid-template-columns: 1fr; gap: 16px; margin-bottom: 36px; }
+    .section-head { grid-template-columns: 1fr; gap: 12px; margin-bottom: 36px; }
   }
 
   /* ========== ABOUT ========== */
-  .about-body {
-    display: grid; grid-template-columns: 220px 1fr; gap: 56px;
-  }
-  .about-body .spacer {} /* offset col */
+  .about-body { display: grid; grid-template-columns: 220px 1fr; gap: 56px; }
   .about-prose { max-width: 64ch; }
   .about-prose p { font-size: 18px; color: var(--ink-2); margin: 0 0 20px; }
-  .about-prose p.lead { font-family: var(--serif); font-size: 26px; line-height: 1.35; color: var(--ink); margin-bottom: 28px; }
-  .about-prose p.lead em { color: var(--accent-ink); font-style: italic; }
+  .about-prose p.lead { font-family: var(--narrow); font-weight: 600; font-size: 26px; line-height: 1.3; color: var(--navy); margin-bottom: 28px; letter-spacing: 0.005em; }
+  .about-prose p.lead .accent { color: var(--green); }
 
   .cities {
     margin-top: 40px;
     padding-top: 28px;
     border-top: 1px solid var(--rule);
   }
-  .cities .label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 16px; }
+  .cities .label { font-family: var(--narrow); font-weight: 700; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 16px; }
   .city-list {
     display: flex; flex-wrap: wrap; gap: 8px;
     list-style: none; padding: 0; margin: 0;
   }
   .city-list li {
-    font-family: var(--serif); font-size: 18px;
-    padding: 6px 14px;
-    background: var(--paper);
+    font-family: var(--narrow); font-weight: 600; font-size: 14px;
+    padding: 8px 14px;
+    background: var(--bone);
     border: 1px solid var(--rule);
-    border-radius: 999px;
-    color: var(--ink);
+    color: var(--navy);
+    letter-spacing: 0.04em; text-transform: uppercase;
   }
-  .city-list li.dvc { background: var(--accent); color: var(--paper); border-color: var(--accent); font-style: italic;}
+  .city-list li.dvc { background: var(--green); color: var(--sage); border-color: var(--green); }
   @media (max-width: 760px) {
     .about-body { grid-template-columns: 1fr; gap: 0; }
   }
 
   /* ========== TRACKS ========== */
-  .tracks-grid {
-    display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
-    margin-top: 0;
-  }
+  .tracks-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
   .track {
-    background: var(--paper);
-    border: 1px solid var(--rule);
-    border-radius: 4px;
-    padding: 36px 36px 40px;
+    background: var(--bone);
+    border: 2px solid var(--navy);
+    padding: 40px 36px 40px;
     display: flex; flex-direction: column; gap: 16px;
     position: relative;
   }
-  .track.feature { background: var(--ink); color: var(--paper); border-color: var(--ink); }
-  .track.feature .mono-tag { color: oklch(0.78 0.05 38); }
-  .track.feature .track-meta { color: oklch(0.78 0.01 60); border-color: #2c2925; }
-  .track.feature h3 em { color: oklch(0.78 0.1 38); }
-  .track h3 { font-size: 36px; line-height: 1.05; }
-  .track h3 em { font-style: italic; color: var(--accent-ink); }
+  .track.feature { background: var(--green); color: var(--sage); border-color: var(--green); }
+  .track.feature .mono-tag { color: var(--sage); opacity: 0.8; }
+  .track.feature .track-meta { color: var(--sage-soft); border-color: rgba(181, 219, 175, 0.3); }
+  .track.feature h3 { color: var(--sage); }
+  .track.feature h3 .accent { color: var(--periwinkle); }
+  .track.feature .track-meta .k { color: var(--sage); opacity: 0.7; }
+  .track h3 { font-size: 44px; line-height: 0.95; color: var(--navy); }
+  .track h3 .accent { color: var(--green); }
   .track p { margin: 0; color: var(--ink-2); }
-  .track.feature p { color: oklch(0.85 0.01 60); }
+  .track.feature p { color: var(--sage-soft); }
   .track-meta {
     margin-top: auto;
-    padding-top: 20px;
+    padding-top: 24px;
     border-top: 1px solid var(--rule);
-    display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px 20px;
     font-size: 14px;
   }
-  .track-meta .k { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 4px; }
-  .track-meta .v { color: inherit; }
+  .track-meta .k { font-family: var(--narrow); font-weight: 700; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 4px; }
+  .track-meta .v { color: inherit; font-family: var(--narrow); font-weight: 500; }
 
-  @media (max-width: 760px) {
-    .tracks-grid { grid-template-columns: 1fr; }
-  }
+  @media (max-width: 760px) { .tracks-grid { grid-template-columns: 1fr; } }
 
   /* ========== TIMELINE ========== */
-  .timeline { position: relative; }
   .tl-row {
     display: grid;
-    grid-template-columns: 200px 1fr;
+    grid-template-columns: 220px 1fr;
     gap: 32px;
     padding: 28px 0;
     border-top: 1px solid var(--rule);
     align-items: start;
   }
   .tl-row:last-child { border-bottom: 1px solid var(--rule); }
-  .tl-date {
-    font-family: var(--serif);
-    font-size: 28px;
-    line-height: 1.1;
-    letter-spacing: -0.01em;
-  }
-  .tl-date small { display: block; font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-top: 6px; font-style: normal;}
-  .tl-body h4 { font-size: 22px; margin-bottom: 6px; }
-  .tl-body p { color: var(--ink-2); margin: 0; max-width: 60ch; }
-  .tl-row.highlight { background: var(--accent-soft); margin: 0 -24px; padding: 28px 24px; border-radius: 4px; border-top: 1px solid transparent; }
+  .tl-date { font-family: var(--display); font-size: 36px; line-height: 1; color: var(--navy); letter-spacing: 0.005em; }
+  .tl-date small { display: block; font-family: var(--narrow); font-weight: 700; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-3); margin-top: 8px; }
+  .tl-body h4 { font-size: 26px; margin-bottom: 8px; color: var(--navy); }
+  .tl-body p { color: var(--ink-2); margin: 0; max-width: 60ch; font-size: 16px; }
+  .tl-row.highlight { background: var(--sage-soft); border-color: var(--green); margin: 0 -24px; padding: 28px 24px; }
+  .tl-row.highlight .tl-date { color: var(--green-deep); }
   .tl-row.highlight + .tl-row { border-top: 1px solid var(--rule); }
 
-  @media (max-width: 760px) {
-    .tl-row { grid-template-columns: 1fr; gap: 8px; }
-  }
+  @media (max-width: 760px) { .tl-row { grid-template-columns: 1fr; gap: 8px; } }
 
   /* ========== PRIZES ========== */
-  .prizes-grid {
-    display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 16px;
-  }
+  .prizes-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 12px; }
   .prize {
-    border: 1px solid var(--rule);
-    background: var(--paper);
+    border: 2px solid var(--navy);
+    background: var(--bone);
     padding: 28px 24px 32px;
-    display: flex; flex-direction: column; gap: 8px;
-    border-radius: 4px;
+    display: flex; flex-direction: column; gap: 6px;
   }
-  .prize.first { background: var(--accent); color: var(--paper); border-color: var(--accent); }
-  .prize .place { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); }
-  .prize.first .place { color: var(--paper); opacity: 0.85; }
+  .prize.first { background: var(--green); color: var(--sage); border-color: var(--green); }
+  .prize .place { font-family: var(--narrow); font-weight: 700; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-3); }
+  .prize.first .place { color: var(--sage); opacity: 0.8; }
   .prize .amount {
-    font-family: var(--serif);
-    font-size: 56px;
-    line-height: 1;
-    letter-spacing: -0.02em;
-    margin: 8px 0 4px;
+    font-family: var(--display);
+    font-size: 84px;
+    line-height: 0.9;
+    margin: 12px 0 6px;
+    color: var(--navy);
+    letter-spacing: 0.005em;
   }
-  .prize .amount sup { font-size: 24px; vertical-align: top; margin-right: 2px; opacity: 0.7; }
-  .prize .name { font-family: var(--serif); font-style: italic; font-size: 18px; }
-  .prize p { font-size: 14px; color: var(--ink-3); margin: 6px 0 0; }
-  .prize.first p { color: oklch(0.95 0.02 38); }
+  .prize.first .amount { color: var(--sage); }
+  .prize .amount sup { font-size: 32px; vertical-align: top; margin-right: 2px; opacity: 0.7; line-height: 1.1; }
+  .prize .name { font-family: var(--narrow); font-weight: 700; font-size: 16px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--navy); }
+  .prize.first .name { color: var(--sage); }
+  .prize p { font-size: 13px; color: var(--ink-3); margin: 8px 0 0; line-height: 1.5; }
+  .prize.first p { color: var(--sage-soft); }
 
-  @media (max-width: 860px) {
-    .prizes-grid { grid-template-columns: repeat(2, 1fr); }
-  }
-  @media (max-width: 480px) {
-    .prizes-grid { grid-template-columns: 1fr; }
-  }
+  @media (max-width: 860px) { .prizes-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 480px) { .prizes-grid { grid-template-columns: 1fr; } }
 
-  /* ========== JUDGING + WINNERS ========== */
-  .two-col {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 56px;
-  }
-  .panel-list {
-    list-style: none; padding: 0; margin: 0;
-  }
+  /* ========== TWO COL (judging / criteria) ========== */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
+  .panel-list { list-style: none; padding: 0; margin: 0; }
   .panel-list li {
     padding: 18px 0;
     border-top: 1px solid var(--rule);
     display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: baseline;
   }
   .panel-list li:last-child { border-bottom: 1px solid var(--rule); }
-  .panel-list .who { font-family: var(--serif); font-size: 22px; }
-  .panel-list .what { font-size: 13px; color: var(--ink-3); text-align: right; max-width: 220px; }
-
-  .winner {
-    padding: 24px 0;
-    border-top: 1px solid var(--rule);
-    display: grid; grid-template-columns: 90px 1fr; gap: 20px;
-  }
-  .winner:last-child { border-bottom: 1px solid var(--rule); }
-  .winner .rank {
-    font-family: var(--serif); font-size: 40px; line-height: 1; color: var(--accent-ink);
-    font-style: italic;
-  }
-  .winner h4 { font-size: 22px; margin-bottom: 4px; }
-  .winner h4 em { font-style: italic; color: var(--ink-3); font-size: 15px; margin-left: 8px; font-family: var(--sans); font-weight: 400;}
-  .winner p { font-size: 14px; color: var(--ink-2); margin: 0; }
-  .winner .founder { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 6px; }
+  .panel-list .who { font-family: var(--narrow); font-weight: 700; font-size: 18px; color: var(--navy); letter-spacing: 0.02em; text-transform: uppercase; }
+  .panel-list .what { font-size: 13px; color: var(--ink-3); text-align: right; max-width: 240px; font-family: var(--narrow); }
 
   @media (max-width: 760px) {
     .two-col { grid-template-columns: 1fr; gap: 40px; }
-    .panel-list .what { text-align: left; max-width: none; }
     .panel-list li { grid-template-columns: 1fr; }
+    .panel-list .what { text-align: left; max-width: none; }
   }
 
-  /* ========== CRITERIA ========== */
-  .criteria-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
-  .criterion .num { font-family: var(--serif); font-style: italic; font-size: 22px; color: var(--accent-ink); margin-bottom: 4px; }
-  .criterion h4 { font-size: 22px; margin-bottom: 8px; }
-  .criterion p { font-size: 14px; color: var(--ink-2); margin: 0; }
-  @media (max-width: 760px) { .criteria-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 480px) { .criteria-grid { grid-template-columns: 1fr; } }
+  /* ========== FINALISTS / WINNERS GRID ========== */
+  .year-block { margin-bottom: 64px; }
+  .year-block:last-child { margin-bottom: 0; }
+  .year-head {
+    display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--navy);
+  }
+  .year-head .y { font-family: var(--display); font-size: 56px; line-height: 1; color: var(--navy); }
+  .year-head .label { font-family: var(--narrow); font-weight: 700; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green); }
+  .year-head .meta { margin-left: auto; font-family: var(--narrow); font-size: 13px; color: var(--ink-3); }
+
+  .finalist-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
+  .finalist {
+    padding: 24px 24px 28px;
+    border: 1px solid var(--rule);
+    margin: -1px 0 0 -1px;
+    background: var(--paper);
+    display: flex; flex-direction: column; gap: 6px;
+    position: relative;
+  }
+  .finalist.winner-1, .finalist.winner-2, .finalist.winner-3, .finalist.winner-pc {
+    background: var(--bone);
+  }
+  .finalist .rank-badge {
+    font-family: var(--narrow); font-weight: 700; font-size: 11px;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    padding: 4px 8px;
+    align-self: flex-start;
+    margin-bottom: 4px;
+  }
+  .finalist.winner-1 .rank-badge { background: var(--green); color: var(--sage); }
+  .finalist.winner-2 .rank-badge { background: var(--navy); color: var(--periwinkle); }
+  .finalist.winner-3 .rank-badge { background: var(--periwinkle); color: var(--navy); }
+  .finalist.winner-pc .rank-badge { background: var(--sage); color: var(--green-deep); }
+  .finalist h4 { font-family: var(--narrow); font-weight: 800; font-size: 22px; color: var(--navy); letter-spacing: 0.005em; text-transform: none; line-height: 1.15; }
+  .finalist p { font-size: 14px; color: var(--ink-2); margin: 4px 0 0; line-height: 1.5; }
+  .finalist .by { font-family: var(--narrow); font-weight: 600; font-size: 12px; color: var(--green); letter-spacing: 0.06em; text-transform: uppercase; margin-top: auto; padding-top: 14px; }
+
+  @media (max-width: 860px) { .finalist-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 520px) { .finalist-grid { grid-template-columns: 1fr; } }
 
   /* ========== FAQ ========== */
   .faq details {
@@ -411,88 +453,91 @@
     cursor: pointer;
     list-style: none;
     display: flex; justify-content: space-between; align-items: center; gap: 24px;
-    font-family: var(--serif); font-size: 24px; line-height: 1.2;
+    font-family: var(--narrow); font-weight: 700;
+    font-size: 22px; line-height: 1.25; color: var(--navy);
+    letter-spacing: 0.005em;
   }
   .faq summary::-webkit-details-marker { display: none; }
   .faq summary::after {
     content: "+";
-    font-family: var(--serif);
-    font-size: 28px;
-    color: var(--accent-ink);
+    font-family: var(--display);
+    font-size: 32px;
+    color: var(--green);
     transition: transform 0.2s;
     flex: none;
+    line-height: 1;
   }
   .faq details[open] summary::after { content: "−"; }
-  .faq details p {
-    margin: 16px 0 0;
-    color: var(--ink-2);
-    max-width: 64ch;
-    font-size: 16px;
-  }
+  .faq details p { margin: 16px 0 0; color: var(--ink-2); max-width: 64ch; font-size: 16px; }
 
   /* ========== APPLY CTA ========== */
   .apply {
-    background: var(--ink);
-    color: var(--paper);
+    background: var(--green);
+    color: var(--sage);
     border-bottom: none;
-    padding: 96px 0 96px;
+    padding: 110px 0 110px;
+    position: relative;
+    overflow: hidden;
   }
+  .apply::before {
+    content: ""; position: absolute;
+    right: -80px; bottom: -80px;
+    width: 480px; height: 480px;
+    background: url("assets/dvc-logo-simple.svg") no-repeat center / contain;
+    opacity: 0.18;
+  }
+  .apply .wrap { position: relative; }
   .apply h2 {
-    font-size: clamp(40px, 6vw, 80px);
-    line-height: 1;
-    letter-spacing: -0.02em;
+    font-size: clamp(56px, 8vw, 120px);
+    line-height: 0.92;
     margin-bottom: 24px;
-    max-width: 18ch;
+    max-width: 16ch;
+    color: var(--sage);
   }
-  .apply h2 em { font-style: italic; color: oklch(0.78 0.1 38); }
-  .apply p { color: oklch(0.78 0.01 60); font-size: 19px; max-width: 56ch; margin: 0 0 32px; }
+  .apply h2 .accent { color: var(--periwinkle); }
+  .apply p { color: var(--sage-soft); font-size: 19px; max-width: 56ch; margin: 0 0 32px; }
   .apply .deadline {
     display: inline-flex; align-items: center; gap: 12px;
-    font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
-    color: oklch(0.85 0.08 38);
+    font-family: var(--narrow); font-weight: 700; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--periwinkle);
     margin-bottom: 36px;
   }
-  .apply .deadline::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: oklch(0.78 0.13 38); }
+  .apply .deadline::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--periwinkle); }
   .apply-actions { display: flex; gap: 12px; flex-wrap: wrap; }
-  .apply .cta-btn { background: var(--paper); color: var(--ink); border-color: var(--paper); padding: 14px 24px; font-size: 15px; }
-  .apply .cta-btn:hover { background: var(--accent); border-color: var(--accent); color: var(--paper); }
-  .apply .cta-btn.ghost { background: transparent; color: var(--paper); border-color: oklch(0.5 0 0); }
-  .apply .cta-btn.ghost:hover { background: var(--paper); color: var(--ink); border-color: var(--paper); }
+  .apply .cta-btn { background: var(--sage); color: var(--green-deep); border-color: var(--sage); }
+  .apply .cta-btn:hover { background: var(--periwinkle); color: var(--navy-deep); border-color: var(--periwinkle); }
+  .apply .cta-btn.ghost { background: transparent; color: var(--sage); border-color: var(--sage); }
+  .apply .cta-btn.ghost:hover { background: var(--sage); color: var(--green-deep); }
 
   /* ========== FOOTER ========== */
   footer {
     padding: 48px 0 56px;
-    background: var(--bg-2);
-    color: var(--ink-2);
+    background: var(--navy);
+    color: var(--periwinkle-soft);
     font-size: 14px;
+    border-top: 6px solid var(--green);
   }
+  footer a { color: var(--periwinkle); }
   .foot-grid {
     display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
     margin-bottom: 40px;
   }
-  .foot-grid h5 { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 16px; font-weight: 500; }
-  .foot-grid ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+  .foot-grid h5 { font-family: var(--narrow); font-weight: 700; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--periwinkle); margin: 0 0 16px; }
+  .foot-grid ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; font-family: var(--narrow); font-weight: 500; }
   .foot-grid a { text-decoration: none; }
   .foot-grid a:hover { text-decoration: underline; }
+  .foot-brand { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+  .foot-brand img { width: 44px; height: 44px; }
+  .foot-brand .t { font-family: var(--display); font-size: 20px; color: var(--periwinkle); letter-spacing: 0.01em; }
   .foot-bottom {
     display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
     padding-top: 24px;
-    border-top: 1px solid var(--rule);
-    font-family: var(--mono); font-size: 12px; letter-spacing: 0.04em; color: var(--ink-3);
+    border-top: 1px solid rgba(154, 166, 214, 0.2);
+    font-family: var(--narrow); font-weight: 600; font-size: 12px; letter-spacing: 0.06em; color: var(--periwinkle); opacity: 0.8;
+    text-transform: uppercase;
   }
   @media (max-width: 760px) { .foot-grid { grid-template-columns: 1fr; gap: 28px; } }
 
-  /* ========== UTILITIES ========== */
-  .placeholder-img {
-    background:
-      repeating-linear-gradient(135deg, transparent 0 14px, color-mix(in oklab, var(--ink) 5%, transparent) 14px 15px),
-      var(--bg-2);
-    border: 1px solid var(--rule);
-    display: grid; place-items: center;
-    font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3);
-    aspect-ratio: 4 / 3;
-    border-radius: 4px;
-  }
 </style>
 </head>
 <body>
@@ -500,8 +545,8 @@
 <!-- ============ TOP BAR ============ -->
 <header class="topbar">
   <div class="topbar-inner">
-    <a href="#top" class="brand" style="text-decoration:none;">
-      <span class="brand-mark">d</span>
+    <a href="#top" class="brand">
+      <img src="assets/dvc-logo-simple-green.svg" alt="">
       <span>Diablo Valley Pitch</span>
     </a>
     <nav class="nav">
@@ -509,6 +554,7 @@
       <a href="#tracks">Tracks</a>
       <a href="#timeline">Timeline</a>
       <a href="#prizes">Prizes</a>
+      <a href="#finalists">Finalists</a>
       <a href="#faq">FAQ</a>
     </nav>
     <a href="#apply" class="cta-btn">Apply</a>
@@ -518,51 +564,56 @@
 <!-- ============ HERO ============ -->
 <a id="top"></a>
 <section class="hero" style="border-top: none;">
-  <div class="wrap">
-    <div class="hero-grid">
+  <div class="hero-grid">
+    <div class="hero-left">
+      <div class="eyebrow">2026 · Inaugural Regional Edition</div>
+      <h1>Pitch your<br>idea to the<br><span class="accent">Diablo Valley.</span></h1>
+      <p class="hero-lede">
+        Founders, builders, and student entrepreneurs from Lafayette to Oakley — bring your business idea to a live stage of judges, mentors, and neighbors. A regional expansion of the Diablo Valley College pitch competition, now open to the communities that surround it.
+      </p>
+      <div class="hero-actions">
+        <a href="#apply" class="cta-btn lg">Apply by Oct 26</a>
+        <a href="#about" class="cta-btn ghost lg">Read the brief</a>
+      </div>
+    </div>
+    <aside class="hero-right">
       <div>
-        <div class="eyebrow">2026 · Inaugural Regional Edition</div>
-        <h1>The pitch competition for <em>the entire&nbsp;Diablo&nbsp;Valley.</em></h1>
-        <p class="hero-lede">
-          Founders, builders, and student entrepreneurs from Lafayette to Oakley — bring your business idea to a live stage of judges, mentors, and neighbors. A regional expansion of the Diablo Valley College pitch competition, now open to the communities that surround it.
-        </p>
-        <div class="hero-actions">
-          <a href="#apply" class="cta-btn">Apply by Oct 26</a>
-          <a href="#about" class="cta-btn ghost">Read the brief</a>
+        <div class="save-the-date">
+          <div class="label">Live Final · Save the Date</div>
+          <div class="day">Nov 19<small>Thursday · 2026</small></div>
+          <div class="where">
+            <strong>Diablo Valley College</strong>
+            Diablo Room · Pleasant Hill campus<br>
+            Doors 5:30pm · Pitches 6:00pm<br>
+            Open to the public
+          </div>
         </div>
       </div>
-      <aside class="hero-aside">
-        <div class="label">Live final · save the date</div>
-        <div class="date">Nov 19<small>Thursday evening, 2026</small></div>
-        <div class="where">
-          <strong>Diablo Valley College</strong>
-          Pleasant Hill campus · doors at 5:30pm · pitches begin 6:00pm · open to the public
-        </div>
-      </aside>
-    </div>
+    </aside>
   </div>
 </section>
+<div class="wave-bar"></div>
 
 <!-- ============ KEY DATES RAIL ============ -->
 <section class="dates" style="padding: 0; border-bottom: none;">
   <div class="dates-grid">
     <div class="date-cell">
-      <div class="step">Step 01 — Apply</div>
+      <div class="step">Step 01 · Apply</div>
       <h3>Submit your idea</h3>
-      <div class="when">Due Mon · Oct 26, 2026 · 11:59pm PT</div>
+      <div class="when">Due Mon · Oct 26, 2026</div>
       <p>A short written application, a deck, and an optional 1-minute video. No prior experience required.</p>
     </div>
     <div class="date-cell">
-      <div class="step">Step 02 — Finalists</div>
-      <h3>10 teams advance</h3>
+      <div class="step">Step 02 · Finalists</div>
+      <h3>Up to 10 teams advance</h3>
       <div class="when">Announced Mon · Nov 2, 2026</div>
-      <p>Selected from a screening panel. Finalists submit a final-draft deck and an optional 1-minute YouTube video.</p>
+      <p>Selected by the screening panel. Finalists submit a final-draft deck and an optional 1-minute YouTube video.</p>
     </div>
     <div class="date-cell">
-      <div class="step">Step 03 — Compete</div>
+      <div class="step">Step 03 · Compete</div>
       <h3>Live final, on stage</h3>
       <div class="when">Thu · Nov 19, 2026 · 6:00pm</div>
-      <p>Three minutes to pitch, two minutes of judges' questions. Cash prizes, audience vote, and after-party.</p>
+      <p>Three minutes to pitch, two minutes of judges' questions. Cash prizes, audience vote, and reception.</p>
     </div>
   </div>
 </section>
@@ -572,14 +623,14 @@
   <div class="wrap">
     <div class="section-head">
       <div class="index">§ 01 — About</div>
-      <h2>Built in the Bay's quieter corner — for the founders <em>actually building&nbsp;here.</em></h2>
+      <h2>Built in the Bay's quieter corner — for the founders <span class="accent">actually building&nbsp;here.</span></h2>
     </div>
 
     <div class="about-body">
       <div></div>
       <div class="about-prose">
         <p class="lead">
-          What started as a <em>districtwide college</em> pitch competition is opening up. In 2026, anyone living, working, or studying in the Diablo Valley can apply.
+          What started as a <span class="accent">districtwide college</span> pitch competition is opening up. In 2026, anyone living, working, or studying in the Diablo Valley can apply.
         </p>
         <p>
           For the past several years, the Contra Costa Community College District has hosted an annual Business Pitch Competition at DVC's Pleasant Hill campus — an evening of student founders sharing ventures spanning wellness tech, food sustainability, hardware, and student support. Past winners have gone on to pilot with Contra Costa County agencies and BART.
@@ -618,55 +669,31 @@
   <div class="wrap">
     <div class="section-head">
       <div class="index">§ 02 — Tracks</div>
-      <h2>Two tracks. <em>One stage.</em></h2>
+      <h2>Two tracks. <span class="accent">One stage.</span></h2>
     </div>
 
     <div class="tracks-grid">
       <div class="track">
         <div class="mono-tag">Track A</div>
-        <h3>Open <em>Community</em></h3>
+        <h3>Open <span class="accent">community.</span></h3>
         <p>For founders, side-project builders, and small-business operators living or working anywhere in the Diablo Valley. Bring a venture at any stage — pre-launch idea, early MVP, or a real business looking for its next chapter.</p>
         <div class="track-meta">
-          <div>
-            <div class="k">Eligibility</div>
-            <div class="v">18+ residents of the region</div>
-          </div>
-          <div>
-            <div class="k">Team size</div>
-            <div class="v">1–4 founders</div>
-          </div>
-          <div>
-            <div class="k">Stage</div>
-            <div class="v">Idea → revenue OK</div>
-          </div>
-          <div>
-            <div class="k">Cost</div>
-            <div class="v">Free to apply</div>
-          </div>
+          <div><div class="k">Eligibility</div><div class="v">18+ residents of the region</div></div>
+          <div><div class="k">Team size</div><div class="v">1–4 founders</div></div>
+          <div><div class="k">Stage</div><div class="v">Idea → revenue OK</div></div>
+          <div><div class="k">Cost</div><div class="v">Free to apply</div></div>
         </div>
       </div>
 
       <div class="track feature">
         <div class="mono-tag">Track B · Featured</div>
-        <h3>Student <em>Track</em></h3>
+        <h3>Student <span class="accent">track.</span></h3>
         <p>For full-time and dual-enrolled DVC students and current high school students attending school in the region. Same judges, dedicated prize pool, and extra mentoring built around school schedules. This is where Leftoverly, Scholarise, and WellPulse came from.</p>
         <div class="track-meta">
-          <div>
-            <div class="k">Eligibility</div>
-            <div class="v">DVC + local HS students</div>
-          </div>
-          <div>
-            <div class="k">Team size</div>
-            <div class="v">1–4 founders</div>
-          </div>
-          <div>
-            <div class="k">Mentors</div>
-            <div class="v">Faculty &amp; alumni founders</div>
-          </div>
-          <div>
-            <div class="k">Cost</div>
-            <div class="v">Free to apply</div>
-          </div>
+          <div><div class="k">Eligibility</div><div class="v">DVC + local HS students</div></div>
+          <div><div class="k">Team size</div><div class="v">1–4 founders</div></div>
+          <div><div class="k">Mentors</div><div class="v">Faculty &amp; alumni founders</div></div>
+          <div><div class="k">Cost</div><div class="v">Free to apply</div></div>
         </div>
       </div>
     </div>
@@ -678,11 +705,10 @@
   <div class="wrap">
     <div class="section-head">
       <div class="index">§ 03 — Timeline</div>
-      <h2>The road to <em>Nov 19.</em></h2>
+      <h2>The road to <span class="accent">Nov 19.</span></h2>
     </div>
 
-    <div class="timeline">
-
+    <div>
       <div class="tl-row">
         <div class="tl-date">Sept 15<small>Applications open</small></div>
         <div class="tl-body">
@@ -692,9 +718,9 @@
       </div>
 
       <div class="tl-row highlight">
-        <div class="tl-date">Oct 26<small>Deadline</small></div>
+        <div class="tl-date">Oct 26<small>Deadline · 11:59pm PT</small></div>
         <div class="tl-body">
-          <h4>Applications due — 11:59pm PT</h4>
+          <h4>Applications due</h4>
           <p>Submit a short written application, a deck (PDF or slides link), and an optional 1-minute video. Late submissions are not accepted; the screening panel begins review the same week.</p>
         </div>
       </div>
@@ -722,7 +748,6 @@
           <p>Three minutes to pitch, two minutes of Q&amp;A. Audience vote runs throughout. Winners announced live; reception immediately following with judges, mentors, and the regional founder community.</p>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -732,7 +757,7 @@
   <div class="wrap">
     <div class="section-head">
       <div class="index">§ 04 — Prizes</div>
-      <h2>Cash prizes, mentorship, and a <em>real audience.</em></h2>
+      <h2>Cash prizes, mentorship, and a <span class="accent">real audience.</span></h2>
     </div>
 
     <div class="prizes-grid">
@@ -755,7 +780,7 @@
         <p>Cash prize and recognition.</p>
       </div>
       <div class="prize">
-        <div class="place">By audience vote</div>
+        <div class="place">Audience vote</div>
         <div class="amount"><sup>$</sup>50</div>
         <div class="name">People's Choice</div>
         <p>Live audience vote during the final. Open to all finalists.</p>
@@ -768,36 +793,27 @@
   </div>
 </section>
 
-<!-- ============ JUDGING + WINNERS ============ -->
+<!-- ============ JUDGING + CRITERIA ============ -->
 <section id="judges">
   <div class="wrap">
     <div class="section-head">
       <div class="index">§ 05 — How it's judged</div>
-      <h2>Local leaders, working entrepreneurs, real <em>industry seats.</em></h2>
+      <h2>Local leaders, working entrepreneurs, real <span class="accent">industry seats.</span></h2>
     </div>
 
     <div class="two-col">
       <div>
-        <div class="mono-tag" style="margin-bottom:24px;">Past judges panel · 2025</div>
+        <div class="mono-tag" style="margin-bottom:24px;">Past judges · 2024 &amp; 2025</div>
         <ul class="panel-list">
-          <li>
-            <div class="who">Kim Trupiano</div>
-            <div class="what">Mayor, City of Clayton</div>
-          </li>
-          <li>
-            <div class="who">Ruby Grover</div>
-            <div class="what">Business leader, Sunvalley Shopping Center</div>
-          </li>
-          <li>
-            <div class="who">Nayab Siddiqui</div>
-            <div class="what">COO, ZAYNA Ventures</div>
-          </li>
-          <li>
-            <div class="who">Dan Siegel</div>
-            <div class="what">Local entrepreneur</div>
-          </li>
+          <li><div class="who">Kim Trupiano</div><div class="what">Mayor, City of Clayton</div></li>
+          <li><div class="who">Ruby Grover</div><div class="what">Sunvalley Shopping Center</div></li>
+          <li><div class="who">Nayab Siddiqui</div><div class="what">COO, ZAYNA Ventures</div></li>
+          <li><div class="who">Dan Siegel</div><div class="what">Local entrepreneur</div></li>
+          <li><div class="who">McGrail Reynolds</div><div class="what">2024 judging panel</div></li>
+          <li><div class="who">Jason Cragholm</div><div class="what">2024 judging panel</div></li>
+          <li><div class="who">Doug Skinner</div><div class="what">2024 judging panel</div></li>
         </ul>
-        <p style="margin-top:20px; color:var(--ink-3); font-size:13px;">2026 panel announced in October.</p>
+        <p style="margin-top:20px; color:var(--ink-3); font-size:13px; font-family:var(--narrow);">2026 panel announced in October.</p>
       </div>
 
       <div>
@@ -814,50 +830,116 @@
   </div>
 </section>
 
-<!-- ============ PAST WINNERS ============ -->
-<section id="winners">
+<!-- ============ FINALISTS / PAST WINNERS ============ -->
+<section id="finalists">
   <div class="wrap">
     <div class="section-head">
-      <div class="index">§ 06 — From last year</div>
-      <h2>Four ventures that <em>walked off this stage.</em></h2>
+      <div class="index">§ 06 — Past finalists</div>
+      <h2>Two years of ventures that <span class="accent">walked off this stage.</span></h2>
     </div>
 
-    <div class="two-col">
-      <div>
-        <div class="winner">
-          <div class="rank">1<sup style="font-size:14px;">st</sup></div>
-          <div>
-            <div class="founder">WellPulse · Anya Gupta · Walnut Creek</div>
-            <h4>WellPulse <em>$1,000</em></h4>
-            <p>An anonymous, QR-code based wellness survey giving organizations real-time insight into mental health trends while protecting individual privacy. Now piloting at the county and BART level.</p>
-          </div>
+    <!-- ========== 2025 ========== -->
+    <div class="year-block">
+      <div class="year-head">
+        <div class="y">2025</div>
+        <div class="label">4CD Districtwide Final</div>
+        <div class="meta">Pleasant Hill campus · Jan 2026 recap</div>
+      </div>
+      <div class="finalist-grid">
+        <div class="finalist winner-1">
+          <div class="rank-badge">1st · $1,000</div>
+          <h4>WellPulse</h4>
+          <p>Anonymous, QR-code based wellness survey giving organizations real-time insight into mental health trends while protecting individual privacy. Now piloting at the county and BART level.</p>
+          <div class="by">Anya Gupta · Walnut Creek</div>
         </div>
-        <div class="winner">
-          <div class="rank">2<sup style="font-size:14px;">nd</sup></div>
-          <div>
-            <div class="founder">Leftoverly · Zachary Lee · Concord</div>
-            <h4>Leftoverly <em>$500</em></h4>
-            <p>A platform helping restaurants reduce food waste by selling surplus meals at affordable prices. Founded by a dual-enrolled DVC student and Northgate High School junior.</p>
-          </div>
+        <div class="finalist winner-2">
+          <div class="rank-badge">2nd · $500</div>
+          <h4>Leftoverly</h4>
+          <p>Helping restaurants reduce food waste by selling surplus meals at affordable prices. Founded by a dual-enrolled DVC student and Northgate High School junior.</p>
+          <div class="by">Zachary Lee · Concord</div>
+        </div>
+        <div class="finalist winner-3">
+          <div class="rank-badge">3rd · $250</div>
+          <h4>Scholarise</h4>
+          <p>Helping community college students track scholarships, internships, and coursework as they prepare to transfer. Prize money funded a scholarship for underrepresented transfer students.</p>
+          <div class="by">Floris Brussaard · Concord</div>
+        </div>
+        <div class="finalist winner-pc">
+          <div class="rank-badge">People's Choice · $50</div>
+          <h4>Garydian Angel</h4>
+          <p>A voice-activated wristband focused on calm, family-centered safety alerts. Selected by audience vote on the night of the competition.</p>
+          <div class="by">Anzell Ross</div>
         </div>
       </div>
+    </div>
 
-      <div>
-        <div class="winner">
-          <div class="rank">3<sup style="font-size:14px;">rd</sup></div>
-          <div>
-            <div class="founder">Scholarise · Floris Brussaard · Concord</div>
-            <h4>Scholarise <em>$250</em></h4>
-            <p>A tool helping community college students track scholarships, internships, and coursework as they prepare to transfer to four-year universities. Prize money funded a scholarship for underrepresented transfer students.</p>
-          </div>
+    <!-- ========== 2024 ========== -->
+    <div class="year-block">
+      <div class="year-head">
+        <div class="y">2024</div>
+        <div class="label">DVC Business Pitch Competition</div>
+        <div class="meta">Diablo Room · November 22, 2024</div>
+      </div>
+      <div class="finalist-grid">
+        <div class="finalist">
+          <div class="rank-badge" style="background:var(--bone); color:var(--navy); border:1px solid var(--rule);">Finalist</div>
+          <h4>Scholarise.org</h4>
+          <p>Scholarships, internships, coursework tracking, and essay help for community college students.</p>
+          <div class="by">Floris Brussaard</div>
         </div>
-        <div class="winner">
-          <div class="rank" style="font-size:24px; padding-top:14px;">★</div>
-          <div>
-            <div class="founder">Garydian Angel · Anzell Ross · People's Choice</div>
-            <h4>Garydian Angel <em>$50</em></h4>
-            <p>A voice-activated wristband focused on calm, family-centered safety alerts. Selected by audience vote on the night of the competition.</p>
-          </div>
+        <div class="finalist">
+          <div class="rank-badge" style="background:var(--bone); color:var(--navy); border:1px solid var(--rule);">Finalist</div>
+          <h4>JobJump</h4>
+          <p>A platform connecting talented teens with freelance opportunities.</p>
+          <div class="by">Mauricio Herrera</div>
+        </div>
+        <div class="finalist">
+          <div class="rank-badge" style="background:var(--bone); color:var(--navy); border:1px solid var(--rule);">Finalist</div>
+          <h4>ClickInvest</h4>
+          <p>Investment coaching for young adults.</p>
+          <div class="by">Vanessa Lule</div>
+        </div>
+        <div class="finalist">
+          <div class="rank-badge" style="background:var(--bone); color:var(--navy); border:1px solid var(--rule);">Finalist</div>
+          <h4>DreaMe Dolls</h4>
+          <p>Diverse plush dolls empowering children to embrace their heritage.</p>
+          <div class="by">Tenisha Manoharan</div>
+        </div>
+        <div class="finalist">
+          <div class="rank-badge" style="background:var(--bone); color:var(--navy); border:1px solid var(--rule);">Finalist</div>
+          <h4>ATRUST</h4>
+          <p>An app that detects scam calls, messages, and emails.</p>
+          <div class="by">Yahaira Kqrimaya</div>
+        </div>
+        <div class="finalist">
+          <div class="rank-badge" style="background:var(--bone); color:var(--navy); border:1px solid var(--rule);">Finalist</div>
+          <h4>Gaiter</h4>
+          <p>Software enhancing triage accuracy with integrated patient histories.</p>
+          <div class="by">Jessica Nguyen</div>
+        </div>
+        <div class="finalist">
+          <div class="rank-badge" style="background:var(--bone); color:var(--navy); border:1px solid var(--rule);">Finalist</div>
+          <h4>Hyperband</h4>
+          <p>A wristband that buzzes until you complete tasks in the app.</p>
+          <div class="by">Brooke Clifton</div>
+        </div>
+        <div class="finalist">
+          <div class="rank-badge" style="background:var(--bone); color:var(--navy); border:1px solid var(--rule);">Finalist</div>
+          <h4>Healthy Habits Helper</h4>
+          <p>Keychain accessory promoting healthy habits and goal progress.</p>
+          <div class="by">Madeleine Lee</div>
+        </div>
+        <div class="finalist">
+          <div class="rank-badge" style="background:var(--bone); color:var(--navy); border:1px solid var(--rule);">Finalist</div>
+          <h4>Camels &amp; Sunsets · Storytime</h4>
+          <p>Clothing brand merging UAE heritage with California style.</p>
+          <div class="by">Ahmed Alwaswasi</div>
+        </div>
+        <div class="finalist">
+          <div class="rank-badge" style="background:var(--bone); color:var(--navy); border:1px solid var(--rule);">Finalist</div>
+          <h4>Audiobook Tool</h4>
+          <p>A tool for easily converting owned books to audio.</p>
+          <div class="by">Andrew Gabriel</div>
         </div>
       </div>
     </div>
@@ -869,10 +951,10 @@
   <div class="wrap">
     <div class="section-head">
       <div class="index">§ 07 — FAQ</div>
-      <h2>Common <em>questions.</em></h2>
+      <h2>Common <span class="accent">questions.</span></h2>
     </div>
 
-    <div class="faq" style="max-width: 880px; margin-left: auto;">
+    <div class="faq" style="max-width: 920px; margin-left: auto;">
       <details>
         <summary>Who can apply?</summary>
         <p>Anyone 18 or older who lives, works, or studies in the Diablo Valley can apply to the Open Community track. Current DVC students and students attending high schools in the region apply through the Student Track. There are no citizenship or status requirements.</p>
@@ -913,11 +995,11 @@
 <section id="apply" class="apply">
   <div class="wrap">
     <div class="deadline">Applications open · close Mon Oct 26</div>
-    <h2>Bring an idea. <em>Leave with a pitch deck, a network, and maybe a check.</em></h2>
+    <h2>Bring an idea.<br><span class="accent">Leave with a deck, a network, and maybe a check.</span></h2>
     <p>Whether you're 16 and have an app idea, or 46 and ready to make the side project the main thing — this is the stage. Apply once. We'll do the rest.</p>
     <div class="apply-actions">
-      <a href="#" class="cta-btn">Start application →</a>
-      <a href="#" class="cta-btn ghost">Email us a question</a>
+      <a href="#" class="cta-btn lg">Start application →</a>
+      <a href="mailto:" class="cta-btn ghost lg">Email us a question</a>
     </div>
   </div>
 </section>
@@ -927,11 +1009,11 @@
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <div class="brand" style="margin-bottom:12px;">
-          <span class="brand-mark">d</span>
-          <span>Diablo Valley Pitch Competition</span>
+        <div class="foot-brand">
+          <img src="assets/dvc-logo-simple.svg" alt="">
+          <span class="t">Diablo Valley Pitch Competition</span>
         </div>
-        <p style="max-width: 44ch; margin: 0; color: var(--ink-3); font-size: 13px;">
+        <p style="max-width: 48ch; margin: 0; color: var(--periwinkle-soft); font-size: 13px; font-family: var(--narrow);">
           A regional pitch competition for the Diablo Valley, hosted at Diablo Valley College's Pleasant Hill campus. Built on the foundation of the 4CD Business Pitch Competition.
         </p>
       </div>
@@ -942,6 +1024,7 @@
           <li><a href="#tracks">Tracks</a></li>
           <li><a href="#timeline">Timeline</a></li>
           <li><a href="#prizes">Prizes</a></li>
+          <li><a href="#finalists">Past finalists</a></li>
           <li><a href="#faq">FAQ</a></li>
         </ul>
       </div>
@@ -951,13 +1034,13 @@
           <li>DVC Business Department</li>
           <li>321 Golf Club Rd</li>
           <li>Pleasant Hill, CA 94523</li>
-          <li><a href="#">pitch@diablovalley.example</a></li>
+          <li><a href="https://dvcbpc.com">dvcbpc.com</a></li>
         </ul>
       </div>
     </div>
     <div class="foot-bottom">
       <div>© 2026 Diablo Valley Pitch Competition</div>
-      <div>Hosted on GitHub Pages · last updated May 2026</div>
+      <div>Hosted on GitHub Pages</div>
     </div>
   </div>
 </footer>
