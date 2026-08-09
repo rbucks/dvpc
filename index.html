@@ -573,7 +573,17 @@
     margin-bottom: 36px;
   }
   .apply .deadline::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--periwinkle); }
-  .apply-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .apply .soon-note { font-size: 15px; color: var(--periwinkle); max-width: 56ch; margin: -16px 0 30px; }
+  .apply .soon-note a { color: var(--sage); }
+  .apply-actions { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+  .cta-btn.is-soon {
+    cursor: default;
+    background: transparent;
+    color: var(--sage-soft);
+    border-style: dashed;
+    border-color: rgba(214, 236, 210, 0.55);
+    opacity: 0.9;
+  }
   .apply .cta-btn { background: var(--sage); color: var(--green-deep); border-color: var(--sage); }
   .apply .cta-btn:hover { background: var(--periwinkle); color: var(--navy-deep); border-color: var(--periwinkle); }
   .apply .cta-btn.ghost { background: transparent; color: var(--sage); border-color: var(--sage); }
@@ -628,7 +638,7 @@
       <a href="#faq">FAQ</a>
       <a href="#community">Community</a>
     </nav>
-    <a href="#apply" class="cta-btn">Apply</a>
+    <a href="#apply" class="cta-btn">Applications soon</a>
   </div>
 </header>
 
@@ -643,7 +653,7 @@
         Cafés, breweries, and nail salons. Construction trades, aviation, and industry. Biotech, health tech, and software. Every kind of business this valley actually runs on belongs on this stage — and one Contra Costa Community College District class, credit or not, makes you eligible.
       </p>
       <div class="hero-actions">
-        <a href="#apply" class="cta-btn lg">Apply by Nov 2, noon</a>
+        <a href="#apply" class="cta-btn lg">Applications coming soon</a>
         <a href="https://discord.gg/4DQQQBcjeW" class="cta-btn ghost lg" target="_blank" rel="noopener">Join the Discord</a>
         <a href="#about" class="cta-btn ghost lg">Read the brief</a>
       </div>
@@ -1117,11 +1127,12 @@
 <!-- ============ APPLY ============ -->
 <section id="apply" class="apply">
   <div class="wrap">
-    <div class="deadline">Applications close Mon Nov 2 · 12:00pm PT</div>
+    <div class="deadline">Not open yet · Due Mon Nov 2 · 12:00pm PT</div>
     <h2>Bring an idea.<br><span class="accent">Leave with a deck, a network, and maybe a check.</span></h2>
     <p>Whether you're 16 with an app idea or 46 with a lease you're ready to sign — this is the stage. One 4CD class is all it takes to be eligible, and any class counts. Apply once. We'll do the rest.</p>
+    <p class="soon-note">The application form isn't live yet. <a href="https://discord.gg/4DQQQBcjeW" target="_blank" rel="noopener">Join the Discord</a> and we'll announce it there the moment it opens — well before the Nov 2 deadline.</p>
     <div class="apply-actions">
-      <a href="#" class="cta-btn lg">Start application →</a>
+      <span class="cta-btn lg is-soon" aria-disabled="true">Application coming soon</span>
       <a href="https://discord.gg/4DQQQBcjeW" class="cta-btn ghost lg" target="_blank" rel="noopener">Join the Discord</a>
       <a href="mailto:rbuckley@dvc.edu" class="cta-btn ghost lg">Email us a question</a>
     </div>
