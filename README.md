@@ -1,6 +1,6 @@
-# Diablo Valley Pitch Competition — Website
+# The 4CD Pitch Competition — Website
 
-Single-page static site for the regional Diablo Valley Pitch Competition.
+Single-page static site for The 4CD Pitch Competition — the pitch competition of the Contra Costa Community College District. Production domain: **www.4cdpitch.com**.
 
 ## Hosting on GitHub Pages
 
@@ -19,7 +19,7 @@ Single-page static site for the regional Diablo Valley Pitch Competition.
    - **Branch:** `main` / `/ (root)`
 4. Wait ~1 minute. Your site will be live at `https://<your-username>.github.io/diablo-valley-pitch/`.
 
-To use a custom domain (e.g. `pitch.diablovalley.org`), add a `CNAME` file with the bare domain on a single line and configure a CNAME record at your DNS provider pointing to `<your-username>.github.io`.
+To use the custom domain, add a `CNAME` file containing `www.4cdpitch.com` on a single line, then point a CNAME record for `www` at `<your-username>.github.io` in your DNS provider. (No `CNAME` file is committed right now — add it when DNS is ready.)
 
 ## Editing the site
 
@@ -31,7 +31,7 @@ Major sections, in order, marked with HTML comments:
 - `HERO` — headline, lede, save-the-date card
 - `KEY DATES RAIL` — the three milestone dates
 - `ABOUT` — regional expansion explanation + city list
-- `TRACKS` — Open + Student
+- `THE ROOM` — the "Diablo Valley, not Silicon Valley" statement band (`.valley-statement`) + the Main Street / science-and-product columns (`.kinds`)
 - `TIMELINE` — Sept 15 → Nov 19
 - `PRIZES` — four cash prizes
 - `JUDGING + WINNERS` — past judges, scoring criteria
@@ -42,8 +42,12 @@ Major sections, in order, marked with HTML comments:
 
 ### Common edits
 
-- **Update the dates / year** — search `Nov 19`, `Oct 26`, `Nov 2`, `2026`.
-- **Add or remove cities** — find the `<ul class="city-list">` block in the About section.
+- **Update the dates / year** — search `Nov 19` (live final), `Nov 2` (application deadline, noon PT), `Nov 5`/`Nov 6` (finalists named), `2026`.
+- **Eligibility copy** — the rule is "enrolled in any 4CD course, credit or non-credit Community Education." It appears in the hero lede, About, both track cards, and the first three FAQ entries.
+- **Add or remove colleges** — find the `<ul class="city-list">` block in the About section (still uses the `city-list` class; the items are now 4CD campuses).
+- **Edit the Main Street / science example lists** — find the `.kinds-cols` block in the `THE ROOM` section.
+- **Edit the city line** — the `.vs-places` div inside `.valley-statement`.
+- **Positioning** — the "Diablo Valley, not Silicon Valley" argument lives in one place, `.valley-statement`. The About section deliberately defers to it rather than repeating it.
 - **Change the application link** — search for `Start application` and replace the `href="#"` with the real URL (e.g. a Google Form or Typeform).
 - **Update prize amounts** — find the `prizes-grid` block. Each `.prize` card has an `.amount` div.
 - **Swap accent color** — change the `--accent` and `--accent-ink` CSS custom properties at the top of the `<style>` block.

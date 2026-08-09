@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Diablo Valley Pitch Competition — Nov 20, 2026</title>
-<meta name="description" content="A regional business pitch competition for founders across the Diablo Valley — open to community members and a special student track for DVC and local high school students. Final event Nov 20, 2026." />
+<title>The 4CD Pitch Competition — Nov 19, 2026</title>
+<meta name="description" content="The 4CD Pitch Competition — open to anyone enrolled in any Contra Costa Community College District course, including non-credit Community Education. Cafés, breweries, trades, biotech, health tech, software. Diablo Valley, not Silicon Valley. Live final Nov 19, 2026." />
 
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="apple-touch-icon" href="assets/favicon-180.png">
@@ -302,36 +302,75 @@
     .about-body { grid-template-columns: 1fr; gap: 0; }
   }
 
-  /* ========== TRACKS ========== */
-  .tracks-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-  .track {
-    background: var(--bone);
-    border: 2px solid var(--navy);
-    padding: 40px 36px 40px;
-    display: flex; flex-direction: column; gap: 16px;
-    position: relative;
+  /* ========== VALLEY STATEMENT ========== */
+  .valley-statement {
+    background: var(--navy);
+    color: var(--periwinkle);
+    padding: 52px 48px 56px;
+    display: grid; grid-template-columns: 1.05fr 1fr; gap: 48px;
+    align-items: start;
+    position: relative; overflow: hidden;
   }
-  .track.feature { background: var(--green); color: var(--sage); border-color: var(--green); }
-  .track.feature .mono-tag { color: var(--sage); opacity: 0.8; }
-  .track.feature .track-meta { color: var(--sage-soft); border-color: rgba(181, 219, 175, 0.3); }
-  .track.feature h3 { color: var(--sage); }
-  .track.feature h3 .accent { color: var(--periwinkle); }
-  .track.feature .track-meta .k { color: var(--sage); opacity: 0.7; }
-  .track h3 { font-size: 44px; line-height: 0.95; color: var(--navy); }
-  .track h3 .accent { color: var(--green); }
-  .track p { margin: 0; color: var(--ink-2); }
-  .track.feature p { color: var(--sage-soft); }
-  .track-meta {
-    margin-top: auto;
-    padding-top: 24px;
-    border-top: 1px solid var(--rule);
-    display: grid; grid-template-columns: 1fr 1fr; gap: 16px 20px;
-    font-size: 14px;
+  .valley-statement::before {
+    content: ""; position: absolute; inset: 0;
+    background: url("assets/dvc-logo-simple.svg") no-repeat right -60px bottom -70px / 300px;
+    opacity: 0.12;
+    filter: brightness(2);
   }
-  .track-meta .k { font-family: var(--narrow); font-weight: 700; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 4px; }
-  .track-meta .v { color: inherit; font-family: var(--narrow); font-weight: 500; }
+  .valley-statement > * { position: relative; }
+  .vs-big {
+    font-family: var(--display);
+    font-size: clamp(30px, 3.8vw, 50px);
+    line-height: 1;
+    letter-spacing: 0.005em;
+    text-transform: uppercase;
+    color: var(--periwinkle);
+  }
+  .vs-big .accent { color: var(--sage); }
+  .vs-places {
+    margin-top: 30px; padding-top: 24px;
+    border-top: 1px solid rgba(154, 166, 214, 0.3);
+    font-family: var(--narrow); font-weight: 600;
+    font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;
+    line-height: 2; color: var(--periwinkle); opacity: 0.75;
+  }
+  .vs-body p { color: var(--periwinkle-soft); font-size: 16px; margin: 0 0 16px; }
+  .vs-body p:last-child { margin-bottom: 0; }
+  .vs-body em { font-style: normal; font-weight: 700; color: var(--sage); }
 
-  @media (max-width: 760px) { .tracks-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 760px) {
+    .valley-statement { grid-template-columns: 1fr; gap: 26px; padding: 34px 26px 38px; }
+  }
+
+  /* ========== KINDS OF BUSINESS ========== */
+  .kinds { margin-top: 56px; padding-top: 48px; border-top: 2px solid var(--navy); }
+  .kinds-head { max-width: 68ch; margin-bottom: 36px; }
+  .kinds-head h3 { font-size: clamp(30px, 4vw, 44px); line-height: 1; color: var(--navy); margin: 16px 0 16px; }
+  .kinds-head h3 .accent { color: var(--green); }
+  .kinds-head p { margin: 0; color: var(--ink-2); font-size: 17px; max-width: 62ch; }
+  .kinds-cols { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .kind-col { padding: 28px 28px 30px; border: 2px solid var(--rule); background: var(--bone); }
+  .kind-col.main { border-color: var(--green); background: var(--sage-soft); }
+  .kind-col.tech { border-color: var(--navy); }
+  .kind-label {
+    font-family: var(--narrow); font-weight: 700; font-size: 12px;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--navy); margin-bottom: 18px;
+    padding-bottom: 14px; border-bottom: 1px solid var(--rule);
+  }
+  .kind-col.main .kind-label { color: var(--green-deep); border-color: rgba(1, 119, 91, 0.25); }
+  .kind-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+  .kind-col li {
+    font-family: var(--narrow); font-weight: 500; font-size: 15px; color: var(--ink-2);
+    padding-left: 20px; position: relative;
+  }
+  .kind-col li::before {
+    content: ""; position: absolute; left: 0; top: 0.55em;
+    width: 9px; height: 2px; background: var(--green);
+  }
+  .kind-col.tech li::before { background: var(--navy); }
+
+  @media (max-width: 760px) { .kinds-cols { grid-template-columns: 1fr; } }
 
   /* ========== TIMELINE ========== */
   .tl-row {
@@ -547,11 +586,11 @@
   <div class="topbar-inner">
     <a href="#top" class="brand">
       <img src="assets/dvc-logo-simple-green.svg" alt="">
-      <span>Diablo Valley Pitch</span>
+      <span>The 4CD Pitch Competition</span>
     </a>
     <nav class="nav">
       <a href="#about">About</a>
-      <a href="#tracks">Tracks</a>
+      <a href="#room">The Room</a>
       <a href="#timeline">Timeline</a>
       <a href="#prizes">Prizes</a>
       <a href="#finalists">Finalists</a>
@@ -566,13 +605,13 @@
 <section class="hero" style="border-top: none;">
   <div class="hero-grid">
     <div class="hero-left">
-      <div class="eyebrow">2026 · Inaugural Regional Edition</div>
+      <div class="eyebrow">2026 · The 4CD Pitch Competition</div>
       <h1>Pitch your<br>idea to the<br><span class="accent">Diablo Valley.</span></h1>
       <p class="hero-lede">
-        Founders, builders, and student entrepreneurs from Lafayette to Oakley — bring your business idea to a live stage of judges, mentors, and neighbors. A regional expansion of the Diablo Valley College pitch competition, now open to the communities that surround it.
+        Cafés, breweries, and nail salons. Construction trades, aviation, and industry. Biotech, health tech, and software. Every kind of business this valley actually runs on belongs on this stage — and one Contra Costa Community College District class, credit or not, makes you eligible.
       </p>
       <div class="hero-actions">
-        <a href="#apply" class="cta-btn lg">Apply by Oct 26</a>
+        <a href="#apply" class="cta-btn lg">Apply by Nov 2, noon</a>
         <a href="#about" class="cta-btn ghost lg">Read the brief</a>
       </div>
     </div>
@@ -580,7 +619,7 @@
       <div>
         <div class="save-the-date">
           <div class="label">Live Final · Save the Date</div>
-          <div class="day">Nov 20<small>Friday · 2026</small></div>
+          <div class="day">Nov 19<small>Thursday · 2026</small></div>
           <div class="where">
             <strong>Diablo Valley College</strong>
             Diablo Room · Pleasant Hill campus<br>
@@ -600,19 +639,19 @@
     <div class="date-cell">
       <div class="step">Step 01 · Apply</div>
       <h3>Submit your idea</h3>
-      <div class="when">Due Mon · Oct 26, 2026</div>
-      <p>A short written application, a deck, and an optional 1-minute video. No prior experience required.</p>
+      <div class="when">Due Mon · Nov 2, 2026 · 12:00pm</div>
+      <p>A short written application, a deck, and an optional 1-minute video. No prior experience required — just current 4CD enrollment.</p>
     </div>
     <div class="date-cell">
       <div class="step">Step 02 · Finalists</div>
       <h3>Up to 10 teams advance</h3>
-      <div class="when">Announced Mon · Nov 2, 2026</div>
-      <p>Selected by the screening panel. Finalists submit a final-draft deck and an optional 1-minute YouTube video.</p>
+      <div class="when">Announced by Fri · Nov 6, 2026</div>
+      <p>Selected by the screening panel and notified no later than Nov 6, opening a full two-week mentoring window before the final.</p>
     </div>
     <div class="date-cell">
       <div class="step">Step 03 · Compete</div>
       <h3>Live final, on stage</h3>
-      <div class="when">Fri · Nov 20, 2026 · 9:00am</div>
+      <div class="when">Thu · Nov 19, 2026 · 9:00am</div>
       <p>Three minutes to pitch, two minutes of judges' questions. Cash prizes, audience vote, and reception.</p>
     </div>
   </div>
@@ -623,40 +662,37 @@
   <div class="wrap">
     <div class="section-head">
       <div class="index">§ 01 — About</div>
-      <h2>Built in the Bay's quieter corner — for the founders <span class="accent">actually building&nbsp;here.</span></h2>
+      <h2>One district. One application. <span class="accent">Every kind of business.</span></h2>
     </div>
 
     <div class="about-body">
       <div></div>
       <div class="about-prose">
         <p class="lead">
-          What started as a <span class="accent">districtwide college</span> pitch competition is opening up. In 2026, anyone living, working, or studying in the Diablo Valley can apply.
+          This is a <span class="accent">4CD competition.</span> If you are enrolled in a Contra Costa Community College District course — any course, at any of our colleges — you are eligible to apply.
         </p>
         <p>
-          For the past several years, the Contra Costa Community College District has hosted an annual Business Pitch Competition at DVC's Pleasant Hill campus — an evening of student founders sharing ventures spanning wellness tech, food sustainability, hardware, and student support. Past winners have gone on to pilot with Contra Costa County agencies and BART.
+          For the past several years, the Contra Costa Community College District has hosted an annual Business Pitch Competition at DVC's Pleasant Hill campus — student founders sharing ventures spanning wellness tech, food sustainability, hardware, and student support. Past winners have gone on to pilot with Contra Costa County agencies and BART.
         </p>
         <p>
-          This year we're broadening the field. The competition is open to entrepreneurs from across the cities and towns of the Diablo Valley, with a dedicated <strong>Student Track</strong> reserved for DVC students and local high school students. Same stage. Same judges. New range of voices.
+          For 2026 we've widened the door without leaving the district. Community members are welcome to compete — they just have to be enrolled in a 4CD class. That includes <strong>non-credit Community Education courses</strong>: a ceramics class, a QuickBooks workshop, an ESL course, a welding certificate. One class is enough. Enroll, then apply.
+        </p>
+        <p>
+          There are no tracks and no categories. Students, dual-enrolled high schoolers, and community members in a non-credit class all fill out the same form and stand on the same stage. What we are actively recruiting is range — see <a href="#room">the room we're trying to build</a>.
         </p>
 
         <div class="cities">
-          <div class="label">Open to founders from</div>
+          <div class="label">Enroll at any 4CD college</div>
           <ul class="city-list">
-            <li class="dvc">DVC &amp; local high schools</li>
-            <li>Lafayette</li>
-            <li>Walnut Creek</li>
-            <li>Pleasant Hill</li>
-            <li>Concord</li>
-            <li>Clayton</li>
-            <li>Martinez</li>
-            <li>Pittsburg</li>
-            <li>Antioch</li>
-            <li>Oakley</li>
-            <li>Brentwood</li>
-            <li>Danville</li>
-            <li>Alamo</li>
-            <li>Moraga</li>
-            <li>Orinda</li>
+            <li class="dvc">Diablo Valley College</li>
+            <li class="dvc">DVC San Ramon</li>
+            <li class="dvc">Contra Costa College</li>
+            <li class="dvc">Los Medanos College</li>
+            <li class="dvc">LMC Brentwood</li>
+            <li>Community Ed · non-credit</li>
+            <li>Dual enrollment</li>
+            <li>Credit courses</li>
+            <li>Any subject</li>
           </ul>
         </div>
       </div>
@@ -664,36 +700,53 @@
   </div>
 </section>
 
-<!-- ============ TRACKS ============ -->
-<section id="tracks">
+<!-- ============ THE ROOM ============ -->
+<section id="room">
   <div class="wrap">
     <div class="section-head">
-      <div class="index">§ 02 — Tracks</div>
-      <h2>Two tracks. <span class="accent">One stage.</span></h2>
+      <div class="index">§ 02 — The room</div>
+      <h2>We want a room that looks like <span class="accent">the Diablo Valley.</span></h2>
     </div>
 
-    <div class="tracks-grid">
-      <div class="track">
-        <div class="mono-tag">Track A</div>
-        <h3>Open <span class="accent">community.</span></h3>
-        <p>For founders, side-project builders, and small-business operators living or working anywhere in the Diablo Valley. Bring a venture at any stage — pre-launch idea, early MVP, or a real business looking for its next chapter.</p>
-        <div class="track-meta">
-          <div><div class="k">Eligibility</div><div class="v">18+ residents of the region</div></div>
-          <div><div class="k">Team size</div><div class="v">1–4 founders</div></div>
-          <div><div class="k">Stage</div><div class="v">Idea → revenue OK</div></div>
-          <div><div class="k">Cost</div><div class="v">Free to apply</div></div>
-        </div>
+    <div class="valley-statement">
+      <div>
+        <div class="vs-big">An hour northeast of <span class="accent">Silicon Valley.</span><br>Nothing like it — <span class="accent">on purpose.</span></div>
+        <div class="vs-places">Concord · Pleasant Hill · Martinez · Walnut Creek · Pittsburg · Antioch · Brentwood · Oakley · Clayton · Lafayette · Danville · San Ramon · Moraga · Orinda</div>
       </div>
+      <div class="vs-body">
+        <p>We are not auditioning to be the other valley. We are cafés, breweries, bakeries, and nail salons. We are aviation and industry out past the airfield. We are biotech and health tech in the labs. And we are construction trades — a <em>lot</em> of construction trades.</p>
+        <p>That's the economy people here actually work in, so that's the room we want on this stage. There is no venture-scale requirement and no technical co-founder required. A framing contractor with a hiring plan is a business. A second bakery location is a business. Bring the software too — just don't assume it has a head start. It doesn't.</p>
+      </div>
+    </div>
 
-      <div class="track feature">
-        <div class="mono-tag">Track B · Featured</div>
-        <h3>Student <span class="accent">track.</span></h3>
-        <p>For full-time and dual-enrolled DVC students and current high school students attending school in the region. Same judges, dedicated prize pool, and extra mentoring built around school schedules. This is where Leftoverly, Scholarise, and WellPulse came from.</p>
-        <div class="track-meta">
-          <div><div class="k">Eligibility</div><div class="v">DVC + local HS students</div></div>
-          <div><div class="k">Team size</div><div class="v">1–4 founders</div></div>
-          <div><div class="k">Mentors</div><div class="v">Faculty &amp; alumni founders</div></div>
-          <div><div class="k">Cost</div><div class="v">Free to apply</div></div>
+    <div class="kinds">
+      <div class="kinds-head">
+        <div class="mono-tag">One field · every kind of business</div>
+        <h3>One application. One rubric. <span class="accent">One stage.</span></h3>
+        <p>No separate tracks, no beginner bracket, no category handicap. A nail salon expansion and an AI product go into the same pile, in front of the same panel, scored against the same five criteria.</p>
+      </div>
+      <div class="kinds-cols">
+        <div class="kind-col main">
+          <div class="kind-label">Main Street, trades &amp; industry</div>
+          <ul>
+            <li>Cafés, breweries, bakeries, taquerias</li>
+            <li>Nail salons, barbers, fitness studios</li>
+            <li>Construction trades · framing, electrical, HVAC, concrete</li>
+            <li>Landscaping, cleaning, auto repair, hauling</li>
+            <li>Aviation, manufacturing &amp; industrial services</li>
+            <li>Retail, childcare, bookkeeping, event work</li>
+          </ul>
+        </div>
+        <div class="kind-col tech">
+          <div class="kind-label">Science, health &amp; product</div>
+          <ul>
+            <li>Biotech &amp; life sciences</li>
+            <li>Health tech &amp; medical devices</li>
+            <li>Software, apps &amp; marketplaces</li>
+            <li>AI &amp; data tools</li>
+            <li>Hardware, robotics &amp; wearables</li>
+            <li>Consumer products &amp; packaged goods</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -705,7 +758,7 @@
   <div class="wrap">
     <div class="section-head">
       <div class="index">§ 03 — Timeline</div>
-      <h2>The road to <span class="accent">Nov 20.</span></h2>
+      <h2>The road to <span class="accent">Nov 19.</span></h2>
     </div>
 
     <div>
@@ -713,39 +766,39 @@
         <div class="tl-date">Sept 15<small>Applications open</small></div>
         <div class="tl-body">
           <h4>Applications open</h4>
-          <p>The form goes live. Start a draft, save it, come back. We recommend submitting early — applicants who submit before Oct 12 are eligible for an optional pre-screening review.</p>
+          <p>The form goes live. Start a draft, save it, come back. If you're not enrolled in a 4CD class yet, this is the window to sign up for one — including any non-credit Community Education course.</p>
         </div>
       </div>
 
       <div class="tl-row highlight">
-        <div class="tl-date">Oct 26<small>Deadline · 11:59pm PT</small></div>
+        <div class="tl-date">Nov 2<small>Deadline · 12:00pm PT</small></div>
         <div class="tl-body">
-          <h4>Applications due</h4>
-          <p>Submit a short written application, a deck (PDF or slides link), and an optional 1-minute video. Late submissions are not accepted; the screening panel begins review the same week.</p>
+          <h4>Applications due at noon</h4>
+          <p>Submit a short written application, a deck (PDF or slides link), and an optional 1-minute video by <strong>12:00pm PT on Monday, Nov 2</strong>. Late submissions are not accepted; the screening panel begins review that afternoon.</p>
         </div>
       </div>
 
       <div class="tl-row">
-        <div class="tl-date">Nov 2<small>Finalists named</small></div>
+        <div class="tl-date">Nov 5–6<small>Finalists named</small></div>
         <div class="tl-body">
-          <h4>Up to 10 finalists announced</h4>
-          <p>Each application is reviewed by two members of a multi-person screening panel; highest-scoring teams advance. Finalists submit a final-draft deck and an optional 1-minute public YouTube video.</p>
+          <h4>Up to 10 finalists announced — no later than Nov 6</h4>
+          <p>Each application is reviewed by two members of a multi-person screening panel; highest-scoring teams advance. We aim to notify finalists Thursday, Nov 5, and commit to no later than Friday, Nov 6, so every team gets the full mentoring window. Finalists submit a final-draft deck and an optional 1-minute public YouTube video.</p>
         </div>
       </div>
 
       <div class="tl-row">
-        <div class="tl-date">Nov 2 → 20<small>Mentoring window</small></div>
+        <div class="tl-date">Nov 5 → 19<small>Mentoring window</small></div>
         <div class="tl-body">
-          <h4>Two and a half weeks of intensive support</h4>
-          <p>Finalists are paired with mentors and given access to deck reviews, pitch coaching, financial-model review, and dry-run sessions. Optional drop-in office hours every weekday evening at the DVC business department.</p>
+          <h4>A full two weeks of intensive support</h4>
+          <p>The mentoring window now opens two weeks ahead of the final. Finalists are paired with mentors and given deck reviews, pitch coaching, financial-model review, and dry-run sessions — with Main Street teams matched to operators and lenders, not just startup advisors. Optional drop-in office hours every weekday evening at the DVC business department.</p>
         </div>
       </div>
 
       <div class="tl-row highlight">
-        <div class="tl-date">Nov 20<small>Live final</small></div>
+        <div class="tl-date">Nov 19<small>Live final</small></div>
         <div class="tl-body">
           <h4>The stage. The judges. The prize.</h4>
-          <p>Three minutes to pitch, two minutes of Q&amp;A. Audience vote runs throughout. Winners announced live; reception immediately following with judges, mentors, and the regional founder community.</p>
+          <p>Three minutes to pitch, two minutes of Q&amp;A. Audience vote runs throughout. Winners announced live; reception immediately following with judges, mentors, and the district's founder and small-business community.</p>
         </div>
       </div>
     </div>
@@ -765,7 +818,7 @@
         <div class="place">Grand Prize</div>
         <div class="amount"><sup>$</sup>1,000</div>
         <div class="name">First Place</div>
-        <p>Cash prize, on-stage recognition, and an introduction round to regional investors and small-business advisors.</p>
+        <p>Cash prize, on-stage recognition, and an introduction round to local investors, lenders, and small-business advisors.</p>
       </div>
       <div class="prize">
         <div class="place">Runner-up</div>
@@ -788,7 +841,7 @@
     </div>
 
     <p style="margin-top:32px; color:var(--ink-3); font-size:14px; max-width:60ch;">
-      Prize amounts shown reflect the 2025 finals; the 2026 regional edition will scale prizes to the expanded field. Final amounts confirmed when finalists are named.
+      Prize amounts shown reflect the 2025 finals; the 2026 districtwide edition will scale prizes to the expanded field. Final amounts confirmed when finalists are named.
     </p>
   </div>
 </section>
@@ -825,6 +878,7 @@
           <li><div class="who">Real-world impact</div><div class="what">Who is helped, and how much</div></li>
           <li><div class="who">Traction &amp; validation</div><div class="what">Any evidence the idea works</div></li>
         </ul>
+        <p style="margin-top:20px; color:var(--ink-3); font-size:13px; font-family:var(--narrow);">One rubric for everyone. A neighborhood service business and an AI product are scored against the same five criteria — no category is graded on a curve, and no judge is asked to weigh "scalability" against a business meant to serve one town well.</p>
       </div>
     </div>
   </div>
@@ -957,7 +1011,19 @@
     <div class="faq" style="max-width: 920px; margin-left: auto;">
       <details>
         <summary>Who can apply?</summary>
-        <p>Anyone 18 or older who lives, works, or studies in the Diablo Valley can apply to the Open Community track. Current DVC students and students attending high schools in the region apply through the Student Track. There are no citizenship or status requirements.</p>
+        <p>Anyone currently enrolled in a Contra Costa Community College District course. That's the only eligibility bar: one active enrollment at DVC, Contra Costa College, or Los Medanos College. Credit students, dual-enrolled high school students, and community members in a non-credit class all use the same application — there are no separate tracks. There are no citizenship or status requirements.</p>
+      </details>
+      <details>
+        <summary>I'm not a student. Can I still compete?</summary>
+        <p>Yes — enroll in a class and you're eligible. It does not have to be a business class, a full course load, or a credit course. A single non-credit Community Education class counts: cooking, ceramics, computer basics, ESL, QuickBooks, welding, yoga. Register for one 4CD course, keep the enrollment active through Nov 19, and you can apply.</p>
+      </details>
+      <details>
+        <summary>Does it count if the class is non-credit Community Education?</summary>
+        <p>It does. Non-credit Community Education enrollment carries exactly the same eligibility as a credit course. We ask for your student ID on the application so we can verify enrollment — nothing more.</p>
+      </details>
+      <details>
+        <summary>My business isn't tech. Is it still a fit?</summary>
+        <p>It's more than a fit — it's the point. We are actively recruiting Main Street: restaurants, food trucks, salons, landscaping and trades, childcare, retail, cleaning, bookkeeping, repair shops. Brick-and-mortar and service businesses compete on the same stage, in front of the same judges, against the same five scoring criteria as the software and AI teams. You do not need a technical co-founder, a prototype, or a growth chart.</p>
       </details>
       <details>
         <summary>Does my idea need to be a real business already?</summary>
@@ -969,11 +1035,11 @@
       </details>
       <details>
         <summary>What does the application include?</summary>
-        <p>A short written form (problem, solution, customer, what's different), a pitch deck submitted as a PDF or shareable slide link, and an optional 1-minute video introducing the team. Finalists submit a final-draft deck and an optional 1-minute YouTube video by Nov 2.</p>
+        <p>A short written form (problem, solution, customer, what's different), your 4CD student ID for enrollment verification, a pitch deck submitted as a PDF or shareable slide link, and an optional 1-minute video introducing the team. Everything is due by <strong>noon on Monday, Nov 2</strong>. Finalists then submit a final-draft deck and an optional 1-minute YouTube video.</p>
       </details>
       <details>
         <summary>What kind of mentoring do finalists get?</summary>
-        <p>Between Nov 2 and Nov 20, every finalist team is matched with one or more mentors drawn from the DVC business faculty, alumni founders, past judges, and the regional founder community. Support includes deck reviews, pitch coaching, financial-model feedback, and live dry-runs in the actual venue.</p>
+        <p>The mentoring window is a full two weeks — it opens as soon as finalists are named (Nov 5, and no later than Nov 6) and runs to the final on Nov 19. Every finalist team is matched with one or more mentors drawn from 4CD business faculty, alumni founders, past judges, and working local operators. Support includes deck reviews, pitch coaching, financial-model feedback, and live dry-runs in the actual venue. Main Street teams are matched with people who have run storefronts and payrolls, not only startup advisors.</p>
       </details>
       <details>
         <summary>Do I keep ownership of my idea?</summary>
@@ -981,7 +1047,7 @@
       </details>
       <details>
         <summary>Is the final event open to the public?</summary>
-        <p>Yes — and we encourage it. The November 20 final is free to attend. Invite your family, your customers, your potential investors, and your skeptics. The audience vote is real.</p>
+        <p>Yes — and we encourage it. The November 19 final is free to attend, and attendance requires no enrollment of any kind. Invite your family, your customers, your potential investors, and your skeptics. The audience vote is real.</p>
       </details>
       <details>
         <summary>I have a question that isn't here.</summary>
@@ -994,9 +1060,9 @@
 <!-- ============ APPLY ============ -->
 <section id="apply" class="apply">
   <div class="wrap">
-    <div class="deadline">Applications open · close Mon Oct 26</div>
+    <div class="deadline">Applications close Mon Nov 2 · 12:00pm PT</div>
     <h2>Bring an idea.<br><span class="accent">Leave with a deck, a network, and maybe a check.</span></h2>
-    <p>Whether you're 16 and have an app idea, or 46 and ready to make the side project the main thing — this is the stage. Apply once. We'll do the rest.</p>
+    <p>Whether you're 16 with an app idea or 46 with a lease you're ready to sign — this is the stage. One 4CD class is all it takes to be eligible, and any class counts. Apply once. We'll do the rest.</p>
     <div class="apply-actions">
       <a href="#" class="cta-btn lg">Start application →</a>
       <a href="mailto:" class="cta-btn ghost lg">Email us a question</a>
@@ -1011,17 +1077,17 @@
       <div>
         <div class="foot-brand">
           <img src="assets/dvc-logo-simple.svg" alt="">
-          <span class="t">Diablo Valley Pitch Competition</span>
+          <span class="t">The 4CD Pitch Competition</span>
         </div>
         <p style="max-width: 48ch; margin: 0; color: var(--periwinkle-soft); font-size: 13px; font-family: var(--narrow);">
-          A regional pitch competition for the Diablo Valley, hosted at Diablo Valley College's Pleasant Hill campus. Built on the foundation of the 4CD Business Pitch Competition.
+          The pitch competition of the Contra Costa Community College District, hosted at Diablo Valley College's Pleasant Hill campus. Open to every student and community member enrolled in a 4CD course. Cafés, trades, industry, biotech, software — Diablo Valley, not Silicon Valley.
         </p>
       </div>
       <div>
         <h5>Event</h5>
         <ul>
           <li><a href="#about">About</a></li>
-          <li><a href="#tracks">Tracks</a></li>
+          <li><a href="#room">The Room</a></li>
           <li><a href="#timeline">Timeline</a></li>
           <li><a href="#prizes">Prizes</a></li>
           <li><a href="#finalists">Past finalists</a></li>
@@ -1034,12 +1100,12 @@
           <li>DVC Business Department</li>
           <li>321 Golf Club Rd</li>
           <li>Pleasant Hill, CA 94523</li>
-          <li><a href="https://dvcbpc.com">dvcbpc.com</a></li>
+          <li><a href="https://www.4cdpitch.com">www.4cdpitch.com</a></li>
         </ul>
       </div>
     </div>
     <div class="foot-bottom">
-      <div>© 2026 Diablo Valley Pitch Competition</div>
+      <div>© 2026 The 4CD Pitch Competition</div>
       <div>Hosted on GitHub Pages</div>
     </div>
   </div>
