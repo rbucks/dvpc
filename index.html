@@ -509,6 +509,37 @@
   .faq details[open] summary::after { content: "−"; }
   .faq details p { margin: 16px 0 0; color: var(--ink-2); max-width: 64ch; font-size: 16px; }
 
+  /* ========== COMMUNITY / DISCORD ========== */
+  .community { background: var(--sage-soft); }
+  .community-inner { display: grid; grid-template-columns: 1.35fr 1fr; gap: 64px; align-items: center; }
+  .community h2 {
+    font-size: clamp(44px, 6vw, 72px);
+    line-height: 0.95;
+    color: var(--green-deep);
+    margin: 18px 0 22px;
+  }
+  .community h2 .accent { color: var(--navy); }
+  .community p { font-size: 18px; color: var(--ink-2); max-width: 58ch; margin: 0 0 26px; }
+  .community-list { list-style: none; padding: 0; margin: 0 0 34px; display: grid; gap: 11px; }
+  .community-list li {
+    font-family: var(--narrow); font-weight: 500; font-size: 15px; color: var(--ink-2);
+    padding-left: 22px; position: relative;
+  }
+  .community-list li::before {
+    content: ""; position: absolute; left: 0; top: 0.55em;
+    width: 10px; height: 2px; background: var(--green);
+  }
+  .community .cta-btn { background: var(--green); color: var(--sage); border-color: var(--green); }
+  .community .cta-btn:hover { background: var(--navy); border-color: var(--navy); color: var(--periwinkle); }
+  .community-mark { display: flex; justify-content: center; }
+  .community-mark svg { width: 100%; max-width: 260px; height: auto; color: var(--green); opacity: 0.85; }
+
+  @media (max-width: 860px) {
+    .community-inner { grid-template-columns: 1fr; gap: 36px; }
+    .community-mark { order: -1; justify-content: flex-start; }
+    .community-mark svg { max-width: 120px; }
+  }
+
   /* ========== APPLY CTA ========== */
   .apply {
     background: var(--green);
@@ -595,6 +626,7 @@
       <a href="#prizes">Prizes</a>
       <a href="#finalists">Finalists</a>
       <a href="#faq">FAQ</a>
+      <a href="#community">Community</a>
     </nav>
     <a href="#apply" class="cta-btn">Apply</a>
   </div>
@@ -612,6 +644,7 @@
       </p>
       <div class="hero-actions">
         <a href="#apply" class="cta-btn lg">Apply by Nov 2, noon</a>
+        <a href="https://discord.gg/4DQQQBcjeW" class="cta-btn ghost lg" target="_blank" rel="noopener">Join the Discord</a>
         <a href="#about" class="cta-btn ghost lg">Read the brief</a>
       </div>
     </div>
@@ -862,9 +895,9 @@
           <li><div class="who">Ruby Grover</div><div class="what">Sunvalley Shopping Center</div></li>
           <li><div class="who">Nayab Siddiqui</div><div class="what">COO, ZAYNA Ventures</div></li>
           <li><div class="who">Dan Siegel</div><div class="what">Local entrepreneur</div></li>
-          <li><div class="who">McGrail Reynolds</div><div class="what">2024 judging panel</div></li>
-          <li><div class="who">Jason Cragholm</div><div class="what">2024 judging panel</div></li>
-          <li><div class="who">Doug Skinner</div><div class="what">2024 judging panel</div></li>
+          <li><div class="who">McGrail Reynolds</div><div class="what">The Coding School</div></li>
+          <li><div class="who">Jason Cragholm</div><div class="what">CEO, Qualscore</div></li>
+          <li><div class="who">Doug Skinner</div><div class="what">Founder, Intentional Management LLC</div></li>
         </ul>
         <p style="margin-top:20px; color:var(--ink-3); font-size:13px; font-family:var(--narrow);">2026 panel announced in October.</p>
       </div>
@@ -935,8 +968,8 @@
         <div class="meta">Diablo Room · November 22, 2024</div>
       </div>
       <div class="finalist-grid">
-        <div class="finalist">
-          <div class="rank-badge" style="background:var(--bone); color:var(--navy); border:1px solid var(--rule);">Finalist</div>
+        <div class="finalist winner-1">
+          <div class="rank-badge">1st Place</div>
           <h4>Scholarise.org</h4>
           <p>Scholarships, internships, coursework tracking, and essay help for community college students.</p>
           <div class="by">Floris Brussaard</div>
@@ -1051,8 +1084,32 @@
       </details>
       <details>
         <summary>I have a question that isn't here.</summary>
-        <p>Email the organizing team and we'll get back to you within two business days. Contact details are in the footer below.</p>
+        <p>Ask it in <a href="https://discord.gg/4DQQQBcjeW" target="_blank" rel="noopener">the Discord</a> — that's the fastest way to reach the organizers, and odds are someone else was wondering the same thing. If you'd rather ask privately, email <a href="mailto:rbuckley@dvc.edu">rbuckley@dvc.edu</a> and we'll get back to you within two business days.</p>
       </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMMUNITY / DISCORD ============ -->
+<section id="community" class="community">
+  <div class="wrap">
+    <div class="community-inner">
+      <div class="community-copy">
+        <div class="mono-tag">Discord · Free · Open now</div>
+        <h2>Join the <span class="accent">community.</span></h2>
+        <p>You don't have to wait for the deadline to start. The Discord is where applicants ask the organizers questions, find a co-founder, get a deck torn apart before a judge sees it, and hear about workshops and office hours first.</p>
+        <ul class="community-list">
+          <li>Ask the organizers anything — no question is too basic</li>
+          <li>Find teammates and co-founders across all three colleges</li>
+          <li>Deck feedback and practice-pitch threads</li>
+          <li>Workshop, office-hour, and deadline reminders</li>
+          <li>Main Street channels and tech channels, side by side</li>
+        </ul>
+        <a href="https://discord.gg/4DQQQBcjeW" class="cta-btn lg" target="_blank" rel="noopener">Join the Discord →</a>
+      </div>
+      <div class="community-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg>
+      </div>
     </div>
   </div>
 </section>
@@ -1065,7 +1122,8 @@
     <p>Whether you're 16 with an app idea or 46 with a lease you're ready to sign — this is the stage. One 4CD class is all it takes to be eligible, and any class counts. Apply once. We'll do the rest.</p>
     <div class="apply-actions">
       <a href="#" class="cta-btn lg">Start application →</a>
-      <a href="mailto:" class="cta-btn ghost lg">Email us a question</a>
+      <a href="https://discord.gg/4DQQQBcjeW" class="cta-btn ghost lg" target="_blank" rel="noopener">Join the Discord</a>
+      <a href="mailto:rbuckley@dvc.edu" class="cta-btn ghost lg">Email us a question</a>
     </div>
   </div>
 </section>
@@ -1092,6 +1150,7 @@
           <li><a href="#prizes">Prizes</a></li>
           <li><a href="#finalists">Past finalists</a></li>
           <li><a href="#faq">FAQ</a></li>
+          <li><a href="#community">Community</a></li>
         </ul>
       </div>
       <div>
@@ -1101,6 +1160,8 @@
           <li>321 Golf Club Rd</li>
           <li>Pleasant Hill, CA 94523</li>
           <li><a href="https://www.4cdpitch.com">www.4cdpitch.com</a></li>
+          <li><a href="mailto:rbuckley@dvc.edu">rbuckley@dvc.edu</a></li>
+          <li><a href="https://discord.gg/4DQQQBcjeW" target="_blank" rel="noopener">Join the Discord →</a></li>
         </ul>
       </div>
     </div>
