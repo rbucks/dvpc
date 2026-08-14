@@ -27,12 +27,13 @@ Everything lives in `index.html`. There is no build step, no framework, no depen
 
 Major sections, in order, marked with HTML comments:
 
+- `DISTRICT BAR` — spells out 4CD and lists the three member colleges
 - `TOP BAR` — sticky nav
 - `HERO` — headline, lede, save-the-date card
 - `KEY DATES RAIL` — the three milestone dates
 - `ABOUT` — regional expansion explanation + city list
 - `THE ROOM` — the "Diablo Valley, not Silicon Valley" statement band (`.valley-statement`) + the Main Street / science-and-product columns (`.kinds`)
-- `TIMELINE` — Sept 15 → Nov 19
+- `TIMELINE` — Sept 15 → Nov 20
 - `PRIZES` — four cash prizes
 - `JUDGING + WINNERS` — past judges, scoring criteria
 - `PAST WINNERS` — 2025 results
@@ -42,7 +43,7 @@ Major sections, in order, marked with HTML comments:
 
 ### Common edits
 
-- **Update the dates / year** — search `Nov 19` (live final), `Nov 2` (application deadline, noon PT), `Nov 5`/`Nov 6` (finalists named), `2026`.
+- **Update the dates / year** — search `Nov 20` (live final, Friday), `Nov 2` (application deadline, noon PT), `Nov 5`/`Nov 6` (finalists named), `2026`. Note the two-week mentoring claim is load-bearing: finalists must be named by Nov 6 for `Nov 6 → 20` to be a true fourteen days.
 - **Eligibility copy** — the rule is "enrolled in any 4CD course, credit or non-credit Community Education." It appears in the hero lede, About, both track cards, and the first three FAQ entries.
 - **Add or remove colleges** — find the `<ul class="city-list">` block in the About section (still uses the `city-list` class; the items are now 4CD campuses).
 - **Edit the Main Street / science example lists** — find the `.kinds-cols` block in the `THE ROOM` section.

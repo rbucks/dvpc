@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>The 4CD Pitch Competition — Nov 19, 2026</title>
-<meta name="description" content="The 4CD Pitch Competition — open to anyone enrolled in any Contra Costa Community College District course, including non-credit Community Education. Cafés, breweries, trades, biotech, health tech, software. Diablo Valley, not Silicon Valley. Live final Nov 19, 2026." />
+<title>The 4CD Pitch Competition — Nov 20, 2026</title>
+<meta name="description" content="The 4CD Pitch Competition — open to anyone enrolled in any Contra Costa Community College District course, including non-credit Community Education. Cafés, breweries, trades, biotech, health tech, software. Diablo Valley, not Silicon Valley. Live final Nov 20, 2026." />
 
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="apple-touch-icon" href="assets/favicon-180.png">
@@ -70,6 +70,33 @@
   .mono-tag { font-family: var(--narrow); font-weight: 700; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green); }
 
   .wrap { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
+
+  /* ========== DISTRICT BAR ========== */
+  .district-bar {
+    background: var(--navy-deep);
+    color: var(--periwinkle);
+    font-family: var(--narrow); font-weight: 600;
+    font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+  }
+  .district-inner {
+    max-width: 1240px; margin: 0 auto;
+    padding: 9px 32px;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 6px 24px; flex-wrap: wrap;
+  }
+  .district-name strong { color: var(--sage); font-weight: 700; }
+  .district-colleges { display: flex; gap: 22px; flex-wrap: wrap; opacity: 0.85; }
+  .district-colleges span { position: relative; }
+  .district-colleges span + span::before {
+    content: "·"; position: absolute; left: -13px; opacity: 0.6;
+  }
+
+  @media (max-width: 620px) {
+    .district-inner { padding: 7px 20px; font-size: 10px; gap: 3px 14px; line-height: 1.45; }
+    .db-prefix { display: none; }
+    .district-colleges { gap: 14px; }
+    .district-colleges span + span::before { left: -9px; }
+  }
 
   /* ========== TOP BAR ========== */
   .topbar {
@@ -622,6 +649,18 @@
 </head>
 <body>
 
+<!-- ============ DISTRICT BAR ============ -->
+<div class="district-bar">
+  <div class="district-inner">
+    <span class="district-name"><span class="db-prefix">A program of the </span>Contra Costa Community College District <strong>(4CD)</strong></span>
+    <span class="district-colleges">
+      <span>Contra Costa College</span>
+      <span>Diablo Valley College</span>
+      <span>Los Medanos College</span>
+    </span>
+  </div>
+</div>
+
 <!-- ============ TOP BAR ============ -->
 <header class="topbar">
   <div class="topbar-inner">
@@ -662,7 +701,7 @@
       <div>
         <div class="save-the-date">
           <div class="label">Live Final · Save the Date</div>
-          <div class="day">Nov 19<small>Thursday · 2026</small></div>
+          <div class="day">Nov 20<small>Friday · 2026</small></div>
           <div class="where">
             <strong>Diablo Valley College</strong>
             Diablo Room · Pleasant Hill campus<br>
@@ -689,12 +728,12 @@
       <div class="step">Step 02 · Finalists</div>
       <h3>Up to 10 teams advance</h3>
       <div class="when">Announced by Fri · Nov 6, 2026</div>
-      <p>Selected by the screening panel and notified no later than Nov 6, opening a full two-week mentoring window before the final.</p>
+      <p>Selected by the screening panel and notified no later than Nov 6 — exactly two weeks before the final, so every team gets the full mentoring window.</p>
     </div>
     <div class="date-cell">
       <div class="step">Step 03 · Compete</div>
       <h3>Live final, on stage</h3>
-      <div class="when">Thu · Nov 19, 2026 · 9:00am</div>
+      <div class="when">Fri · Nov 20, 2026 · 9:00am</div>
       <p>Three minutes to pitch, two minutes of judges' questions. Cash prizes, audience vote, and reception.</p>
     </div>
   </div>
@@ -801,7 +840,7 @@
   <div class="wrap">
     <div class="section-head">
       <div class="index">§ 03 — Timeline</div>
-      <h2>The road to <span class="accent">Nov 19.</span></h2>
+      <h2>The road to <span class="accent">Nov 20.</span></h2>
     </div>
 
     <div>
@@ -830,7 +869,7 @@
       </div>
 
       <div class="tl-row">
-        <div class="tl-date">Nov 5 → 19<small>Mentoring window</small></div>
+        <div class="tl-date">Nov 6 → 20<small>Mentoring window</small></div>
         <div class="tl-body">
           <h4>A full two weeks of intensive support</h4>
           <p>The mentoring window now opens two weeks ahead of the final. Finalists are paired with mentors and given deck reviews, pitch coaching, financial-model review, and dry-run sessions — with Main Street teams matched to operators and lenders, not just startup advisors. Optional drop-in office hours every weekday evening at the DVC business department.</p>
@@ -838,7 +877,7 @@
       </div>
 
       <div class="tl-row highlight">
-        <div class="tl-date">Nov 19<small>Live final</small></div>
+        <div class="tl-date">Nov 20<small>Live final</small></div>
         <div class="tl-body">
           <h4>The stage. The judges. The prize.</h4>
           <p>Three minutes to pitch, two minutes of Q&amp;A. Audience vote runs throughout. Winners announced live; reception immediately following with judges, mentors, and the district's founder and small-business community.</p>
@@ -1053,12 +1092,16 @@
 
     <div class="faq" style="max-width: 920px; margin-left: auto;">
       <details>
+        <summary>What does 4CD stand for?</summary>
+        <p>The <strong>Contra Costa Community College District</strong>. It's made up of three colleges — Contra Costa College in San Pablo, Diablo Valley College in Pleasant Hill (plus its San Ramon campus), and Los Medanos College in Pittsburg (plus its Brentwood center) — along with districtwide Community Education. Enrollment at any of them, in any course, makes you eligible to compete.</p>
+      </details>
+      <details>
         <summary>Who can apply?</summary>
         <p>Anyone currently enrolled in a Contra Costa Community College District course. That's the only eligibility bar: one active enrollment at DVC, Contra Costa College, or Los Medanos College. Credit students, dual-enrolled high school students, and community members in a non-credit class all use the same application — there are no separate tracks. There are no citizenship or status requirements.</p>
       </details>
       <details>
         <summary>I'm not a student. Can I still compete?</summary>
-        <p>Yes — enroll in a class and you're eligible. It does not have to be a business class, a full course load, or a credit course. A single non-credit Community Education class counts: cooking, ceramics, computer basics, ESL, QuickBooks, welding, yoga. Register for one 4CD course, keep the enrollment active through Nov 19, and you can apply.</p>
+        <p>Yes — enroll in a class and you're eligible. It does not have to be a business class, a full course load, or a credit course. A single non-credit Community Education class counts: cooking, ceramics, computer basics, ESL, QuickBooks, welding, yoga. Register for one 4CD course, keep the enrollment active through Nov 20, and you can apply.</p>
       </details>
       <details>
         <summary>Does it count if the class is non-credit Community Education?</summary>
@@ -1082,7 +1125,7 @@
       </details>
       <details>
         <summary>What kind of mentoring do finalists get?</summary>
-        <p>The mentoring window is a full two weeks — it opens as soon as finalists are named (Nov 5, and no later than Nov 6) and runs to the final on Nov 19. Every finalist team is matched with one or more mentors drawn from 4CD business faculty, alumni founders, past judges, and working local operators. Support includes deck reviews, pitch coaching, financial-model feedback, and live dry-runs in the actual venue. Main Street teams are matched with people who have run storefronts and payrolls, not only startup advisors.</p>
+        <p>The mentoring window is a full two weeks — it opens as soon as finalists are named (Nov 5, and no later than Nov 6) and runs to the final on Nov 20 — so Nov 6 still leaves a full fourteen days. Every finalist team is matched with one or more mentors drawn from 4CD business faculty, alumni founders, past judges, and working local operators. Support includes deck reviews, pitch coaching, financial-model feedback, and live dry-runs in the actual venue. Main Street teams are matched with people who have run storefronts and payrolls, not only startup advisors.</p>
       </details>
       <details>
         <summary>Do I keep ownership of my idea?</summary>
@@ -1090,7 +1133,7 @@
       </details>
       <details>
         <summary>Is the final event open to the public?</summary>
-        <p>Yes — and we encourage it. The November 19 final is free to attend, and attendance requires no enrollment of any kind. Invite your family, your customers, your potential investors, and your skeptics. The audience vote is real.</p>
+        <p>Yes — and we encourage it. The November 20 final is free to attend, and attendance requires no enrollment of any kind. Invite your family, your customers, your potential investors, and your skeptics. The audience vote is real.</p>
       </details>
       <details>
         <summary>I have a question that isn't here.</summary>
