@@ -43,7 +43,8 @@ Major sections, in order, marked with HTML comments:
 
 ### Common edits
 
-- **Update the dates / year** — search `Nov 20` (live final, Friday), `Nov 2` (application deadline, noon PT), `Nov 5`/`Nov 6` (finalists named), `2026`. Note the two-week mentoring claim is load-bearing: finalists must be named by Nov 6 for `Nov 6 → 20` to be a true fourteen days.
+- **Update the dates / year** — search `Nov 20` (live final, Friday), `Nov 2` (application deadline, noon PT), `Nov 6` (finalists named), `2026`. Note the two-week mentoring claim is load-bearing: finalists must be named on Nov 6 for `Nov 6 → 20` to be a true fourteen days.
+- **Application contents** — the application is a written form plus a deck, deliberately no video. A video appears only at the finalist stage (optional 1-minute YouTube). Search `video` before changing either.
 - **Eligibility copy** — the rule is "enrolled in any 4CD course, credit or non-credit Community Education." It appears in the hero lede, About, both track cards, and the first three FAQ entries.
 - **Add or remove colleges** — find the `<ul class="city-list">` block in the About section (still uses the `city-list` class; the items are now 4CD campuses).
 - **Edit the Main Street / science example lists** — find the `.kinds-cols` block in the `THE ROOM` section.
