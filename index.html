@@ -118,7 +118,7 @@
     font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase;
   }
   .brand img { width: 34px; height: 34px; display: block; }
-  .nav { display: flex; gap: 28px; font-family: var(--narrow); font-weight: 600; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; }
+  .nav { display: flex; gap: 22px; font-family: var(--narrow); font-weight: 600; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; }
   .nav a { text-decoration: none; color: var(--ink-2); }
   .nav a:hover { color: var(--green); }
 
@@ -466,6 +466,64 @@
     .panel-list .what { text-align: left; max-width: none; }
   }
 
+
+  /* ========== SCORING RUBRIC ========== */
+  .rubric-lede { font-size: 18px; color: var(--ink-2); max-width: 66ch; margin: 0 0 18px; }
+  .rubric-lede.tail { margin-bottom: 44px; }
+  .rubric-lede strong { color: var(--navy); font-weight: 700; }
+  .rubric { border: 2px solid var(--navy); background: var(--bone); margin-bottom: 32px; }
+  .rubric-head {
+    background: var(--navy); color: var(--periwinkle-soft);
+    padding: 22px 24px;
+    display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: end;
+  }
+  .rubric-head .stage { font-family: var(--narrow); font-weight: 700; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.85; }
+  .rubric-head h3 { color: #fff; font-size: clamp(24px, 3vw, 34px); line-height: 1; margin-top: 8px; }
+  .rubric-head .max { font-family: var(--display); font-size: 40px; line-height: 0.9; color: #fff; white-space: nowrap; }
+  .rubric-head .max span { font-family: var(--narrow); font-weight: 700; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.85; margin-left: 6px; }
+  .rubric.final { border-color: var(--green); }
+  .rubric.final .rubric-head { background: var(--green); color: var(--sage-soft); }
+  .rubric.final .rubric-head h3, .rubric.final .rubric-head .max { color: var(--sage); }
+
+  .rubric-who {
+    padding: 14px 24px; background: var(--paper); border-bottom: 1px solid var(--rule);
+    font-family: var(--narrow); font-size: 14px; color: var(--ink-2);
+  }
+  .rubric-who strong { color: var(--navy); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; font-size: 12px; margin-right: 8px; }
+  .rubric.final .rubric-who strong { color: var(--green); }
+
+  .rubric table { width: 100%; border-collapse: collapse; }
+  .rubric th, .rubric td { text-align: left; vertical-align: top; padding: 18px 24px; border-top: 1px solid var(--rule); }
+  .rubric thead th {
+    border-top: none; padding: 18px 24px 12px;
+    font-family: var(--narrow); font-weight: 700; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-3);
+  }
+  .rubric tbody th {
+    width: 28%;
+    font-family: var(--narrow); font-weight: 700; font-size: 17px; letter-spacing: 0.02em; text-transform: uppercase; color: var(--navy);
+  }
+  .rubric td.desc { font-size: 15px; color: var(--ink-2); line-height: 1.5; }
+  .rubric .pts { width: 110px; text-align: right; font-family: var(--display); font-size: 30px; line-height: 1; color: var(--navy); }
+  .rubric tfoot th, .rubric tfoot td { border-top: 2px solid var(--navy); background: rgba(26, 58, 108, 0.05); }
+  .rubric tfoot th { font-size: 14px; letter-spacing: 0.14em; }
+  .rubric tfoot .pts { font-size: 36px; }
+  .rubric.final tfoot th, .rubric.final tfoot td { border-top-color: var(--green); background: rgba(1, 106, 82, 0.06); }
+  .rubric.final tfoot .pts { color: var(--green); }
+
+  @media (max-width: 760px) {
+    .rubric thead { display: none; }
+    .rubric table, .rubric tbody, .rubric tfoot, .rubric tr, .rubric th, .rubric td { display: block; width: auto; }
+    .rubric tr { border-top: 1px solid var(--rule); padding: 16px 20px; }
+    .rubric tbody tr:first-child { border-top: none; }
+    .rubric th, .rubric td { border-top: none; padding: 0; }
+    .rubric tbody th, .rubric tfoot th, .rubric .pts { width: auto; }
+    .rubric td.desc { margin-top: 6px; }
+    .rubric .pts { text-align: left; font-size: 26px; margin-top: 10px; }
+    .rubric .pts::after { content: " pts"; font-family: var(--narrow); font-weight: 700; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-3); }
+    .rubric tfoot tr { border-top: 2px solid var(--navy); background: rgba(26, 58, 108, 0.05); }
+    .rubric.final tfoot tr { border-top-color: var(--green); background: rgba(1, 106, 82, 0.06); }
+  }
+
   /* ========== FINALISTS / WINNERS GRID ========== */
   .year-block { margin-bottom: 64px; }
   .year-block:last-child { margin-bottom: 0; }
@@ -673,6 +731,7 @@
       <a href="#room">The Room</a>
       <a href="#timeline">Timeline</a>
       <a href="#prizes">Prizes</a>
+      <a href="#scoring">Scoring</a>
       <a href="#finalists">Finalists</a>
       <a href="#faq">FAQ</a>
       <a href="#community">Community</a>
@@ -726,7 +785,7 @@
     </div>
     <div class="date-cell">
       <div class="step">Step 02 · Finalists</div>
-      <h3>Up to 10 teams advance</h3>
+      <h3>10 teams advance</h3>
       <div class="when">Announced Fri · Nov 6, 2026</div>
       <p>Selected by the screening panel and notified on Nov 6 — exactly two weeks before the final, so every team gets the full mentoring window.</p>
     </div>
@@ -863,8 +922,8 @@
       <div class="tl-row">
         <div class="tl-date">Nov 6<small>Finalists named</small></div>
         <div class="tl-body">
-          <h4>Up to 10 finalists announced</h4>
-          <p>Each application is reviewed by two members of a multi-person screening panel; highest-scoring teams advance. Finalists are notified on Friday, Nov 6 — exactly two weeks before the final. Finalists then submit a final-draft deck and an optional 1-minute public YouTube video.</p>
+          <h4>The 10 finalists announced</h4>
+          <p>Each application is reviewed by two members of a multi-person screening panel; the ten highest-scoring teams advance. Finalists are notified on Friday, Nov 6 — exactly two weeks before the final. Finalists then submit a final-draft deck and an optional 1-minute public YouTube video.</p>
         </div>
       </div>
 
@@ -952,17 +1011,131 @@
       </div>
 
       <div>
-        <div class="mono-tag" style="margin-bottom:24px;">Scoring criteria</div>
+        <div class="mono-tag" style="margin-bottom:24px;">How scoring works</div>
         <ul class="panel-list">
-          <li><div class="who">Originality</div><div class="what">Is the idea differentiated?</div></li>
-          <li><div class="who">Clarity of concept</div><div class="what">Can a stranger understand it in 60s?</div></li>
-          <li><div class="who">Presentation quality</div><div class="what">Slide design, narrative, delivery</div></li>
-          <li><div class="who">Real-world impact</div><div class="what">Who is helped, and how much</div></li>
-          <li><div class="who">Traction &amp; validation</div><div class="what">Any evidence the idea works</div></li>
+          <li><div class="who">Two scored rounds</div><div class="what">Screening application, then the live final</div></li>
+          <li><div class="who">50 points each</div><div class="what">Five categories, 10 points apiece</div></li>
+          <li><div class="who">Screening</div><div class="what">Open to every applicant; two reviewers each</div></li>
+          <li><div class="who">The final</div><div class="what">The ten finalists only, scored live on stage</div></li>
+          <li><div class="who">Separate scores</div><div class="what">Screening results do not carry into the final</div></li>
+          <li><div class="who">People's Choice</div><div class="what">Live audience vote, separate from the rubric</div></li>
         </ul>
-        <p style="margin-top:20px; color:var(--ink-3); font-size:13px; font-family:var(--narrow);">One rubric for everyone. A neighborhood service business and an AI product are scored against the same five criteria — no category is graded on a curve, and no judge is asked to weigh "scalability" against a business meant to serve one town well.</p>
+        <p style="margin-top:20px; color:var(--ink-3); font-size:13px; font-family:var(--narrow);">The full category-by-category rubric for both stages is published below — <a href="#scoring">see §&nbsp;06, Scoring</a>. Nothing is scored on anything that isn't on it.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ============ SCORING RUBRIC ============ -->
+<section id="scoring">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="index">§ 06 — Scoring</div>
+      <h2>Fifty points to make the cut. Fifty more <span class="accent">on the stage.</span></h2>
+    </div>
+
+    <p class="rubric-lede">
+      Scoring happens in two rounds, on two published rubrics. The first is for everybody: every application submitted by the Nov 2 deadline is scored on the screening rubric, and the ten highest-scoring teams become the finalists. The second rubric is used only at the live final, and only those ten teams are scored on it. Each round is worth 50 points, and every category is worth 10.
+    </p>
+    <p class="rubric-lede tail">
+      <strong>The two scores are completely separate — your screening score does not carry into the final.</strong> Screening decides who gets on stage and nothing more. Squeaking into the ten costs you nothing there, and topping the screening round buys you nothing either: all ten finalists start the final at zero.
+    </p>
+
+    <div class="rubric">
+      <div class="rubric-head">
+        <div>
+          <div class="stage">Round one · Initial screening</div>
+          <h3>Elevator pitch</h3>
+        </div>
+        <div class="max">50<span>pts</span></div>
+      </div>
+      <div class="rubric-who"><strong>Everyone</strong> Every application submitted by the deadline is scored on this rubric. The ten highest scorers advance to the final.</div>
+      <table>
+        <thead>
+          <tr><th scope="col">Category</th><th scope="col">Description</th><th scope="col" class="pts-head">Possible points</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Clean formatting</th>
+            <td class="desc">Fonts, layout, sentence and paragraph structure.</td>
+            <td class="pts">10</td>
+          </tr>
+          <tr>
+            <th scope="row">Quality of writing</th>
+            <td class="desc">Professional, grammar, punctuation, etc.</td>
+            <td class="pts">10</td>
+          </tr>
+          <tr>
+            <th scope="row">Description of business idea</th>
+            <td class="desc">How likely is this idea going to become a real business (feasibility / viability)? Description of product or service? Market size and potential?</td>
+            <td class="pts">10</td>
+          </tr>
+          <tr>
+            <th scope="row">Rationale &amp; supporting information</th>
+            <td class="desc">How much, if any, supporting information was provided to justify the idea?</td>
+            <td class="pts">10</td>
+          </tr>
+          <tr>
+            <th scope="row">Initial slide deck draft / outline</th>
+            <td class="desc">Did the slide deck address all necessary components for the pitch?</td>
+            <td class="pts">10</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr><th scope="row">Total points</th><td class="desc"></td><td class="pts">50</td></tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <div class="rubric final">
+      <div class="rubric-head">
+        <div>
+          <div class="stage">Round two · Live final</div>
+          <h3>Final presentations</h3>
+        </div>
+        <div class="max">50<span>pts</span></div>
+      </div>
+      <div class="rubric-who"><strong>Finalists only</strong> Used on stage on Nov 20, scored only for the ten finalists selected in the screening round.</div>
+      <table>
+        <thead>
+          <tr><th scope="col">Category</th><th scope="col">Description</th><th scope="col" class="pts-head">Possible points</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Demeanor &amp; delivery</th>
+            <td class="desc">Appropriate language and logical flow? Supported by data and/or examples? Confidence and sincerity?</td>
+            <td class="pts">10</td>
+          </tr>
+          <tr>
+            <th scope="row">Problem–solution statement</th>
+            <td class="desc">Is the description of the proposed problem clear and the proposed solution viable?</td>
+            <td class="pts">10</td>
+          </tr>
+          <tr>
+            <th scope="row">Market analysis &amp; plan</th>
+            <td class="desc">Product/service described with market sizing and potential? Information and/or data on traction?</td>
+            <td class="pts">10</td>
+          </tr>
+          <tr>
+            <th scope="row">Conclusion</th>
+            <td class="desc">Was the "ask" specific, clear, and convincing?</td>
+            <td class="pts">10</td>
+          </tr>
+          <tr>
+            <th scope="row">Quality &amp; clarity of slide deck</th>
+            <td class="desc">Formatting, easy to read and understand, thorough with supporting data and information.</td>
+            <td class="pts">10</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr><th scope="row">Total points</th><td class="desc"></td><td class="pts">50</td></tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <p style="margin-top:32px; color:var(--ink-3); font-size:14px; max-width:66ch;">
+      One rubric for everyone. A neighborhood service business and an AI product are scored against the same categories — no category is graded on a curve, and no judge is asked to weigh "scalability" against a business meant to serve one town well. The People's Choice award is decided by the live audience vote and sits outside these rubrics.
+    </p>
   </div>
 </section>
 
@@ -970,7 +1143,7 @@
 <section id="finalists">
   <div class="wrap">
     <div class="section-head">
-      <div class="index">§ 06 — Past finalists</div>
+      <div class="index">§ 07 — Past finalists</div>
       <h2>Two years of ventures that <span class="accent">walked off this stage.</span></h2>
     </div>
 
@@ -1086,7 +1259,7 @@
 <section id="faq">
   <div class="wrap">
     <div class="section-head">
-      <div class="index">§ 07 — FAQ</div>
+      <div class="index">§ 08 — FAQ</div>
       <h2>Common <span class="accent">questions.</span></h2>
     </div>
 

@@ -35,7 +35,8 @@ Major sections, in order, marked with HTML comments:
 - `THE ROOM` — the "Diablo Valley, not Silicon Valley" statement band (`.valley-statement`) + the Main Street / science-and-product columns (`.kinds`)
 - `TIMELINE` — Sept 15 → Nov 20
 - `PRIZES` — four cash prizes
-- `JUDGING + WINNERS` — past judges, scoring criteria
+- `JUDGING + CRITERIA` — past judges, how scoring works
+- `SCORING RUBRIC` — the two published rubrics (screening elevator pitch, final presentations), 50 points each
 - `PAST WINNERS` — 2025 results
 - `FAQ` — accordion
 - `APPLY` — bottom CTA
@@ -52,6 +53,7 @@ Major sections, in order, marked with HTML comments:
 - **Positioning** — the "Diablo Valley, not Silicon Valley" argument lives in one place, `.valley-statement`. The About section deliberately defers to it rather than repeating it.
 - **Change the application link** — search for `Start application` and replace the `href="#"` with the real URL (e.g. a Google Form or Typeform).
 - **Update prize amounts** — find the `prizes-grid` block. Each `.prize` card has an `.amount` div.
+- **Edit the scoring rubrics** — find the `SCORING RUBRIC` section. Each stage is a `.rubric` block (`.rubric.final` is the green live-final variant) wrapping one `<table>`: category `<th>`, `td.desc`, and `td.pts`. If you change point values, update the `tfoot` total and the `.rubric-head .max` badge to match.
 - **Swap accent color** — change the `--accent` and `--accent-ink` CSS custom properties at the top of the `<style>` block.
 - **Edit the FAQ** — each Q is a `<details>` element; the `<summary>` is the question, the `<p>` is the answer.
 
