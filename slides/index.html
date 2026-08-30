@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The 4CD Pitch Competition — slides</title>
+<link rel="icon" href="../assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800;900&family=Archivo+Narrow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #01775b; --green-deep: #015a45;
+    --sage: #b5dbaf; --sage-soft: #d6ecd2;
+    --navy: #1a3a6c; --navy-deep: #122a4e;
+    --periwinkle: #9aa6d6; --periwinkle-soft: #c5cce8;
+    --paper: #fbfaf5; --bone: #f3f1ea;
+    --ink: #0e1d2c; --ink-2: #36465a; --ink-3: #6b7787;
+    --rule: rgba(26,58,108,0.15);
+    --display: "Anton", Impact, sans-serif;
+    --sans: "Archivo", system-ui, sans-serif;
+    --narrow: "Archivo Narrow", "Archivo", sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; background: #0a1520; overflow: hidden; }
+  body { font-family: var(--sans); color: var(--ink); -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { font-family: var(--display); font-weight: 400; text-transform: uppercase; letter-spacing: 0.005em; }
+
+  .deck { position: fixed; inset: 0; display: grid; place-items: center; }
+  .stage { width: 1280px; height: 720px; position: relative; transform-origin: center center; box-shadow: 0 24px 80px rgba(0,0,0,0.5); }
+  .slide {
+    position: absolute; inset: 0; background: var(--paper);
+    display: none; flex-direction: column; overflow: hidden;
+  }
+  .slide.on { display: flex; }
+
+  /* ---- shared furniture ---- */
+  .head { padding: 44px 64px 0; display: flex; align-items: baseline; gap: 20px; }
+  .head .ix { font-family: var(--narrow); font-weight: 700; font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green); white-space: nowrap; }
+  .head h2 { font-size: 58px; line-height: 0.94; color: var(--navy); }
+  .head h2 .ac { color: var(--green); }
+  .main { flex: 1; padding: 34px 64px 56px; display: flex; flex-direction: column; justify-content: center; gap: 26px; }
+  .lede { font-size: 22px; line-height: 1.45; color: var(--ink-2); max-width: 66ch; }
+  .kick { font-family: var(--narrow); font-weight: 700; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green); }
+  .foot-note { font-family: var(--narrow); font-size: 15px; color: var(--ink-3); line-height: 1.45; }
+  .slide .stamp {
+    position: absolute; right: 30px; bottom: 22px;
+    font-family: var(--narrow); font-weight: 700; font-size: 12px;
+    letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-3);
+  }
+  .slide.dark .stamp { color: rgba(255,255,255,0.45); }
+
+  /* ---- cover / closing ---- */
+  .cover { background: var(--green); color: var(--sage); padding: 68px 72px; justify-content: space-between; }
+  .cover .brand { display: flex; align-items: center; gap: 16px; }
+  .cover .brand img { width: 58px; height: 58px; }
+  .cover .brand span { font-family: var(--narrow); font-weight: 700; font-size: 20px; letter-spacing: 0.16em; text-transform: uppercase; color: #fff; }
+  .cover h1 { font-size: 104px; line-height: 0.86; color: var(--sage); }
+  .cover h1 em { font-style: normal; color: var(--periwinkle-soft); }
+  .cover .strap { display: flex; align-items: flex-end; gap: 40px; }
+  .cover .strap .when { font-family: var(--display); font-size: 54px; line-height: 0.9; color: #fff; }
+  .cover .strap .where { font-family: var(--narrow); font-size: 18px; line-height: 1.5; color: var(--sage-soft); }
+  .cover .strap .url { margin-left: auto; font-family: var(--display); font-size: 40px; color: var(--periwinkle-soft); }
+
+  /* ---- panels & grids ---- */
+  .cols2 { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; }
+  .cols3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .panel { border: 2px solid var(--navy); background: var(--bone); padding: 24px 26px 26px; }
+  .panel h3 { font-family: var(--narrow); font-weight: 700; font-size: 15px; letter-spacing: 0.14em; color: var(--navy); margin-bottom: 14px; }
+  .panel ul { list-style: none; }
+  .panel li { font-family: var(--narrow); font-size: 18px; line-height: 1.55; color: var(--ink-2); padding-left: 18px; position: relative; }
+  .panel li::before { content: ""; position: absolute; left: 0; top: 13px; width: 9px; height: 2px; background: var(--green); }
+
+  .rows { border-top: 1px solid var(--rule); }
+  .row { display: grid; grid-template-columns: 190px 1fr; gap: 26px; padding: 14px 0; border-bottom: 1px solid var(--rule); align-items: baseline; }
+  .row .d { font-family: var(--display); font-size: 30px; line-height: 1; color: var(--navy); }
+  .row.hot .d { color: var(--green); }
+  .row .t b { display: block; font-family: var(--narrow); font-weight: 700; font-size: 17px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); }
+  .row .t span { font-family: var(--narrow); font-size: 17px; color: var(--ink-2); line-height: 1.45; }
+
+  .prizes { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 12px; }
+  .prz { border: 2px solid var(--navy); background: var(--paper); padding: 22px 20px 24px; }
+  .prz.win { background: var(--green); border-color: var(--green); }
+  .prz .p { font-family: var(--narrow); font-weight: 700; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-3); }
+  .prz.win .p { color: var(--sage-soft); }
+  .prz .a { font-family: var(--display); font-size: 56px; line-height: 0.92; color: var(--navy); margin: 8px 0 2px; }
+  .prz.win .a { color: var(--sage); }
+  .prz .n { font-family: var(--narrow); font-weight: 700; font-size: 14px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--navy); }
+  .prz.win .n { color: var(--sage); }
+
+  .scorecard { border: 2px solid var(--navy); }
+  .scorecard.g { border-color: var(--green); }
+  .scorecard .sh { background: var(--navy); color: #fff; padding: 14px 20px; display: flex; align-items: baseline; gap: 14px; }
+  .scorecard.g .sh { background: var(--green); }
+  .scorecard .sh b { font-family: var(--display); font-weight: 400; font-size: 24px; text-transform: uppercase; }
+  .scorecard .sh i { font-style: normal; margin-left: auto; font-family: var(--display); font-size: 26px; }
+  .scorecard .sh em { font-style: normal; font-family: var(--narrow); font-weight: 700; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; opacity: .85; }
+  .scorecard ol { list-style: none; background: var(--bone); padding: 6px 20px 14px; }
+  .scorecard li { font-family: var(--narrow); font-size: 17px; line-height: 1.5; color: var(--ink-2); padding: 7px 0; border-bottom: 1px solid var(--rule); display: flex; gap: 12px; }
+  .scorecard li:last-child { border-bottom: none; }
+  .scorecard li b { color: var(--navy); font-weight: 700; }
+  .scorecard li span { margin-left: auto; font-family: var(--display); font-size: 20px; color: var(--navy); }
+  .scorecard.g li span { color: var(--green); }
+
+  .wins { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+  .win-cell { border: 1px solid var(--rule); margin: 0 0 0 -1px; padding: 18px 20px 20px; background: var(--paper); }
+  .win-cell:first-child { margin-left: 0; }
+  .win-cell .badge { display: inline-block; font-family: var(--narrow); font-weight: 700; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; padding: 4px 8px; margin-bottom: 10px; }
+  .b1 { background: var(--green); color: var(--sage); }
+  .b2 { background: var(--navy); color: var(--periwinkle); }
+  .b3 { background: var(--periwinkle); color: var(--navy); }
+  .bp { background: var(--sage); color: var(--green-deep); }
+  .win-cell h4 { font-family: var(--narrow); font-weight: 800; font-size: 21px; color: var(--navy); line-height: 1.1; }
+  .win-cell p { font-family: var(--narrow); font-size: 15px; color: var(--ink-2); line-height: 1.45; margin-top: 6px; }
+
+  .shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .shots figure { margin: 0; }
+  .shots img { width: 100%; aspect-ratio: 3/2; object-fit: cover; display: block; border: 2px solid var(--navy); }
+  .shots figcaption { font-family: var(--narrow); font-size: 14px; color: var(--ink-3); line-height: 1.4; margin-top: 8px; }
+  .shots figcaption b { display: block; font-weight: 700; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--navy); }
+
+  .qa { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 44px; }
+  .qa div { padding: 11px 0; border-top: 1px solid var(--rule); }
+  .qa b { display: block; font-family: var(--narrow); font-weight: 700; font-size: 17px; color: var(--navy); }
+  .qa span { font-family: var(--narrow); font-size: 16px; color: var(--ink-2); line-height: 1.45; }
+
+  .slide.navy { background: var(--navy-deep); }
+  .slide.navy .head h2 { color: #fff; }
+  .slide.navy .head h2 .ac { color: var(--sage); }
+  .slide.navy .head .ix { color: var(--sage); }
+  .slide.navy .lede { color: var(--periwinkle-soft); }
+  .discord { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; align-items: start; }
+  .discord ul { list-style: none; }
+  .discord li { font-family: var(--narrow); font-size: 19px; line-height: 1.5; color: var(--periwinkle-soft); padding: 10px 0 10px 20px; border-top: 1px solid rgba(255,255,255,0.14); position: relative; }
+  .discord li::before { content: ""; position: absolute; left: 0; top: 20px; width: 10px; height: 2px; background: var(--sage); }
+  .bigurl { font-family: var(--display); font-size: 66px; line-height: 0.95; color: #fff; }
+  .bigurl small { display: block; font-family: var(--narrow); font-weight: 400; font-size: 18px; letter-spacing: 0; text-transform: none; color: var(--periwinkle-soft); margin-top: 10px; line-height: 1.5; }
+
+  /* ---- chrome ---- */
+  .hud {
+    position: fixed; left: 0; right: 0; bottom: 0; height: 46px;
+    display: flex; align-items: center; gap: 16px; padding: 0 18px;
+    font-family: var(--narrow); font-weight: 600; font-size: 12px;
+    letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.5);
+    opacity: 0; transition: opacity .2s; pointer-events: none;
+  }
+  .deck:hover .hud, .hud.show { opacity: 1; pointer-events: auto; }
+  .hud button {
+    font: inherit; letter-spacing: inherit; text-transform: inherit;
+    background: transparent; color: rgba(255,255,255,0.65);
+    border: 1px solid rgba(255,255,255,0.3); padding: 5px 11px; cursor: pointer;
+  }
+  .hud button:hover { color: #fff; border-color: #fff; }
+  .hud .count { margin-left: auto; color: rgba(255,255,255,0.75); }
+  .bar { position: fixed; left: 0; bottom: 0; height: 3px; background: var(--sage); transition: width .18s; }
+
+  @media print {
+    html, body { overflow: visible; background: #fff; height: auto; }
+    @page { size: 13.333in 7.5in; margin: 0; }
+    .deck { position: static; display: block; }
+    .stage { width: 1280px; height: 720px; transform: none !important; box-shadow: none; }
+    .slide { position: relative; display: flex !important; page-break-after: always; break-after: page; }
+    .hud, .bar { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="deck" id="deck">
+<div class="stage" id="stage">
+
+  <!-- 1 · COVER -->
+  <section class="slide cover dark on">
+    <div class="brand">
+      <img src="../assets/dvc-logo-simple.svg" alt="">
+      <span>The 4CD Pitch Competition</span>
+    </div>
+    <h1>Pitch your idea<br>to the <em>Diablo Valley.</em></h1>
+    <div class="strap">
+      <div class="when">Nov 20<br>2026</div>
+      <div class="where">
+        Friday · Diablo Room<br>
+        Diablo Valley College, Pleasant Hill campus<br>
+        Doors 8:30am · Pitches 9:00am · Free and open to the public
+      </div>
+      <div class="url">4cdpitch.com</div>
+    </div>
+  </section>
+
+  <!-- 2 · ABOUT -->
+  <section class="slide">
+    <div class="head"><span class="ix">§ 01</span><h2>This is a <span class="ac">4CD competition.</span></h2></div>
+    <div class="main">
+      <p class="lede">If you are enrolled in a Contra Costa Community College District course — any course, at any of our colleges — you are eligible to apply. One class is enough. Enroll, then apply.</p>
+      <div class="cols2">
+        <div class="panel">
+          <h3>THE THREE COLLEGES</h3>
+          <ul>
+            <li>Contra Costa College — San Pablo</li>
+            <li>Diablo Valley College — Pleasant Hill &amp; San Ramon</li>
+            <li>Los Medanos College — Pittsburg &amp; Brentwood</li>
+            <li>Districtwide Community Education</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>WHO THAT INCLUDES</h3>
+          <ul>
+            <li>Credit students, full-time or part-time</li>
+            <li>Dual-enrolled high school students</li>
+            <li>Community members in a non-credit class</li>
+            <li>No citizenship or status requirements</li>
+          </ul>
+        </div>
+      </div>
+      <p class="foot-note">There are no tracks and no categories. Everyone fills out the same form and stands on the same stage.</p>
+    </div>
+    <div class="stamp">4cdpitch.com</div>
+  </section>
+
+  <!-- 3 · THE ROOM -->
+  <section class="slide">
+    <div class="head"><span class="ix">§ 02</span><h2>Diablo Valley, <span class="ac">not Silicon Valley.</span></h2></div>
+    <div class="main">
+      <p class="lede">A nail salon expansion and an AI product go into the same pile, in front of the same panel, scored against the same criteria. We are actively recruiting range.</p>
+      <div class="cols2">
+        <div class="panel">
+          <h3>MAIN STREET</h3>
+          <ul>
+            <li>Restaurants, food trucks, cafés, breweries</li>
+            <li>Salons, childcare, cleaning, repair shops</li>
+            <li>Landscaping, construction, and the trades</li>
+            <li>Retail, bookkeeping, and local services</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>SCIENCE &amp; PRODUCT</h3>
+          <ul>
+            <li>Biotech and health tech</li>
+            <li>Software, apps, and AI</li>
+            <li>Aviation and industry</li>
+            <li>Hardware and climate</li>
+          </ul>
+        </div>
+      </div>
+      <p class="foot-note">No technical co-founder, prototype, or growth chart required.</p>
+    </div>
+    <div class="stamp">4cdpitch.com</div>
+  </section>
+
+  <!-- 4 · TIMELINE -->
+  <section class="slide">
+    <div class="head"><span class="ix">§ 03</span><h2>The road to <span class="ac">Nov 20.</span></h2></div>
+    <div class="main">
+      <div class="rows">
+        <div class="row"><div class="d">Sept 15</div><div class="t"><b>Applications open</b><span>Start a draft, save it, come back. Not enrolled yet? This is the window.</span></div></div>
+        <div class="row hot"><div class="d">Nov 2</div><div class="t"><b>Deadline · 11:59pm PT</b><span>Monday. A short description of the idea and a deck of no more than 15 slides. Late entries are not accepted.</span></div></div>
+        <div class="row"><div class="d">Nov 6</div><div class="t"><b>The 10 finalists announced</b><span>Two reviewers per application; the ten highest-scoring teams advance.</span></div></div>
+        <div class="row"><div class="d">Nov 6 → 20</div><div class="t"><b>Two weeks of mentoring</b><span>Deck reviews, pitch coaching, financial-model review, and dry runs in the actual venue.</span></div></div>
+        <div class="row hot"><div class="d">Nov 20</div><div class="t"><b>The live final</b><span>Three minutes to pitch, two minutes of questions. Audience vote runs throughout.</span></div></div>
+      </div>
+    </div>
+    <div class="stamp">4cdpitch.com</div>
+  </section>
+
+  <!-- 5 · PRIZES -->
+  <section class="slide">
+    <div class="head"><span class="ix">§ 04</span><h2>Cash prizes, mentorship, and a <span class="ac">real audience.</span></h2></div>
+    <div class="main">
+      <div class="prizes">
+        <div class="prz win"><div class="p">Grand prize</div><div class="a">$1,000</div><div class="n">First place</div></div>
+        <div class="prz"><div class="p">Runner-up</div><div class="a">$500</div><div class="n">Second</div></div>
+        <div class="prz"><div class="p">Third</div><div class="a">$250</div><div class="n">Third place</div></div>
+        <div class="prz"><div class="p">Audience vote</div><div class="a">$50</div><div class="n">People's Choice</div></div>
+      </div>
+      <p class="foot-note">Amounts shown are the 2025 finals; the 2026 districtwide edition scales prizes to the expanded field, confirmed when finalists are named. First place also gets an introduction round to local investors, lenders, and small-business advisors — and every finalist keeps 100% of their venture, IP, and equity.</p>
+    </div>
+    <div class="stamp">4cdpitch.com</div>
+  </section>
+
+  <!-- 6 · SCORING -->
+  <section class="slide">
+    <div class="head"><span class="ix">§ 05 — 06</span><h2>Fifty points to make the cut. Fifty more <span class="ac">on the stage.</span></h2></div>
+    <div class="main">
+      <div class="cols2">
+        <div class="scorecard">
+          <div class="sh"><b>Elevator pitch</b><em>Everyone</em><i>50</i></div>
+          <ol>
+            <li><b>Clean formatting</b><span>10</span></li>
+            <li><b>Quality of writing</b><span>10</span></li>
+            <li><b>Description of business idea</b><span>10</span></li>
+            <li><b>Rationale &amp; supporting info</b><span>10</span></li>
+            <li><b>Slide deck draft / outline</b><span>10</span></li>
+          </ol>
+        </div>
+        <div class="scorecard g">
+          <div class="sh"><b>Final presentations</b><em>Finalists only</em><i>50</i></div>
+          <ol>
+            <li><b>Demeanor &amp; delivery</b><span>10</span></li>
+            <li><b>Problem–solution statement</b><span>10</span></li>
+            <li><b>Market analysis &amp; plan</b><span>10</span></li>
+            <li><b>Conclusion — the "ask"</b><span>10</span></li>
+            <li><b>Quality &amp; clarity of deck</b><span>10</span></li>
+          </ol>
+        </div>
+      </div>
+      <p class="foot-note"><strong>The two scores are completely separate.</strong> Screening decides who gets on stage and nothing more — all ten finalists start the final at zero. People's Choice is a live audience vote and sits outside both rubrics.</p>
+    </div>
+    <div class="stamp">4cdpitch.com</div>
+  </section>
+
+  <!-- 7 · FINALISTS -->
+  <section class="slide">
+    <div class="head"><span class="ix">§ 07</span><h2>Two years of ventures that <span class="ac">walked off this stage.</span></h2></div>
+    <div class="main">
+      <div class="kick">2025 · 4CD districtwide final</div>
+      <div class="wins">
+        <div class="win-cell"><span class="badge b1">1st · $1,000</span><h4>WellPulse</h4><p>Anonymous, QR-code based wellness surveys. Now piloting at the county and BART level.</p></div>
+        <div class="win-cell"><span class="badge b2">2nd · $500</span><h4>Leftoverly</h4><p>Helping restaurants cut food waste by selling surplus meals affordably.</p></div>
+        <div class="win-cell"><span class="badge b3">3rd · $250</span><h4>Scholarise</h4><p>Scholarship, internship, and coursework tracking for community college students.</p></div>
+        <div class="win-cell"><span class="badge bp">People's Choice</span><h4>Garydian Angel</h4><p>A voice-activated wristband for calm, family-centered safety alerts.</p></div>
+      </div>
+      <p class="foot-note">2024 · DVC Business Pitch Competition — first place went to <strong>Scholarise.org</strong>, from a field that also included an app detecting scam calls, a plush-doll brand celebrating children's heritage, and clinical triage software.</p>
+    </div>
+    <div class="stamp">4cdpitch.com</div>
+  </section>
+
+  <!-- 8 · GALLERY -->
+  <section class="slide">
+    <div class="head"><span class="ix">§ 08</span><h2>What the room actually <span class="ac">looks like.</span></h2></div>
+    <div class="main">
+      <div class="shots">
+        <figure>
+          <img src="../assets/images/event/event-2024-01-800.webp" alt="A wide view of the Diablo Room from the back during the closing slides, with the judging table at the front.">
+          <figcaption><b>Closing slides</b>Judges' table at the front, audience in rows.</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/images/event/event-2024-05-800.webp" alt="Three members of the Scholarise.org team holding an oversized $500 check with an organizer.">
+          <figcaption><b>Scholarise.org</b>First place, $500, 2024.</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/images/event/event-2024-06-800.webp" alt="A student jazz combo with upright bass, guitar and drums playing at the side of the room.">
+          <figcaption><b>The reception</b>Played out by a student combo.</figcaption>
+        </figure>
+      </div>
+      <p class="foot-note">Diablo Room · Pleasant Hill campus · November 22, 2024. The full gallery is on the site.</p>
+    </div>
+    <div class="stamp">4cdpitch.com</div>
+  </section>
+
+  <!-- 9 · FAQ -->
+  <section class="slide">
+    <div class="head"><span class="ix">§ 09</span><h2>The rules, <span class="ac">in brief.</span></h2></div>
+    <div class="main">
+      <div class="qa">
+        <div><b>Who can enter?</b><span>Anyone with one active 4CD enrollment — any course, credit or non-credit Community Education.</span></div>
+        <div><b>What do I submit?</b><span>A short description of the business idea and a slide presentation of no more than 15 slides. No video.</span></div>
+        <div><b>How big can a team be?</b><span>No more than five people. Solo founders are permitted.</span></div>
+        <div><b>Can I pitch a business I already run?</b><span>Yes, if it has less than $25,000 in total assets or annual revenue.</span></div>
+        <div><b>I entered before. Can I come back?</b><span>Yes — including past winners. The new submission must be a different concept.</span></div>
+        <div><b>Can I submit more than once?</b><span>Yes. But a finalist pitches only once at the live event, solo or on a team.</span></div>
+        <div><b>Do I keep my idea?</b><span>100% of your venture, IP, and equity. The competition takes no equity and no fees.</span></div>
+        <div><b>Can the public come?</b><span>Yes. The final is free, and attendance requires no enrollment of any kind.</span></div>
+      </div>
+    </div>
+    <div class="stamp">4cdpitch.com</div>
+  </section>
+
+  <!-- 10 · COMMUNITY -->
+  <section class="slide navy dark">
+    <div class="head"><span class="ix">§ 10</span><h2>You don't have to wait for <span class="ac">the deadline.</span></h2></div>
+    <div class="main">
+      <div class="discord">
+        <div>
+          <p class="lede">The Discord is where applicants ask the organizers questions, find a co-founder, get a deck torn apart before a judge sees it, and hear about workshops and office hours first.</p>
+        </div>
+        <ul>
+          <li>Find teammates and co-founders across all three colleges</li>
+          <li>Deck feedback and practice-pitch threads</li>
+          <li>Workshop and office-hours announcements</li>
+          <li>Direct line to the organizers</li>
+        </ul>
+      </div>
+    </div>
+    <div class="stamp">discord — link on 4cdpitch.com</div>
+  </section>
+
+  <!-- 11 · CLOSING -->
+  <section class="slide navy dark">
+    <div class="main" style="justify-content: center; gap: 34px;">
+      <div class="bigurl">4cdpitch.com
+        <small>Full rules, both scoring rubrics, past winners, the photo gallery, printable flyers, and the application.</small>
+      </div>
+      <div class="rows" style="border-top-color: rgba(255,255,255,0.18);">
+        <div class="row" style="border-bottom-color: rgba(255,255,255,0.18);"><div class="d" style="color:var(--sage)">Nov 2</div><div class="t"><b style="color:#fff">Applications close · 11:59pm PT</b><span style="color:var(--periwinkle-soft)">A short description of the idea, and no more than 15 slides.</span></div></div>
+        <div class="row" style="border-bottom-color: rgba(255,255,255,0.18);"><div class="d" style="color:var(--sage)">Nov 6</div><div class="t"><b style="color:#fff">The 10 finalists announced</b><span style="color:var(--periwinkle-soft)">Then two full weeks of mentoring.</span></div></div>
+        <div class="row" style="border-bottom-color: rgba(255,255,255,0.18);"><div class="d" style="color:var(--sage)">Nov 20</div><div class="t"><b style="color:#fff">The live final · Diablo Room, DVC</b><span style="color:var(--periwinkle-soft)">Doors 8:30am, pitches 9:00am. Free and open to the public.</span></div></div>
+      </div>
+    </div>
+    <div class="stamp">The 4CD Pitch Competition · 2026</div>
+  </section>
+
+</div>
+
+<div class="hud" id="hud">
+  <button type="button" data-go="prev">← Prev</button>
+  <button type="button" data-go="next">Next →</button>
+  <button type="button" data-go="full">Full screen</button>
+  <button type="button" data-go="print">Print</button>
+  <span class="count" id="count"></span>
+</div>
+<div class="bar" id="bar"></div>
+</div>
+
+<script>
+(function () {
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var stage = document.getElementById('stage');
+  var deck = document.getElementById('deck');
+  var count = document.getElementById('count');
+  var bar = document.getElementById('bar');
+  var at = 0;
+
+  function fit() {
+    var k = Math.min(window.innerWidth / 1280, window.innerHeight / 720) * 0.96;
+    stage.style.transform = 'scale(' + k + ')';
+  }
+
+  function go(n, push) {
+    at = Math.max(0, Math.min(slides.length - 1, n));
+    slides.forEach(function (s, i) { s.classList.toggle('on', i === at); });
+    count.textContent = (at + 1) + ' / ' + slides.length;
+    bar.style.width = ((at + 1) / slides.length * 100) + '%';
+    if (push !== false) history.replaceState(null, '', '#' + (at + 1));
+  }
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') { e.preventDefault(); go(at + 1); }
+    else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); go(at - 1); }
+    else if (e.key === 'Home') { e.preventDefault(); go(0); }
+    else if (e.key === 'End') { e.preventDefault(); go(slides.length - 1); }
+    else if (e.key === 'f') { toggleFull(); }
+  });
+
+  stage.addEventListener('click', function (e) {
+    go(at + (e.clientX < window.innerWidth / 3 ? -1 : 1));
+  });
+
+  function toggleFull() {
+    if (document.fullscreenElement) document.exitFullscreen();
+    else document.documentElement.requestFullscreen().catch(function () {});
+  }
+
+  document.getElementById('hud').addEventListener('click', function (e) {
+    var act = e.target.getAttribute && e.target.getAttribute('data-go');
+    if (!act) return;
+    e.stopPropagation();
+    if (act === 'next') go(at + 1);
+    else if (act === 'prev') go(at - 1);
+    else if (act === 'full') toggleFull();
+    else if (act === 'print') window.print();
+  });
+
+  window.addEventListener('resize', fit);
+  fit();
+  go(Math.max(0, (parseInt(location.hash.slice(1), 10) || 1) - 1), false);
+})();
+</script>
+</body>
+</html>

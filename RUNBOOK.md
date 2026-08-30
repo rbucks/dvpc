@@ -1,7 +1,7 @@
 # Annual runbook — resetting the site for a new competition year
 
-Everything the site needs for a new cycle lives in three places: `index.html`,
-`assets/images/event/`, and `flyers/`. There is no build step, no framework, and
+Everything the site needs for a new cycle lives in four places: `index.html`,
+`assets/images/event/`, `flyers/`, and `slides/`. There is no build step, no framework, and
 no CMS. Edit, preview locally, commit, push — GitHub Pages serves `main` at
 [4cdpitch.com](https://www.4cdpitch.com).
 
@@ -254,6 +254,70 @@ competition?"), so keep them exactly as they are and the links keep working.
 
 ---
 
+## Phase 6b — Update the slide deck
+
+`slides/index.html` is one self-contained file: eleven 16:9 slides, one per nav
+section, plus a cover and a closing card. Like the flyers, it carries its own
+copy of the palette and does **not** read `index.html` — every date, rule, and
+prize has to be changed here too.
+
+Open it at <http://localhost:8777/slides/>. Arrow keys or space advance,
+<kbd>F</kbd> is full screen, `#7` in the URL jumps to slide 7.
+
+### What's on each slide
+
+| # | Slide | Pulls from |
+|---|---|---|
+| 1 | Cover | Hero + save-the-date card |
+| 2 | About | § 01 — eligibility, the three colleges |
+| 3 | The Room | § 02 — Main Street vs science & product |
+| 4 | Timeline | § 03 — all five dates |
+| 5 | Prizes | § 04 — four prize cards + caveat |
+| 6 | Scoring | § 05–06 — both rubrics, five categories each |
+| 7 | Finalists | § 07 — last year's four winners |
+| 8 | Gallery | § 08 — three photos from `assets/images/event/` |
+| 9 | FAQ | § 09 — eight rules as Q&A |
+| 10 | Community | Discord and what it's for |
+| 11 | Closing | URL + the three key dates |
+
+### What to change each year
+
+- **Slides 1, 4, 11** carry dates. Slide 11 repeats the three key dates, so it
+  is the easiest one to forget.
+- **Slide 5** must match the prize cards in `index.html` and both flyers.
+- **Slide 9** must match the `.rules-strip` panel and the FAQ.
+- **Slide 7** needs last year's winners moved in — same content you wrote in
+  Phase 4, cut to one sentence each.
+- **Slide 8** needs three new photo filenames from Phase 5. It uses the
+  `-800.webp` variants; the paths are relative (`../assets/images/event/…`).
+- **Slide 6** only changes if the official rubric changes.
+
+### Check nothing overflows
+
+Slides silently clip at 720px. With the deck open, in the console:
+
+```js
+[...document.querySelectorAll('.slide')]
+  .map((s, i) => [i + 1, s.scrollHeight])
+  .filter(([, h]) => h > 720)
+```
+
+Must return an empty array. If a slide is over, cut a bullet — don't shrink the
+type below 15px, because it has to read from the back of a room.
+
+### Presenting and exporting
+
+The deck is meant to be presented from the browser, full screen. The **Print**
+button in the bottom bar (or ⌘P) lays it out one slide per page in landscape —
+"Save as PDF" from there gives you a shareable deck. Turn on "Background
+graphics" in the print dialog or every slide comes out white.
+
+The deck is linked from the FAQ ("Is there a flyer I can print about this
+competition?"), and the URL `4cdpitch.com/slides/` depends on the file staying
+at `slides/index.html`. Don't rename it.
+
+---
+
 ## Phase 7 — Judges, mentors, and sponsors
 
 - `§ 05 — How it's judged` has a `.panel-list` of past judges. Add the previous
@@ -279,7 +343,7 @@ Then click through the live-ish local copy at three widths — 375px, 880px, and
   should equal `clientWidth`)
 - The gallery lightbox opens, arrows work, Esc closes
 - Every FAQ `<details>` opens
-- The flyer links download the right files
+- The flyer links download the right files, and `/slides/` opens and pages through
 
 Then:
 
