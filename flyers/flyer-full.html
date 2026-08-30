@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The 4CD Pitch Competition — full-page flyer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800;900&family=Archivo+Narrow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  @page { size: 8.5in 11in; margin: 0; }
+  :root {
+    --green: #01775b; --green-deep: #015a45;
+    --sage: #b5dbaf; --sage-soft: #d6ecd2;
+    --navy: #1a3a6c; --navy-deep: #122a4e;
+    --periwinkle: #9aa6d6; --periwinkle-soft: #c5cce8;
+    --paper: #fbfaf5; --bone: #f3f1ea;
+    --ink: #0e1d2c; --ink-2: #36465a; --ink-3: #6b7787;
+    --rule: rgba(26,58,108,0.15);
+    --display: "Anton", Impact, sans-serif;
+    --sans: "Archivo", system-ui, sans-serif;
+    --narrow: "Archivo Narrow", "Archivo", sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #fff; }
+  body { font-family: var(--sans); color: var(--ink); -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { font-family: var(--display); font-weight: 400; text-transform: uppercase; letter-spacing: 0.005em; }
+
+  .sheet {
+    width: 8.5in; height: 11in; overflow: hidden;
+    background: var(--paper);
+    display: flex; flex-direction: column;
+    print-color-adjust: exact; -webkit-print-color-adjust: exact;
+  }
+
+  /* --- district bar --- */
+  .bar {
+    background: var(--navy-deep); color: var(--periwinkle);
+    font-family: var(--narrow); font-weight: 700;
+    font-size: 7pt; letter-spacing: 0.075em; text-transform: uppercase; white-space: nowrap;
+    padding: 0.12in 0.42in; display: flex; justify-content: space-between; gap: 0.2in;
+  }
+  .bar strong { color: #fff; font-weight: 700; }
+
+  /* --- hero --- */
+  .hero { background: var(--green); color: var(--sage); padding: 0.28in 0.45in 0.3in; }
+  .hero-top { display: flex; align-items: center; gap: 0.12in; margin-bottom: 0.2in; }
+  .hero-top img { width: 0.42in; height: 0.42in; }
+  .hero-top .wordmark {
+    font-family: var(--narrow); font-weight: 700; color: #fff;
+    font-size: 11pt; letter-spacing: 0.14em; text-transform: uppercase;
+  }
+  .hero-top .yr { margin-left: auto; font-family: var(--narrow); font-weight: 700; font-size: 9pt; letter-spacing: 0.16em; color: var(--sage-soft); }
+  .hero h1 { font-size: 60pt; line-height: 0.88; color: var(--sage); }
+  .hero h1 em { font-style: normal; color: var(--periwinkle-soft); }
+  .hero p { margin-top: 0.13in; font-size: 11pt; line-height: 1.45; color: var(--sage-soft); max-width: 6.4in; }
+
+  /* --- date strip --- */
+  .date-strip {
+    background: var(--navy); color: #fff;
+    padding: 0.2in 0.45in; display: flex; align-items: center; gap: 0.32in;
+  }
+  .date-strip .big { font-family: var(--display); font-size: 40pt; line-height: 0.85; color: var(--periwinkle-soft); white-space: nowrap; }
+  .date-strip .meta { font-family: var(--narrow); font-size: 9.5pt; line-height: 1.5; color: var(--periwinkle-soft); }
+  .date-strip .meta b { display: block; color: #fff; font-size: 11pt; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+  .date-strip .free {
+    margin-left: auto; text-align: right;
+    font-family: var(--narrow); font-weight: 700; font-size: 8.5pt;
+    letter-spacing: 0.14em; text-transform: uppercase; color: var(--sage);
+    border: 1.5pt solid var(--sage); padding: 0.09in 0.13in; line-height: 1.35;
+  }
+
+  /* --- body --- */
+  .body { flex: 1; padding: 0.26in 0.45in 0.08in; display: flex; flex-direction: column; gap: 0.18in; }
+  .kicker { font-family: var(--narrow); font-weight: 700; font-size: 8.5pt; letter-spacing: 0.16em; text-transform: uppercase; color: var(--green); margin-bottom: 0.1in; }
+
+  .facts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+  .fact { border: 0.75pt solid var(--rule); margin: 0 0 0 -0.75pt; padding: 0.14in 0.15in 0.16in; background: var(--bone); }
+  .fact:first-child { margin-left: 0; }
+  .fact h3 { font-family: var(--narrow); font-weight: 700; font-size: 8pt; letter-spacing: 0.13em; color: var(--navy); margin-bottom: 0.05in; }
+  .fact p { font-family: var(--narrow); font-size: 9pt; line-height: 1.4; color: var(--ink-2); }
+
+  .timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.16in; }
+  .tl { border-top: 2.5pt solid var(--navy); padding-top: 0.1in; }
+  .tl.hot { border-top-color: var(--green); }
+  .tl .d { font-family: var(--display); font-size: 21pt; line-height: 1; color: var(--navy); }
+  .tl.hot .d { color: var(--green); }
+  .tl .l { font-family: var(--narrow); font-weight: 700; font-size: 7.5pt; letter-spacing: 0.13em; text-transform: uppercase; color: var(--ink-3); margin-top: 0.05in; }
+  .tl .s { font-family: var(--narrow); font-size: 8.5pt; line-height: 1.35; color: var(--ink-2); margin-top: 0.04in; }
+
+  .prizes { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 0.08in; }
+  .prize { border: 1.5pt solid var(--navy); background: var(--paper); padding: 0.12in 0.13in 0.14in; }
+  .prize.first { background: var(--green); border-color: var(--green); }
+  .prize .p { font-family: var(--narrow); font-weight: 700; font-size: 7pt; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-3); }
+  .prize.first .p { color: var(--sage-soft); }
+  .prize .a { font-family: var(--display); font-size: 27pt; line-height: 0.95; color: var(--navy); margin-top: 0.03in; }
+  .prize.first .a { color: var(--sage); }
+  .prize .n { font-family: var(--narrow); font-weight: 700; font-size: 8pt; letter-spacing: 0.06em; text-transform: uppercase; color: var(--navy); }
+  .prize.first .n { color: var(--sage); }
+  .note { font-family: var(--narrow); font-size: 7.5pt; color: var(--ink-3); margin-top: 0.08in; line-height: 1.4; }
+
+  /* --- footer --- */
+  .foot {
+    margin-top: auto; background: var(--navy-deep); color: var(--periwinkle-soft);
+    padding: 0.22in 0.45in 0.24in; display: flex; align-items: center; gap: 0.3in;
+  }
+  .foot .url { font-family: var(--display); font-size: 34pt; line-height: 0.9; color: #fff; }
+  .foot .sub { font-family: var(--narrow); font-size: 9pt; line-height: 1.45; margin-top: 0.04in; }
+  .foot .right { margin-left: auto; text-align: right; font-family: var(--narrow); font-size: 8.5pt; line-height: 1.5; }
+  .foot .right b { display: block; color: var(--sage); font-weight: 700; font-size: 8.5pt; letter-spacing: 0.12em; text-transform: uppercase; }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <div class="bar">
+    <span>A program of the Contra Costa Community College District <strong>(4CD)</strong></span>
+    <span>Contra Costa College &nbsp;·&nbsp; Diablo Valley College &nbsp;·&nbsp; Los Medanos College</span>
+  </div>
+
+  <div class="hero">
+    <div class="hero-top">
+      <img src="../assets/dvc-logo-simple.svg" alt="">
+      <span class="wordmark">The 4CD Pitch Competition</span>
+      <span class="yr">2026</span>
+    </div>
+    <h1>Pitch your idea<br>to the <em>Diablo Valley.</em></h1>
+    <p>Cafés, breweries, and nail salons. Construction trades, aviation, and industry. Biotech, health tech, and software. Every kind of business this valley actually runs on belongs on this stage — and one 4CD class, credit or not, makes you eligible.</p>
+  </div>
+
+  <div class="date-strip">
+    <div class="big">Nov 20</div>
+    <div class="meta">
+      <b>The live final · Friday, 2026</b>
+      Diablo Room · Diablo Valley College, Pleasant Hill campus<br>
+      Doors 8:30am · Pitches 9:00am · Three minutes to pitch, two for questions
+    </div>
+    <div class="free">Free<br>&amp; open<br>to all</div>
+  </div>
+
+  <div class="body">
+
+    <div>
+      <div class="kicker">Who can enter, and what you submit</div>
+      <div class="facts">
+        <div class="fact">
+          <h3>ELIGIBILITY</h3>
+          <p>One active 4CD enrollment. Any course at CCC, DVC, or Los Medanos — including a non-credit Community Education class.</p>
+        </div>
+        <div class="fact">
+          <h3>THE APPLICATION</h3>
+          <p>A short description of the business idea, plus a slide presentation of no more than 15 slides. No video.</p>
+        </div>
+        <div class="fact">
+          <h3>YOUR TEAM</h3>
+          <p>Up to five people. Solo founders welcome. Enter more than once if you like — finalists pitch once.</p>
+        </div>
+        <div class="fact">
+          <h3>ALREADY TRADING?</h3>
+          <p>An existing business can enter if it has under $25,000 in total assets or annual revenue.</p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="kicker">The road to Nov 20</div>
+      <div class="timeline">
+        <div class="tl">
+          <div class="d">Sept 15</div>
+          <div class="l">Applications open</div>
+          <div class="s">Start a draft, save it, come back.</div>
+        </div>
+        <div class="tl hot">
+          <div class="d">Nov 2</div>
+          <div class="l">Deadline · 11:59pm PT</div>
+          <div class="s">Monday. Late entries are not accepted.</div>
+        </div>
+        <div class="tl">
+          <div class="d">Nov 6</div>
+          <div class="l">Top 10 named</div>
+          <div class="s">Two full weeks of mentoring follow.</div>
+        </div>
+        <div class="tl hot">
+          <div class="d">Nov 20</div>
+          <div class="l">Live final</div>
+          <div class="s">Ten teams. One stage. Audience vote.</div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="kicker">Cash prizes, mentorship, and a real audience</div>
+      <div class="prizes">
+        <div class="prize first">
+          <div class="p">Grand prize</div>
+          <div class="a">$1,000</div>
+          <div class="n">First place</div>
+        </div>
+        <div class="prize">
+          <div class="p">Runner-up</div>
+          <div class="a">$500</div>
+          <div class="n">Second</div>
+        </div>
+        <div class="prize">
+          <div class="p">Third</div>
+          <div class="a">$250</div>
+          <div class="n">Third place</div>
+        </div>
+        <div class="prize">
+          <div class="p">Audience vote</div>
+          <div class="a">$50</div>
+          <div class="n">People's Choice</div>
+        </div>
+      </div>
+      <p class="note">Amounts shown are the 2025 finals. The 2026 districtwide edition scales prizes to the expanded field; final amounts are confirmed when finalists are named. Every finalist is also paired with mentors for deck reviews, pitch coaching, and dry runs.</p>
+    </div>
+
+  </div>
+
+  <div class="foot">
+    <div>
+      <div class="url">4cdpitch.com</div>
+      <div class="sub">Full rules, the scoring rubrics, past winners, and the application.</div>
+    </div>
+    <div class="right">
+      <b>Questions?</b>
+      Join the Discord — link on the site.<br>
+      Find a co-founder, get your deck torn apart<br>before a judge ever sees it.
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

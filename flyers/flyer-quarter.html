@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The 4CD Pitch Competition — quarter-page flyer (4-up)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800;900&family=Archivo+Narrow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  @page { size: 8.5in 11in; margin: 0; }
+  :root {
+    --green: #01775b; --sage: #b5dbaf; --sage-soft: #d6ecd2;
+    --navy: #1a3a6c; --navy-deep: #122a4e;
+    --periwinkle-soft: #c5cce8;
+    --paper: #fbfaf5; --bone: #f3f1ea;
+    --ink: #0e1d2c; --ink-2: #36465a; --ink-3: #6b7787;
+    --cut: rgba(26,58,108,0.4);
+    --display: "Anton", Impact, sans-serif;
+    --sans: "Archivo", system-ui, sans-serif;
+    --narrow: "Archivo Narrow", "Archivo", sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #fff; }
+  body { font-family: var(--sans); color: var(--ink); -webkit-font-smoothing: antialiased; }
+  h1 { font-family: var(--display); font-weight: 400; text-transform: uppercase; letter-spacing: 0.005em; }
+
+  .page {
+    width: 8.5in; height: 11in; overflow: hidden;
+    display: grid; grid-template-columns: 4.25in 4.25in; grid-template-rows: 5.5in 5.5in;
+    print-color-adjust: exact; -webkit-print-color-adjust: exact;
+  }
+
+  /* Cut on the dashed lines: each card is exactly 4.25 x 5.5in. */
+  .card {
+    width: 4.25in; height: 5.5in; overflow: hidden;
+    background: var(--paper);
+    display: flex; flex-direction: column;
+    border-right: 0.5pt dashed var(--cut);
+    border-bottom: 0.5pt dashed var(--cut);
+  }
+  .card:nth-child(2n) { border-right: none; }
+  .card:nth-child(n+3) { border-bottom: none; }
+
+  .top { background: var(--green); color: var(--sage); padding: 0.17in 0.2in 0.19in; }
+  .top .brand { display: flex; align-items: center; gap: 0.08in; margin-bottom: 0.12in; }
+  .top .brand img { width: 0.26in; height: 0.26in; }
+  .top .brand span {
+    font-family: var(--narrow); font-weight: 700; color: #fff;
+    font-size: 7.5pt; letter-spacing: 0.13em; text-transform: uppercase;
+  }
+  .top .brand .yr { margin-left: auto; color: var(--sage-soft); letter-spacing: 0.15em; }
+  .top h1 { font-size: 26pt; line-height: 0.9; color: var(--sage); }
+  .top h1 em { font-style: normal; color: var(--periwinkle-soft); }
+
+  .when { background: var(--navy); color: var(--periwinkle-soft); padding: 0.13in 0.2in; display: flex; align-items: center; gap: 0.14in; }
+  .when .d { font-family: var(--display); font-size: 22pt; line-height: 0.85; color: #fff; white-space: nowrap; }
+  .when .t { font-family: var(--narrow); font-size: 7.5pt; line-height: 1.42; }
+  .when .t b { display: block; color: #fff; font-weight: 700; font-size: 8pt; letter-spacing: 0.09em; text-transform: uppercase; }
+
+  .body { flex: 1; padding: 0.17in 0.2in 0.14in; display: flex; flex-direction: column; }
+  .prizeline { margin-top: auto; border: 1pt solid var(--navy); background: var(--bone); padding: 0.1in 0.12in 0.11in; }
+  .prizeline .amts { font-family: var(--display); font-size: 15pt; line-height: 1; color: var(--navy); }
+  .prizeline .amts span { color: var(--green); }
+  .prizeline .lbl { font-family: var(--narrow); font-weight: 700; font-size: 6.5pt; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green); margin-bottom: 0.04in; }
+  .prizeline .fine { font-family: var(--narrow); font-size: 6.2pt; line-height: 1.35; color: var(--ink-3); margin-top: 0.04in; }
+  .body .kicker { font-family: var(--narrow); font-weight: 700; font-size: 6.5pt; letter-spacing: 0.15em; text-transform: uppercase; color: var(--green); margin-bottom: 0.1in; }
+  .body ul { list-style: none; }
+  .body li { font-family: var(--narrow); font-size: 8pt; line-height: 1.4; color: var(--ink-2); padding: 0.065in 0 0.065in 0.15in; position: relative; border-top: 0.5pt solid rgba(26,58,108,0.15); }
+  .body li:first-child { border-top: none; padding-top: 0; }
+  .body li::before { content: ""; position: absolute; left: 0; top: 0.115in; width: 0.07in; height: 1.5pt; background: var(--green); }
+  .body li:first-child::before { top: 0.05in; }
+  .body li b { color: var(--navy); font-weight: 700; }
+
+  .foot { background: var(--navy-deep); padding: 0.14in 0.2in 0.16in; }
+  .foot .url { font-family: var(--display); font-size: 20pt; line-height: 0.95; color: #fff; }
+  .foot .sub { font-family: var(--narrow); font-size: 7pt; line-height: 1.4; color: var(--periwinkle-soft); margin-top: 0.02in; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- CARD (repeated 4x — edit the template below and paste into all four) -->
+  <div class="card">
+    <div class="top">
+      <div class="brand">
+        <img src="../assets/dvc-logo-simple.svg" alt="">
+        <span>The 4CD Pitch Competition</span>
+        <span class="yr">2026</span>
+      </div>
+      <h1>Pitch your idea<br>to the <em>Diablo Valley.</em></h1>
+    </div>
+    <div class="when">
+      <div class="d">Nov 20</div>
+      <div class="t">
+        <b>The live final · Friday, 2026</b>
+        Diablo Room · DVC Pleasant Hill campus<br>
+        Pitches 9:00am · Free and open to the public
+      </div>
+    </div>
+    <div class="body">
+      <div class="kicker">How to enter</div>
+      <ul>
+        <li><b>One 4CD class makes you eligible.</b> Any course at Contra Costa College, DVC, or Los Medanos — credit or non-credit.</li>
+        <li><b>Apply by Mon, Nov 2, 11:59pm PT.</b> A short description of your idea and a deck of no more than 15 slides.</li>
+        <li><b>Teams of up to five, or go solo.</b> Any kind of business — a café, a trade, a clinic, an app.</li>
+        <li><b>Top 10 named Nov 6</b> and pitch live for cash prizes, with two weeks of mentoring first.</li>
+      </ul>
+      <div class="prizeline">
+        <div class="lbl">Cash prizes + mentorship</div>
+        <div class="amts"><span>$1,000</span> · $500 · $250 · $50</div>
+        <div class="fine">First, second, third, and the People's Choice audience vote. 2025 amounts; the 2026 districtwide prizes scale with the field.</div>
+      </div>
+    </div>
+    <div class="foot">
+      <div class="url">4cdpitch.com</div>
+      <div class="sub">Full rules, scoring rubrics, past winners, and the application.</div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="top">
+      <div class="brand">
+        <img src="../assets/dvc-logo-simple.svg" alt="">
+        <span>The 4CD Pitch Competition</span>
+        <span class="yr">2026</span>
+      </div>
+      <h1>Pitch your idea<br>to the <em>Diablo Valley.</em></h1>
+    </div>
+    <div class="when">
+      <div class="d">Nov 20</div>
+      <div class="t">
+        <b>The live final · Friday, 2026</b>
+        Diablo Room · DVC Pleasant Hill campus<br>
+        Pitches 9:00am · Free and open to the public
+      </div>
+    </div>
+    <div class="body">
+      <div class="kicker">How to enter</div>
+      <ul>
+        <li><b>One 4CD class makes you eligible.</b> Any course at Contra Costa College, DVC, or Los Medanos — credit or non-credit.</li>
+        <li><b>Apply by Mon, Nov 2, 11:59pm PT.</b> A short description of your idea and a deck of no more than 15 slides.</li>
+        <li><b>Teams of up to five, or go solo.</b> Any kind of business — a café, a trade, a clinic, an app.</li>
+        <li><b>Top 10 named Nov 6</b> and pitch live for cash prizes, with two weeks of mentoring first.</li>
+      </ul>
+      <div class="prizeline">
+        <div class="lbl">Cash prizes + mentorship</div>
+        <div class="amts"><span>$1,000</span> · $500 · $250 · $50</div>
+        <div class="fine">First, second, third, and the People's Choice audience vote. 2025 amounts; the 2026 districtwide prizes scale with the field.</div>
+      </div>
+    </div>
+    <div class="foot">
+      <div class="url">4cdpitch.com</div>
+      <div class="sub">Full rules, scoring rubrics, past winners, and the application.</div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="top">
+      <div class="brand">
+        <img src="../assets/dvc-logo-simple.svg" alt="">
+        <span>The 4CD Pitch Competition</span>
+        <span class="yr">2026</span>
+      </div>
+      <h1>Pitch your idea<br>to the <em>Diablo Valley.</em></h1>
+    </div>
+    <div class="when">
+      <div class="d">Nov 20</div>
+      <div class="t">
+        <b>The live final · Friday, 2026</b>
+        Diablo Room · DVC Pleasant Hill campus<br>
+        Pitches 9:00am · Free and open to the public
+      </div>
+    </div>
+    <div class="body">
+      <div class="kicker">How to enter</div>
+      <ul>
+        <li><b>One 4CD class makes you eligible.</b> Any course at Contra Costa College, DVC, or Los Medanos — credit or non-credit.</li>
+        <li><b>Apply by Mon, Nov 2, 11:59pm PT.</b> A short description of your idea and a deck of no more than 15 slides.</li>
+        <li><b>Teams of up to five, or go solo.</b> Any kind of business — a café, a trade, a clinic, an app.</li>
+        <li><b>Top 10 named Nov 6</b> and pitch live for cash prizes, with two weeks of mentoring first.</li>
+      </ul>
+      <div class="prizeline">
+        <div class="lbl">Cash prizes + mentorship</div>
+        <div class="amts"><span>$1,000</span> · $500 · $250 · $50</div>
+        <div class="fine">First, second, third, and the People's Choice audience vote. 2025 amounts; the 2026 districtwide prizes scale with the field.</div>
+      </div>
+    </div>
+    <div class="foot">
+      <div class="url">4cdpitch.com</div>
+      <div class="sub">Full rules, scoring rubrics, past winners, and the application.</div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="top">
+      <div class="brand">
+        <img src="../assets/dvc-logo-simple.svg" alt="">
+        <span>The 4CD Pitch Competition</span>
+        <span class="yr">2026</span>
+      </div>
+      <h1>Pitch your idea<br>to the <em>Diablo Valley.</em></h1>
+    </div>
+    <div class="when">
+      <div class="d">Nov 20</div>
+      <div class="t">
+        <b>The live final · Friday, 2026</b>
+        Diablo Room · DVC Pleasant Hill campus<br>
+        Pitches 9:00am · Free and open to the public
+      </div>
+    </div>
+    <div class="body">
+      <div class="kicker">How to enter</div>
+      <ul>
+        <li><b>One 4CD class makes you eligible.</b> Any course at Contra Costa College, DVC, or Los Medanos — credit or non-credit.</li>
+        <li><b>Apply by Mon, Nov 2, 11:59pm PT.</b> A short description of your idea and a deck of no more than 15 slides.</li>
+        <li><b>Teams of up to five, or go solo.</b> Any kind of business — a café, a trade, a clinic, an app.</li>
+        <li><b>Top 10 named Nov 6</b> and pitch live for cash prizes, with two weeks of mentoring first.</li>
+      </ul>
+      <div class="prizeline">
+        <div class="lbl">Cash prizes + mentorship</div>
+        <div class="amts"><span>$1,000</span> · $500 · $250 · $50</div>
+        <div class="fine">First, second, third, and the People's Choice audience vote. 2025 amounts; the 2026 districtwide prizes scale with the field.</div>
+      </div>
+    </div>
+    <div class="foot">
+      <div class="url">4cdpitch.com</div>
+      <div class="sub">Full rules, scoring rubrics, past winners, and the application.</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

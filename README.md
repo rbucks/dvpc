@@ -23,6 +23,8 @@ To use the custom domain, add a `CNAME` file containing `www.4cdpitch.com` on a 
 
 ## Editing the site
 
+**Resetting the site for a new competition year? Follow [RUNBOOK.md](RUNBOOK.md)** — it covers rolling the dates, re-checking the rules against the application form, archiving finalists, adding gallery photos, and rebuilding the flyers.
+
 Everything lives in `index.html`. There is no build step, no framework, no dependencies beyond Google Fonts (loaded from a CDN at runtime).
 
 Major sections, in order, marked with HTML comments:
@@ -68,6 +70,7 @@ Major sections, in order, marked with HTML comments:
 
   `-strip` drops EXIF (camera and any GPS data) — keep it. Then copy a `<figure class="shot">` block in the `GALLERY` section: the 800px WebP is the grid image, the 1600px WebP is what the lightbox opens (the `href`), and the JPEG is the fallback. Keep `width`/`height` on the `<img>` matching the 3:2 crop so the page does not shift while loading, and keep the `data-caption` and `<figcaption>` text identical.
 - **The lightbox** — one `<dialog id="lightbox">` near the end of `<body>` plus ~35 lines of vanilla JS. It is the only script on the site. With JS off, each photo is still a plain link to the full-size WebP.
+- **Printable flyers** — sources are `flyers/flyer-full.html` (one 8.5×11in sheet) and `flyers/flyer-quarter.html` (four 4.25×5.5in handbills, 2×2, dashed cut lines). Both carry their own copy of the palette and do not read `index.html`, so dates and prizes must be updated in them separately. Re-render to 300 dpi JPEG with the headless-Chrome recipe in [RUNBOOK.md](RUNBOOK.md); the output filenames are linked from the FAQ, so keep them.
 
 ### Type stack
 

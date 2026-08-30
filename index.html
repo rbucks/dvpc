@@ -678,6 +678,13 @@
   .faq details[open] summary::after { content: "−"; }
   .faq details p { margin: 16px 0 0; color: var(--ink-2); max-width: 64ch; font-size: 16px; }
 
+  .faq .flyer-links { list-style: none; margin: 16px 0 0; padding: 0; }
+  .faq .flyer-links li { padding: 12px 0; border-top: 1px solid var(--rule); font-family: var(--narrow); font-size: 15px; color: var(--ink-3); }
+  .faq .flyer-links li:last-child { border-bottom: 1px solid var(--rule); }
+  .faq .flyer-links b { font-weight: 700; color: var(--navy); margin-right: 8px; }
+  .faq .flyer-links a { color: inherit; }
+  .faq .flyer-links a:hover, .faq .flyer-links a:hover b { color: var(--green); }
+
   /* ========== COMMUNITY / DISCORD ========== */
   .community { background: var(--sage-soft); }
   .community-inner { display: grid; grid-template-columns: 1.35fr 1fr; gap: 64px; align-items: center; }
@@ -1492,6 +1499,15 @@
       <details>
         <summary>Is the final event open to the public?</summary>
         <p>Yes — and we encourage it. The November 20 final is free to attend, and attendance requires no enrollment of any kind. Invite your family, your customers, your potential investors, and your skeptics. The audience vote is real.</p>
+      </details>
+      <details>
+        <summary>Is there a flyer I can print about this competition?</summary>
+        <p>Yes — two, both sized for US Letter and free to post anywhere on campus or around town. Print at 100% / actual size; don't let the print dialog scale to fit.</p>
+        <ul class="flyer-links">
+          <li><a href="flyers/4cd-pitch-flyer-full.jpg" download><b>Full-page flyer</b> 8.5&times;11in JPEG, 300&nbsp;dpi</a> &nbsp;·&nbsp; <a href="flyers/flyer-full.html">HTML version</a></li>
+          <li><a href="flyers/4cd-pitch-flyer-quarter.jpg" download><b>Quarter-page handbills</b> four per 8.5&times;11in sheet, JPEG, 300&nbsp;dpi</a> &nbsp;·&nbsp; <a href="flyers/flyer-quarter.html">HTML version</a></li>
+        </ul>
+        <p>The quarter-page sheet has dashed cut lines down the middle — one sheet gives you four handbills. If your printer can't reach the edge of the page, the colored bands will trim slightly; no text will be lost.</p>
       </details>
       <details>
         <summary>I have a question that isn't here.</summary>
