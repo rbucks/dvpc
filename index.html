@@ -573,6 +573,14 @@
   @media (max-width: 520px) { .finalist-grid { grid-template-columns: 1fr; } }
 
 
+  /* ========== ENTRY RULES ========== */
+  .rules-strip { border: 2px solid var(--navy); background: var(--bone); padding: 24px 24px 26px; margin-bottom: 44px; }
+  .rules-strip ul { list-style: none; margin: 18px 0 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 14px 40px; }
+  .rules-strip li { font-family: var(--narrow); font-size: 14.5px; color: var(--ink-2); line-height: 1.5; padding-left: 18px; position: relative; }
+  .rules-strip li::before { content: ""; position: absolute; left: 0; top: 9px; width: 8px; height: 2px; background: var(--green); }
+  .rules-strip li b { display: block; font-weight: 700; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--navy); margin-bottom: 2px; }
+  @media (max-width: 760px) { .rules-strip ul { grid-template-columns: 1fr; } }
+
   /* ========== GALLERY ========== */
   .gallery-meta {
     display: flex; align-items: baseline; gap: 20px; flex-wrap: wrap;
@@ -857,8 +865,8 @@
     <div class="date-cell">
       <div class="step">Step 01 · Apply</div>
       <h3>Submit your idea</h3>
-      <div class="when">Due Mon · Nov 2, 2026 · 12:00pm</div>
-      <p>A short written application and a pitch deck. No video, no prior experience required — just current 4CD enrollment.</p>
+      <div class="when">Due Mon · Nov 2, 2026 · 11:59pm PT</div>
+      <p>A short description of your business idea and a deck of no more than 15 slides. No video, no prior experience required — just current 4CD enrollment.</p>
     </div>
     <div class="date-cell">
       <div class="step">Step 02 · Finalists</div>
@@ -989,10 +997,10 @@
       </div>
 
       <div class="tl-row highlight">
-        <div class="tl-date">Nov 2<small>Deadline · 12:00pm PT</small></div>
+        <div class="tl-date">Nov 2<small>Deadline · 11:59pm PT</small></div>
         <div class="tl-body">
-          <h4>Applications due at noon</h4>
-          <p>Submit a short written application and a deck (PDF or slides link) by <strong>12:00pm PT on Monday, Nov 2</strong>. No video is required at this stage. Late submissions are not accepted; the screening panel begins review that afternoon.</p>
+          <h4>Applications due at 11:59pm</h4>
+          <p>Submit a short description of your business idea and a slide presentation of <strong>no more than 15 slides</strong> by <strong>11:59pm PT on Monday, Nov 2</strong>. No video is required at this stage. Late submissions are not accepted; the screening panel begins review the next morning.</p>
         </div>
       </div>
 
@@ -1112,11 +1120,25 @@
     </div>
 
     <p class="rubric-lede">
-      Scoring happens in two rounds, on two published rubrics. The first is for everybody: every application submitted by the Nov 2 deadline is scored on the screening rubric, and the ten highest-scoring teams become the finalists. The second rubric is used only at the live final, and only those ten teams are scored on it. Each round is worth 50 points, and every category is worth 10.
+      Scoring happens in two rounds, on two published rubrics. The first is for everybody: every application submitted by 11:59pm PT on Nov 2 is scored on the screening rubric, and the ten highest-scoring teams become the finalists. The second rubric is used only at the live final, and only those ten teams are scored on it. Each round is worth 50 points, and every category is worth 10.
     </p>
     <p class="rubric-lede tail">
       <strong>The two scores are completely separate — your screening score does not carry into the final.</strong> Screening decides who gets on stage and nothing more. Squeaking into the ten costs you nothing there, and topping the screening round buys you nothing either: all ten finalists start the final at zero.
     </p>
+
+    <div class="rules-strip">
+      <div class="mono-tag">Entry rules</div>
+      <ul>
+        <li><b>Enrollment</b> Current enrollment at Contra Costa College, Diablo Valley College, or Los Medanos College.</li>
+        <li><b>Deadline</b> Applications close at 11:59pm PT on Monday, Nov 2. Late entries are not accepted.</li>
+        <li><b>What you submit</b> A short description of the business idea, plus a slide presentation of no more than 15 slides.</li>
+        <li><b>Team size</b> No more than five people on a team. Solo founders are permitted.</li>
+        <li><b>Existing businesses</b> Eligible if the business has less than $25,000 in total assets or annual revenue.</li>
+        <li><b>Competed before?</b> Welcome back — but your new submission must be a different concept.</li>
+        <li><b>Multiple entries</b> Allowed. A finalist still pitches only once at the live event, solo or on a team.</li>
+        <li><b>Finalists</b> The top 10 are announced on Friday, Nov 6.</li>
+      </ul>
+    </div>
 
     <div class="rubric">
       <div class="rubric-head">
@@ -1126,7 +1148,7 @@
         </div>
         <div class="max">50<span>pts</span></div>
       </div>
-      <div class="rubric-who"><strong>Everyone</strong> Every application submitted by the deadline is scored on this rubric. The ten highest scorers advance to the final.</div>
+      <div class="rubric-who"><strong>Everyone</strong> Every application submitted by 11:59pm PT on Nov 2 is scored on this rubric — the written description of the idea and the deck of up to 15 slides. The ten highest scorers advance to the final.</div>
       <table>
         <thead>
           <tr><th scope="col">Category</th><th scope="col">Description</th><th scope="col" class="pts-head">Possible points</th></tr>
@@ -1433,7 +1455,7 @@
       </details>
       <details>
         <summary>Does it count if the class is non-credit Community Education?</summary>
-        <p>It does. Non-credit Community Education enrollment carries exactly the same eligibility as a credit course. We ask for your student ID on the application so we can verify enrollment — nothing more.</p>
+        <p>It does. Non-credit Community Education enrollment carries exactly the same eligibility as a credit course — a single Community Education class puts you on the same footing as a full-time credit student, with no separate track and no extra paperwork.</p>
       </details>
       <details>
         <summary>My business isn't tech. Is it still a fit?</summary>
@@ -1441,15 +1463,23 @@
       </details>
       <details>
         <summary>Does my idea need to be a real business already?</summary>
-        <p>No. We accept ventures at any stage — from a single-slide concept to a registered LLC with revenue. Judging weighs originality, clarity, and potential impact more heavily than current traction, especially for early-stage teams.</p>
+        <p>No — a concept on a single slide is welcome. You may also pitch a business that already exists, as long as it has <strong>less than $25,000 in total assets or annual revenue</strong>. Past that, it has outgrown this competition. The screening rubric scores the description of the idea and the rationale behind it, so an early-stage team is not penalized for having no traction yet — but supporting evidence, where you have it, is worth points.</p>
       </details>
       <details>
         <summary>Can I apply with a co-founder or team?</summary>
-        <p>Yes. Teams of 1–4 are welcome. List every team member on the application; only listed members are eligible to present on stage.</p>
+        <p>Yes. A team may have <strong>no more than five people</strong>, and solo founders are absolutely permitted. List every team member on the application; only listed members are eligible to present on stage.</p>
       </details>
       <details>
         <summary>What does the application include?</summary>
-        <p>A short written form (problem, solution, customer, what's different), your 4CD student ID for enrollment verification, and a pitch deck submitted as a PDF or shareable slide link. No video — just the form and the deck. Everything is due by <strong>noon on Monday, Nov 2</strong>. Finalists then submit a final-draft deck and an optional 1-minute YouTube video.</p>
+        <p>Two things: <strong>a short description of the business idea</strong>, and <strong>a slide presentation of no more than 15 slides</strong>. No video at this stage. Everything is due by <strong>11:59pm PT on Monday, Nov 2</strong>. Finalists then submit a final-draft deck and an optional 1-minute YouTube video.</p>
+      </details>
+      <details>
+        <summary>Can I submit more than one application?</summary>
+        <p>Yes, you can submit multiple applications. But a finalist <strong>pitches only once at the live event</strong>, whether solo or as part of a team — so if more than one of your entries makes the top ten, you will be asked to choose which one goes on stage.</p>
+      </details>
+      <details>
+        <summary>I entered a previous year. Can I compete again?</summary>
+        <p>Yes — past participants are welcome back, including past winners. The one condition is that your new submission must be a <strong>different concept</strong> from the one you pitched before. Come back with something new.</p>
       </details>
       <details>
         <summary>What kind of mentoring do finalists get?</summary>
@@ -1498,9 +1528,9 @@
 <!-- ============ APPLY ============ -->
 <section id="apply" class="apply">
   <div class="wrap">
-    <div class="deadline">Not open yet · Due Mon Nov 2 · 12:00pm PT</div>
+    <div class="deadline">Not open yet · Due Mon Nov 2 · 11:59pm PT</div>
     <h2>Bring an idea.<br><span class="accent">Leave with a deck, a network, and maybe a check.</span></h2>
-    <p>Whether you're 16 with an app idea or 46 with a lease you're ready to sign — this is the stage. One 4CD class is all it takes to be eligible, and any class counts. Apply once. We'll do the rest.</p>
+    <p>Whether you're 16 with an app idea or 46 with a lease you're ready to sign — this is the stage. One 4CD class is all it takes to be eligible, and any class counts. One description, one deck. We'll do the rest.</p>
     <p class="soon-note">The application form isn't live yet. <a href="https://discord.gg/4DQQQBcjeW" target="_blank" rel="noopener">Join the Discord</a> and we'll announce it there the moment it opens — well before the Nov 2 deadline.</p>
     <div class="apply-actions">
       <span class="cta-btn lg is-soon" aria-disabled="true">Application coming soon</span>
