@@ -1,0 +1,6 @@
+.DS_Store
+**/.DS_Store
+
+# Full-resolution camera originals — kept locally, not published.
+# Web-sized derivatives live alongside them as event-*.webp / event-*.jpg.
+assets/images/**/_originals/

@@ -38,6 +38,7 @@ Major sections, in order, marked with HTML comments:
 - `JUDGING + CRITERIA` — past judges, how scoring works
 - `SCORING RUBRIC` — the two published rubrics (screening elevator pitch, final presentations), 50 points each
 - `PAST WINNERS` — 2025 results
+- `GALLERY` — photos from the 2024 final, with a `<dialog>` lightbox
 - `FAQ` — accordion
 - `APPLY` — bottom CTA
 - `FOOTER`
@@ -56,6 +57,16 @@ Major sections, in order, marked with HTML comments:
 - **Edit the scoring rubrics** — find the `SCORING RUBRIC` section. Each stage is a `.rubric` block (`.rubric.final` is the green live-final variant) wrapping one `<table>`: category `<th>`, `td.desc`, and `td.pts`. If you change point values, update the `tfoot` total and the `.rubric-head .max` badge to match.
 - **Swap accent color** — change the `--accent` and `--accent-ink` CSS custom properties at the top of the `<style>` block.
 - **Edit the FAQ** — each Q is a `<details>` element; the `<summary>` is the question, the `<p>` is the answer.
+- **Add gallery photos** — put the full-resolution originals in `assets/images/event/_originals/` (gitignored, never published), then generate the three web derivatives per photo with ImageMagick:
+
+  ```
+  magick IN.JPG -auto-orient -strip -resize 1600x -unsharp 0x0.6+0.6+0.01 -quality 78 -define webp:method=6 event-YYYY-NN.webp
+  magick IN.JPG -auto-orient -strip -resize 800x  -unsharp 0x0.6+0.6+0.01 -quality 76 -define webp:method=6 event-YYYY-NN-800.webp
+  magick IN.JPG -auto-orient -strip -resize 1200x -unsharp 0x0.6+0.6+0.01 -quality 80 -sampling-factor 4:2:0 -interlace JPEG event-YYYY-NN.jpg
+  ```
+
+  `-strip` drops EXIF (camera and any GPS data) — keep it. Then copy a `<figure class="shot">` block in the `GALLERY` section: the 800px WebP is the grid image, the 1600px WebP is what the lightbox opens (the `href`), and the JPEG is the fallback. Keep `width`/`height` on the `<img>` matching the 3:2 crop so the page does not shift while loading, and keep the `data-caption` and `<figcaption>` text identical.
+- **The lightbox** — one `<dialog id="lightbox">` near the end of `<body>` plus ~35 lines of vanilla JS. It is the only script on the site. With JS off, each photo is still a plain link to the full-size WebP.
 
 ### Type stack
 
