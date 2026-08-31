@@ -25,6 +25,8 @@ refresh to see changes. Kill it with `pkill -f "http.server 8777"` when done.
 rule, date, and deadline on this site. If the form and the site disagree, the
 form wins and the site gets corrected — not the other way round.
 
+The 2026 form is <https://forms.cloud.microsoft/r/RB7gvjDQPZ>.
+
 ---
 
 ## Phase 1 — Roll the dates
@@ -58,8 +60,8 @@ cycle, so you know when you've found them all:
 | Search for | Hits | Notes |
 |---|---|---|
 | `Nov 20` | ~15 | Also `<title>`, the hero save-the-date card, section headings |
-| `Nov 2` | ~9 | Careful: `Nov 20` contains `Nov 2` — search `Nov 2<`, `Nov 2,`, `Nov 2.`, `Nov 2 ` |
-| `11:59pm` | 8 | Key-dates rail, timeline, scoring lede, entry rules, rubric band, FAQ, apply CTA |
+| `Nov 2` | ~10 | Careful: `Nov 20` contains `Nov 2` — search `Nov 2<`, `Nov 2,`, `Nov 2.`, `Nov 2 ` |
+| `11:59pm` | 11 | Key-dates rail, timeline, scoring lede, entry rules, rubric band, FAQ (×3), apply CTA |
 | `Nov 6` | ~8 | |
 | `Sept 15` | ~3 | |
 | `2026` | ~20 | Includes the `2026` year chips on the flyers |
@@ -72,6 +74,7 @@ Then check these by eye, because they are worded rather than templated:
 - The `§ 03 — Timeline` heading, which names the final's date
 - The `.rules-strip` entry-rules panel in `§ 06 — Scoring`
 - The `.deadline` line in the `APPLY` CTA
+- The FAQ entry "How do I apply?", which repeats the deadline
 
 **Verify:** `grep -c "Nov 20" index.html` should return zero hits for the old
 date after you're done. Run `grep -in "nov \|sept \|11:59" index.html` and read
@@ -105,6 +108,47 @@ agree:
 
 If the number of finalists changes from ten, note that "ten" is spelled out in
 the scoring section, the rubric bands, the timeline, and the key-dates rail.
+
+---
+
+## Phase 2b — Point every CTA at the new form
+
+A new cycle means a new form and a new URL. The old one is
+<https://forms.cloud.microsoft/r/RB7gvjDQPZ>; find every hit with:
+
+```bash
+grep -rn RB7gvjDQPZ index.html slides/
+```
+
+Nine in `index.html`, four in `slides/index.html`. Replace them all in one pass
+— a half-updated site sends some people to last year's closed form, and the
+form itself will not tell them it is the wrong year.
+
+Where they are in `index.html`:
+
+1. The nav button in the `TOP BAR`
+2. The hero button
+3. The `Step 01 · Apply` cell in the `KEY DATES RAIL` (`p.cell-link`)
+4. The `Sept 15` row in the `TIMELINE`
+5. The `Where to apply` bullet in `.rules-strip`
+6. FAQ — "How do I apply?"
+7. FAQ — "What does the application include?"
+8. The `APPLY` CTA button
+9. The footer's `Event` list
+
+And in `slides/index.html`: the closing `foot-note` on slide 2, the `Sept 15`
+row on slide 4, the `.applyline` block on slide 11, and the `Apply →` link in
+the bottom bar. The slides print the URL as visible text as well as linking it,
+so the text has to change too.
+
+**Before the form opens.** If you are shipping the site ahead of the form going
+live, the pre-launch state is three edits: nav button reads `Applications
+soon`, hero button reads `Applications coming soon`, and the `APPLY` CTA
+becomes a non-clickable `<span class="cta-btn lg is-soon">` with a `.note-line`
+paragraph pointing people at the Discord. The `.is-soon` rule was deleted from
+the stylesheet when the 2026 form went live — restore it alongside
+`.apply .note-line` if you need it. Also set the `.deadline` line in the `APPLY`
+CTA back to `Not open yet · …`.
 
 ---
 
@@ -284,6 +328,11 @@ Open it at <http://localhost:8777/slides/>. Arrow keys or space advance,
 
 - **Slides 1, 4, 11** carry dates. Slide 11 repeats the three key dates, so it
   is the easiest one to forget.
+- **Slides 2, 4, 11** print the application URL as visible text, not just as a
+  link — see Phase 2b. So does the `Apply →` link in the bottom bar.
+- **The `← 4cdpitch.com` link** at the top left is the only way out of the deck
+  for anyone who opened it directly; the FAQ link on the main site opens the
+  deck in a new tab. Leave both in place.
 - **Slide 5** must match the prize cards in `index.html` and both flyers.
 - **Slide 9** must match the `.rules-strip` panel and the FAQ.
 - **Slide 7** needs last year's winners moved in — same content you wrote in

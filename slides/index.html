@@ -136,7 +136,26 @@
   .bigurl { font-family: var(--display); font-size: 66px; line-height: 0.95; color: #fff; }
   .bigurl small { display: block; font-family: var(--narrow); font-weight: 400; font-size: 18px; letter-spacing: 0; text-transform: none; color: var(--periwinkle-soft); margin-top: 10px; line-height: 1.5; }
 
+  .applyline {
+    font-family: var(--narrow); font-weight: 700; font-size: 26px;
+    letter-spacing: 0.04em; color: var(--sage);
+  }
+  .applyline a { color: var(--sage); }
+  .applyline small {
+    display: block; font-weight: 400; font-size: 17px; letter-spacing: 0;
+    color: var(--periwinkle-soft); margin-top: 8px;
+  }
+
   /* ---- chrome ---- */
+  .exit {
+    position: fixed; left: 18px; top: 16px; z-index: 20;
+    font-family: var(--narrow); font-weight: 700; font-size: 12px;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: rgba(255,255,255,0.7); text-decoration: none;
+    background: rgba(10,21,32,0.72);
+    border: 1px solid rgba(255,255,255,0.3); padding: 7px 13px;
+  }
+  .exit:hover { color: #fff; border-color: #fff; }
   .hud {
     position: fixed; left: 0; right: 0; bottom: 0; height: 46px;
     display: flex; align-items: center; gap: 16px; padding: 0 18px;
@@ -145,12 +164,16 @@
     opacity: 0; transition: opacity .2s; pointer-events: none;
   }
   .deck:hover .hud, .hud.show { opacity: 1; pointer-events: auto; }
+  /* Touch devices never fire :hover — keep the bar up so there is always a way out. */
+  @media (hover: none) { .hud { opacity: 1; pointer-events: auto; } }
   .hud button {
     font: inherit; letter-spacing: inherit; text-transform: inherit;
     background: transparent; color: rgba(255,255,255,0.65);
     border: 1px solid rgba(255,255,255,0.3); padding: 5px 11px; cursor: pointer;
   }
   .hud button:hover { color: #fff; border-color: #fff; }
+  .hud a { color: var(--sage); text-decoration: none; border-bottom: 1px solid rgba(181,219,175,0.5); }
+  .hud a:hover { color: #fff; border-bottom-color: #fff; }
   .hud .count { margin-left: auto; color: rgba(255,255,255,0.75); }
   .bar { position: fixed; left: 0; bottom: 0; height: 3px; background: var(--sage); transition: width .18s; }
 
@@ -160,11 +183,12 @@
     .deck { position: static; display: block; }
     .stage { width: 1280px; height: 720px; transform: none !important; box-shadow: none; }
     .slide { position: relative; display: flex !important; page-break-after: always; break-after: page; }
-    .hud, .bar { display: none; }
+    .hud, .bar, .exit { display: none; }
   }
 </style>
 </head>
 <body>
+<a class="exit" href="../index.html">&larr; 4cdpitch.com</a>
 <div class="deck" id="deck">
 <div class="stage" id="stage">
 
@@ -211,7 +235,7 @@
           </ul>
         </div>
       </div>
-      <p class="foot-note">There are no tracks and no categories. Everyone fills out the same form and stands on the same stage.</p>
+      <p class="foot-note">There are no tracks and no categories. Everyone fills out the same form and stands on the same stage — <a href="https://forms.cloud.microsoft/r/RB7gvjDQPZ" target="_blank" rel="noopener"><b>forms.cloud.microsoft/r/RB7gvjDQPZ</b></a></p>
     </div>
     <div class="stamp">4cdpitch.com</div>
   </section>
@@ -251,7 +275,7 @@
     <div class="head"><span class="ix">§ 03</span><h2>The road to <span class="ac">Nov 20.</span></h2></div>
     <div class="main">
       <div class="rows">
-        <div class="row"><div class="d">Sept 15</div><div class="t"><b>Applications open</b><span>Start a draft, save it, come back. Not enrolled yet? This is the window.</span></div></div>
+        <div class="row"><div class="d">Sept 15</div><div class="t"><b>Applications open — the form is live</b><span>Apply at <a href="https://forms.cloud.microsoft/r/RB7gvjDQPZ" target="_blank" rel="noopener">forms.cloud.microsoft/r/RB7gvjDQPZ</a>. Not enrolled yet? This is the window to sign up for a class.</span></div></div>
         <div class="row hot"><div class="d">Nov 2</div><div class="t"><b>Deadline · 11:59pm PT</b><span>Monday. A short description of the idea and a deck of no more than 15 slides. Late entries are not accepted.</span></div></div>
         <div class="row"><div class="d">Nov 6</div><div class="t"><b>The 10 finalists announced</b><span>Two reviewers per application; the ten highest-scoring teams advance.</span></div></div>
         <div class="row"><div class="d">Nov 6 → 20</div><div class="t"><b>Two weeks of mentoring</b><span>Deck reviews, pitch coaching, financial-model review, and dry runs in the actual venue.</span></div></div>
@@ -389,6 +413,9 @@
       <div class="bigurl">4cdpitch.com
         <small>Full rules, both scoring rubrics, past winners, the photo gallery, printable flyers, and the application.</small>
       </div>
+      <div class="applyline">Apply now &middot; <a href="https://forms.cloud.microsoft/r/RB7gvjDQPZ" target="_blank" rel="noopener">forms.cloud.microsoft/r/RB7gvjDQPZ</a>
+        <small>Open until 11:59pm PT on Monday, Nov 2. A short description of the idea, and no more than 15 slides.</small>
+      </div>
       <div class="rows" style="border-top-color: rgba(255,255,255,0.18);">
         <div class="row" style="border-bottom-color: rgba(255,255,255,0.18);"><div class="d" style="color:var(--sage)">Nov 2</div><div class="t"><b style="color:#fff">Applications close · 11:59pm PT</b><span style="color:var(--periwinkle-soft)">A short description of the idea, and no more than 15 slides.</span></div></div>
         <div class="row" style="border-bottom-color: rgba(255,255,255,0.18);"><div class="d" style="color:var(--sage)">Nov 6</div><div class="t"><b style="color:#fff">The 10 finalists announced</b><span style="color:var(--periwinkle-soft)">Then two full weeks of mentoring.</span></div></div>
@@ -405,6 +432,7 @@
   <button type="button" data-go="next">Next →</button>
   <button type="button" data-go="full">Full screen</button>
   <button type="button" data-go="print">Print</button>
+  <a href="https://forms.cloud.microsoft/r/RB7gvjDQPZ" target="_blank" rel="noopener">Apply &rarr;</a>
   <span class="count" id="count"></span>
 </div>
 <div class="bar" id="bar"></div>

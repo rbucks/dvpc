@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>The 4CD Pitch Competition — Nov 20, 2026</title>
-<meta name="description" content="The 4CD Pitch Competition — open to anyone enrolled in any Contra Costa Community College District course, including non-credit Community Education. Cafés, breweries, trades, biotech, health tech, software. Diablo Valley, not Silicon Valley. Live final Nov 20, 2026." />
+<meta name="description" content="The 4CD Pitch Competition — open to anyone enrolled in any Contra Costa Community College District course, including non-credit Community Education. Cafés, breweries, trades, biotech, health tech, software. Diablo Valley, not Silicon Valley. Applications are open now and close 11:59pm PT on Monday, Nov 2. Live final Nov 20, 2026." />
 
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="apple-touch-icon" href="assets/favicon-180.png">
@@ -278,6 +278,14 @@
     margin-bottom: 14px;
   }
   .date-cell p { color: var(--periwinkle-soft); font-size: 14px; margin: 0; line-height: 1.55; }
+  .date-cell .cell-link { margin-top: 16px; }
+  .date-cell .cell-link a {
+    font-family: var(--narrow); font-weight: 700;
+    font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--sage); text-decoration: none;
+    border-bottom: 2px solid rgba(181, 219, 175, 0.45); padding-bottom: 3px;
+  }
+  .date-cell .cell-link a:hover { color: var(--periwinkle); border-bottom-color: var(--periwinkle); }
 
   @media (max-width: 760px) {
     .dates-grid { grid-template-columns: 1fr; }
@@ -750,17 +758,9 @@
     margin-bottom: 36px;
   }
   .apply .deadline::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--periwinkle); }
-  .apply .soon-note { font-size: 15px; color: var(--periwinkle); max-width: 56ch; margin: -16px 0 30px; }
-  .apply .soon-note a { color: var(--sage); }
+  .apply .note-line { font-size: 15px; color: var(--periwinkle); max-width: 56ch; margin: -16px 0 30px; }
+  .apply .note-line a { color: var(--sage); }
   .apply-actions { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
-  .cta-btn.is-soon {
-    cursor: default;
-    background: transparent;
-    color: var(--sage-soft);
-    border-style: dashed;
-    border-color: rgba(214, 236, 210, 0.55);
-    opacity: 0.9;
-  }
   .apply .cta-btn { background: var(--sage); color: var(--green-deep); border-color: var(--sage); }
   .apply .cta-btn:hover { background: var(--periwinkle); color: var(--navy-deep); border-color: var(--periwinkle); }
   .apply .cta-btn.ghost { background: transparent; color: var(--sage); border-color: var(--sage); }
@@ -829,7 +829,7 @@
       <a href="#faq">FAQ</a>
       <a href="#community">Community</a>
     </nav>
-    <a href="#apply" class="cta-btn">Applications soon</a>
+    <a href="https://forms.cloud.microsoft/r/RB7gvjDQPZ" target="_blank" rel="noopener" class="cta-btn">Apply now</a>
   </div>
 </header>
 
@@ -844,7 +844,7 @@
         Cafés, breweries, and nail salons. Construction trades, aviation, and industry. Biotech, health tech, and software. Every kind of business this valley actually runs on belongs on this stage — and one Contra Costa Community College District class, credit or not, makes you eligible.
       </p>
       <div class="hero-actions">
-        <a href="#apply" class="cta-btn lg">Applications coming soon</a>
+        <a href="https://forms.cloud.microsoft/r/RB7gvjDQPZ" target="_blank" rel="noopener" class="cta-btn lg">Start your application</a>
         <a href="https://discord.gg/4DQQQBcjeW" class="cta-btn ghost lg" target="_blank" rel="noopener">Join the Discord</a>
         <a href="#about" class="cta-btn ghost lg">Read the brief</a>
       </div>
@@ -875,6 +875,7 @@
       <h3>Submit your idea</h3>
       <div class="when">Due Mon · Nov 2, 2026 · 11:59pm PT</div>
       <p>A short description of your business idea and a deck of no more than 15 slides. No video, no prior experience required — just current 4CD enrollment.</p>
+      <p class="cell-link"><a href="https://forms.cloud.microsoft/r/RB7gvjDQPZ" target="_blank" rel="noopener">Start your application &rarr;</a></p>
     </div>
     <div class="date-cell">
       <div class="step">Step 02 · Finalists</div>
@@ -945,7 +946,7 @@
     <div class="valley-statement">
       <div>
         <div class="vs-big">An hour northeast of <span class="accent">Silicon Valley.</span><br>Nothing like it — <span class="accent">on purpose.</span></div>
-        <div class="vs-places">Concord · Pleasant Hill · Martinez · Walnut Creek · Pittsburg · Antioch · Brentwood · Oakley · Clayton · Lafayette · Danville · San Ramon · Moraga · Orinda</div>
+        <div class="vs-places">Concord · Pleasant Hill · Martinez · Walnut Creek · Pittsburg · Antioch · Brentwood · Oakley · Clayton · Lafayette · Danville · San Ramon · Moraga · Orinda · Richmond · San Pablo · Pinole</div>
       </div>
       <div class="vs-body">
         <p>We are not auditioning to be the other valley. We are cafés, breweries, bakeries, and nail salons. We are aviation and industry out past the airfield. We are biotech and health tech in the labs. And we are construction trades — a <em>lot</em> of construction trades.</p>
@@ -999,8 +1000,8 @@
       <div class="tl-row">
         <div class="tl-date">Sept 15<small>Applications open</small></div>
         <div class="tl-body">
-          <h4>Applications open</h4>
-          <p>The form goes live. Start a draft, save it, come back. If you're not enrolled in a 4CD class yet, this is the window to sign up for one — including any non-credit Community Education course.</p>
+          <h4>Applications open — the form is live</h4>
+          <p><a href="https://forms.cloud.microsoft/r/RB7gvjDQPZ" target="_blank" rel="noopener"><strong>The application form is open now.</strong></a> If you're not enrolled in a 4CD class yet, this is the window to sign up for one — including any non-credit Community Education course.</p>
         </div>
       </div>
 
@@ -1145,6 +1146,7 @@
         <li><b>Competed before?</b> Welcome back — but your new submission must be a different concept.</li>
         <li><b>Multiple entries</b> Allowed. A finalist still pitches only once at the live event, solo or on a team.</li>
         <li><b>Finalists</b> The top 10 are announced on Friday, Nov 6.</li>
+        <li><b>Where to apply</b> One form for everybody — <a href="https://forms.cloud.microsoft/r/RB7gvjDQPZ" target="_blank" rel="noopener">start your application</a>.</li>
       </ul>
     </div>
 
@@ -1458,6 +1460,10 @@
         <p>Anyone currently enrolled in a Contra Costa Community College District course. That's the only eligibility bar: one active enrollment at DVC, Contra Costa College, or Los Medanos College. Credit students, dual-enrolled high school students, and community members in a non-credit class all use the same application — there are no separate tracks. There are no citizenship or status requirements.</p>
       </details>
       <details>
+        <summary>How do I apply?</summary>
+        <p>Through one form: <a href="https://forms.cloud.microsoft/r/RB7gvjDQPZ" target="_blank" rel="noopener"><strong>the 2026 application</strong></a>. It asks for a short description of your business idea and a slide presentation of no more than 15 slides — nothing else. Everyone uses the same form, and it closes at <strong>11:59pm PT on Monday, Nov 2</strong>.</p>
+      </details>
+      <details>
         <summary>I'm not a student. Can I still compete?</summary>
         <p>Yes — enroll in a class and you're eligible. It does not have to be a business class, a full course load, or a credit course. A single non-credit Community Education class counts: cooking, ceramics, computer basics, ESL, QuickBooks, welding, yoga. Register for one 4CD course, keep the enrollment active through Nov 20, and you can apply.</p>
       </details>
@@ -1479,7 +1485,7 @@
       </details>
       <details>
         <summary>What does the application include?</summary>
-        <p>Two things: <strong>a short description of the business idea</strong>, and <strong>a slide presentation of no more than 15 slides</strong>. No video at this stage. Everything is due by <strong>11:59pm PT on Monday, Nov 2</strong>. Finalists then submit a final-draft deck and an optional 1-minute YouTube video.</p>
+        <p>Two things: <strong>a short description of the business idea</strong>, and <strong>a slide presentation of no more than 15 slides</strong>. No video at this stage. Everything is due by <strong>11:59pm PT on Monday, Nov 2</strong>. Finalists then submit a final-draft deck and an optional 1-minute YouTube video. <a href="https://forms.cloud.microsoft/r/RB7gvjDQPZ" target="_blank" rel="noopener">Open the application form &rarr;</a></p>
       </details>
       <details>
         <summary>Can I submit more than one application?</summary>
@@ -1511,9 +1517,9 @@
         <p>The quarter-page sheet has dashed cut lines down the middle — one sheet gives you four handbills. If your printer can't reach the edge of the page, the colored bands will trim slightly; no text will be lost.</p>
         <p>There is also an <strong>eleven-slide deck</strong> covering the whole competition, if you're presenting this to a class, a club, or a department meeting.</p>
         <ul class="flyer-links">
-          <li><a href="slides/"><b>Slide deck</b> 11 slides, 16:9, opens in your browser</a></li>
+          <li><a href="slides/" target="_blank" rel="noopener"><b>Slide deck</b> 11 slides, 16:9, opens in a new tab</a></li>
         </ul>
-        <p>Arrow keys or space to advance, <kbd>F</kbd> for full screen, and the Print button in the bottom bar exports one slide per page as PDF. Nothing to install and nothing to download.</p>
+        <p>Arrow keys or space to advance, <kbd>F</kbd> for full screen, and the Print button in the bottom bar exports one slide per page as PDF. Nothing to install and nothing to download. To leave the deck, use the <strong>&larr; 4cdpitch.com</strong> link in its top-left corner — or just close the tab.</p>
       </details>
       <details>
         <summary>I have a question that isn't here.</summary>
@@ -1550,12 +1556,12 @@
 <!-- ============ APPLY ============ -->
 <section id="apply" class="apply">
   <div class="wrap">
-    <div class="deadline">Not open yet · Due Mon Nov 2 · 11:59pm PT</div>
+    <div class="deadline">Open now · Due Mon Nov 2 · 11:59pm PT</div>
     <h2>Bring an idea.<br><span class="accent">Leave with a deck, a network, and maybe a check.</span></h2>
     <p>Whether you're 16 with an app idea or 46 with a lease you're ready to sign — this is the stage. One 4CD class is all it takes to be eligible, and any class counts. One description, one deck. We'll do the rest.</p>
-    <p class="soon-note">The application form isn't live yet. <a href="https://discord.gg/4DQQQBcjeW" target="_blank" rel="noopener">Join the Discord</a> and we'll announce it there the moment it opens — well before the Nov 2 deadline.</p>
+    <p class="note-line">The application form is open. Questions while you're filling it in? <a href="https://discord.gg/4DQQQBcjeW" target="_blank" rel="noopener">Join the Discord</a> — organizers and other teams are in there.</p>
     <div class="apply-actions">
-      <span class="cta-btn lg is-soon" aria-disabled="true">Application coming soon</span>
+      <a href="https://forms.cloud.microsoft/r/RB7gvjDQPZ" target="_blank" rel="noopener" class="cta-btn lg">Start your application &rarr;</a>
       <a href="https://discord.gg/4DQQQBcjeW" class="cta-btn ghost lg" target="_blank" rel="noopener">Join the Discord</a>
       <a href="mailto:rbuckley@dvc.edu" class="cta-btn ghost lg">Email us a question</a>
     </div>
@@ -1578,6 +1584,7 @@
       <div>
         <h5>Event</h5>
         <ul>
+          <li><a href="https://forms.cloud.microsoft/r/RB7gvjDQPZ" target="_blank" rel="noopener">Apply now &rarr;</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#room">The Room</a></li>
           <li><a href="#timeline">Timeline</a></li>

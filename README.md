@@ -2,6 +2,8 @@
 
 Single-page static site for The 4CD Pitch Competition — the pitch competition of the Contra Costa Community College District. Production domain: **www.4cdpitch.com**.
 
+**2026 application form:** <https://forms.cloud.microsoft/r/RB7gvjDQPZ> — a Microsoft Form. It is the source of truth for every rule, date, and deadline on this site; if the two disagree, the form wins and the site gets corrected. The URL appears nine times in `index.html` and four times in `slides/index.html` — change it in every one of them together (`grep -rn RB7gvjDQPZ .`).
+
 ## Hosting on GitHub Pages
 
 1. Create a new repository on GitHub (e.g. `diablo-valley-pitch`).
@@ -55,7 +57,8 @@ Major sections, in order, marked with HTML comments:
 - **Edit the Main Street / science example lists** — find the `.kinds-cols` block in the `THE ROOM` section.
 - **Edit the city line** — the `.vs-places` div inside `.valley-statement`.
 - **Positioning** — the "Diablo Valley, not Silicon Valley" argument lives in one place, `.valley-statement`. The About section deliberately defers to it rather than repeating it.
-- **Change the application link** — search for `Start application` and replace the `href="#"` with the real URL (e.g. a Google Form or Typeform).
+- **Change the application link** — `grep -rn RB7gvjDQPZ index.html slides/` finds every hit. In `index.html`: the nav button, the hero button, the `Step 01 · Apply` cell in the key-dates rail, the `Sept 15` timeline row, the `Where to apply` bullet in `.rules-strip`, two FAQ answers ("How do I apply?" and "What does the application include?"), the `APPLY` CTA button, and the footer's Event list. In `slides/index.html`: slides 2, 4 and 11, plus the `Apply →` link in the bottom bar. Every link is `target="_blank" rel="noopener"`.
+- **Put the site back into "not open yet" mode** — the pre-launch state is: nav reads `Applications soon`, hero reads `Applications coming soon`, and the `APPLY` CTA is a non-clickable `<span class="cta-btn lg is-soon">` with a `.note-line` paragraph pointing at the Discord. The `.is-soon` style was removed when the 2026 form went live; restore it (dashed border, `cursor: default`, transparent background) if you need that state again.
 - **Update prize amounts** — find the `prizes-grid` block. Each `.prize` card has an `.amount` div.
 - **Edit the scoring rubrics** — find the `SCORING RUBRIC` section. Each stage is a `.rubric` block (`.rubric.final` is the green live-final variant) wrapping one `<table>`: category `<th>`, `td.desc`, and `td.pts`. If you change point values, update the `tfoot` total and the `.rubric-head .max` badge to match.
 - **Swap accent color** — change the `--accent` and `--accent-ink` CSS custom properties at the top of the `<style>` block.
