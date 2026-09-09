@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The 4CD Pitch Competition — lobby screen slide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800;900&family=Archivo+Narrow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #01775b; --green-deep: #015a45;
+    --sage: #b5dbaf; --sage-soft: #d6ecd2;
+    --navy: #1a3a6c; --navy-deep: #122a4e;
+    --periwinkle: #9aa6d6; --periwinkle-soft: #c5cce8;
+    --paper: #fbfaf5; --bone: #f3f1ea;
+    --ink: #0e1d2c; --ink-2: #36465a; --ink-3: #6b7787;
+    --rule: rgba(255,255,255,0.18);
+    --display: "Anton", Impact, sans-serif;
+    --sans: "Archivo", system-ui, sans-serif;
+    --narrow: "Archivo Narrow", "Archivo", sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #000; }
+  body { font-family: var(--sans); color: var(--ink); -webkit-font-smoothing: antialiased; }
+  h1 { font-family: var(--display); font-weight: 400; text-transform: uppercase; letter-spacing: 0.005em; }
+
+  /*
+    3200x1800 canvas (16:9). Text is kept to a handful of short lines —
+    this is read from across a room, not studied up close — and every
+    piece of text is 32px or larger. A QR code carries the rest of the
+    detail (full rules, dates, application) instead of more copy.
+
+    Everything meaningful sits inside a safe area inset 180px (~5.6%)
+    from every edge, so nothing important is lost to bezel overlap or
+    a monitor's own slight overscan/crop.
+  */
+  .screen {
+    width: 3200px; height: 1800px; position: relative; overflow: hidden;
+    background: var(--navy-deep);
+    display: flex; flex-direction: column;
+  }
+  .safe {
+    position: absolute; inset: 180px;
+    display: flex; flex-direction: column;
+  }
+
+  .brand { display: flex; align-items: center; gap: 28px; }
+  .brand img { width: 92px; height: 92px; }
+  .brand span { font-family: var(--narrow); font-weight: 700; font-size: 38px; letter-spacing: 0.14em; text-transform: uppercase; color: #fff; }
+  .brand .yr { margin-left: auto; font-family: var(--narrow); font-weight: 700; font-size: 34px; letter-spacing: 0.14em; color: var(--periwinkle-soft); }
+
+  .headline { margin-top: 76px; }
+  .headline h1 { font-size: 208px; line-height: 0.88; color: var(--sage); }
+  .headline h1 em { font-style: normal; color: var(--periwinkle-soft); }
+
+  .spacer { flex: 1; }
+
+  .dates {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+    margin-bottom: 64px;
+  }
+  .dcard {
+    border: 5px solid var(--sage); background: rgba(181,219,175,0.08);
+    padding: 44px 52px; display: flex; align-items: baseline; gap: 40px;
+  }
+  .dcard.hot { background: var(--green); border-color: var(--green); }
+  .dcard .big { font-family: var(--display); font-size: 172px; line-height: 0.85; color: #fff; white-space: nowrap; }
+  .dcard .label { font-family: var(--narrow); font-weight: 700; font-size: 44px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--sage); }
+  .dcard.hot .label { color: var(--sage-soft); }
+
+  .foot {
+    border-top: 3px solid var(--rule); padding-top: 56px;
+    display: flex; align-items: center; gap: 56px;
+  }
+  .foot .url { font-family: var(--display); font-size: 224px; line-height: 0.85; color: #fff; }
+  .foot .qrbox {
+    margin-left: auto; display: flex; align-items: center; gap: 30px;
+    background: #fff; border: 4px solid var(--sage); padding: 20px 34px 20px 20px;
+  }
+  .foot .qrbox img { width: 200px; height: 200px; display: block; }
+  .foot .qrbox span { font-family: var(--narrow); font-weight: 700; font-size: 32px; line-height: 1.25; letter-spacing: 0.02em; text-transform: uppercase; color: var(--navy); max-width: 260px; }
+</style>
+</head>
+<body>
+<div class="screen">
+  <div class="safe">
+
+    <div class="brand">
+      <img src="../assets/dvc-logo-simple.svg" alt="">
+      <span>The 4CD Pitch Competition</span>
+      <span class="yr">2026</span>
+    </div>
+
+    <div class="headline">
+      <h1>Pitch your idea<br>to the <em>Diablo Valley.</em></h1>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="dates">
+      <div class="dcard hot">
+        <div class="big">Nov&nbsp;2</div>
+        <div class="label">Applications<br>close</div>
+      </div>
+      <div class="dcard">
+        <div class="big">Nov&nbsp;20</div>
+        <div class="label">Live final<br>at DVC</div>
+      </div>
+    </div>
+
+    <div class="foot">
+      <div class="url">4cdpitch.com</div>
+      <div class="qrbox">
+        <img src="qr-4cdpitch.png" alt="">
+        <span>Scan for full details</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
