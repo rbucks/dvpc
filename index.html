@@ -481,6 +481,28 @@
   .prize p { font-size: 13px; color: var(--ink-3); margin: 8px 0 0; line-height: 1.5; }
   .prize.first p { color: var(--sage-soft); }
 
+  .prize .sponsor {
+    margin-top: auto; padding-top: 22px;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .prize .sponsor-label { font-family: var(--narrow); font-weight: 700; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-3); }
+  .prize.first .sponsor-label { color: var(--sage); opacity: 0.8; }
+  .prize .sponsor-logo {
+    background: #fff; border: 1px solid var(--rule);
+    display: flex; align-items: center; justify-content: center;
+    height: 76px; padding: 12px 16px;
+  }
+  .prize .sponsor-logo img { display: block; max-width: 100%; max-height: 100%; width: auto; }
+  .prize .sponsor-logo img.sv { height: 48px; }
+  .prize .sponsor-logo img.sh { height: 30px; }
+  .prize .sponsor-open {
+    display: flex; align-items: center; justify-content: center; text-align: center;
+    height: 76px; padding: 12px 16px;
+    border: 2px dashed var(--ink-3); color: var(--navy); text-decoration: none;
+    font-family: var(--narrow); font-weight: 700; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .prize .sponsor-open:hover { border-color: var(--green); color: var(--green); }
+
   @media (max-width: 860px) { .prizes-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 480px) { .prizes-grid { grid-template-columns: 1fr; } }
 
@@ -1099,18 +1121,30 @@
         <div class="amount"><sup>$</sup>1,000</div>
         <div class="name">First Place</div>
         <p>Cash prize, on-stage recognition, and an introduction round to local investors, lenders, and small-business advisors.</p>
+        <div class="sponsor">
+          <div class="sponsor-label">Sponsored by Sunvalley Shopping Center</div>
+          <div class="sponsor-logo"><img class="sv" src="assets/sponsors/sunvalley.svg" alt="Sunvalley Shopping Center"></div>
+        </div>
       </div>
       <div class="prize">
         <div class="place">Runner-up</div>
         <div class="amount"><sup>$</sup>500</div>
         <div class="name">Second Place</div>
         <p>Cash prize and continued mentor matching post-event.</p>
+        <div class="sponsor">
+          <div class="sponsor-label">Sponsored by Shovels</div>
+          <div class="sponsor-logo"><img class="sh" src="assets/sponsors/shovels.svg" alt="Shovels"></div>
+        </div>
       </div>
       <div class="prize">
         <div class="place">Third</div>
         <div class="amount"><sup>$</sup>250</div>
         <div class="name">Third Place</div>
         <p>Cash prize and recognition.</p>
+        <div class="sponsor">
+          <div class="sponsor-label">Sponsor wanted</div>
+          <a class="sponsor-open" href="mailto:rbuckley@dvc.edu?subject=Sponsoring%20the%204CD%20Pitch%20third-place%20prize">Sponsor this prize &rarr;</a>
+        </div>
       </div>
       <div class="prize">
         <div class="place">Audience vote</div>

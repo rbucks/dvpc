@@ -4,3 +4,4 @@
 # Full-resolution camera originals — kept locally, not published.
 # Web-sized derivatives live alongside them as event-*.webp / event-*.jpg.
 assets/images/**/_originals/
+.playwright-mcp/
