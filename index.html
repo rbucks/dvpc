@@ -717,6 +717,23 @@
   .faq .flyer-links a { color: inherit; }
   .faq .flyer-links a:hover, .faq .flyer-links a:hover b { color: var(--green); }
 
+  /* ========== RESOURCES ========== */
+  .resources-list { list-style: none; margin: 0 0 0 auto; padding: 0; max-width: 920px; }
+  .resources-list li { border-top: 1px solid var(--rule); }
+  .resources-list li:last-child { border-bottom: 1px solid var(--rule); }
+  .resources-list a {
+    display: grid; grid-template-columns: 1fr auto; gap: 8px 24px; align-items: center;
+    padding: 24px 0; color: inherit; text-decoration: none;
+  }
+  .resources-list .r-title { font-family: var(--narrow); font-weight: 700; font-size: 22px; line-height: 1.25; color: var(--navy); }
+  .resources-list .r-desc { grid-column: 1; font-size: 16px; color: var(--ink-2); max-width: 64ch; }
+  .resources-list .r-go { grid-column: 2; grid-row: 1 / span 2; font-family: var(--narrow); font-weight: 700; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); white-space: nowrap; }
+  .resources-list a:hover .r-title { color: var(--green); }
+  @media (max-width: 760px) {
+    .resources-list a { grid-template-columns: 1fr; }
+    .resources-list .r-go { grid-column: 1; grid-row: auto; }
+  }
+
   /* ========== COMMUNITY / DISCORD ========== */
   .community { background: var(--sage-soft); }
   .community-inner { display: grid; grid-template-columns: 1.35fr 1fr; gap: 64px; align-items: center; }
@@ -851,6 +868,7 @@
       <a href="#scoring">Scoring</a>
       <a href="#finalists">Finalists</a>
       <a href="#gallery">Gallery</a>
+      <a href="#resources">Resources</a>
       <a href="#faq">FAQ</a>
       <a href="#community">Community</a>
     </nav>
@@ -1469,11 +1487,45 @@
   </div>
 </section>
 
+<!-- ============ RESOURCES ============ -->
+<section id="resources">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="index">§ 09 — Resources</div>
+      <h2>Everything you need to <span class="accent">build your pitch.</span></h2>
+    </div>
+
+    <ul class="resources-list">
+      <li>
+        <a href="https://docs.google.com/presentation/d/17qdEgdfOSC_BQvLUK5mTuSWFQwYwoTi1xpLz_Y_tjoE/edit?usp=sharing" target="_blank" rel="noopener">
+          <span class="r-title">Pitch deck template</span>
+          <span class="r-desc">A 10-slide Google Slides deck: problem, solution, team, customer, traction, and your ask. View-only &mdash; use File &rarr; Make a copy to start your own.</span>
+          <span class="r-go">Open template &rarr;</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://4cd.zoom.us/j/81951415734?pwd=wcVIJTmR8dbI3TIA6Os4ezLP8xb6Y9.1" target="_blank" rel="noopener">
+          <span class="r-title">Weekly Zoom drop-in</span>
+          <span class="r-desc">Every Wednesday at 4pm PT. Bring your deck or your questions.</span>
+          <span class="r-go">Join Zoom &rarr;</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://discord.gg/4DQQQBcjeW" target="_blank" rel="noopener">
+          <span class="r-title">Discord community</span>
+          <span class="r-desc">Ask the organizers, find teammates, and get feedback on your deck.</span>
+          <span class="r-go">Join Discord &rarr;</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+
 <!-- ============ FAQ ============ -->
 <section id="faq">
   <div class="wrap">
     <div class="section-head">
-      <div class="index">§ 09 — FAQ</div>
+      <div class="index">§ 10 — FAQ</div>
       <h2>Common <span class="accent">questions.</span></h2>
     </div>
 
@@ -1532,7 +1584,7 @@
       </details>
       <details>
         <summary>Is there a weekly Zoom session I can join?</summary>
-        <p>Yes — a live Zoom drop-in every Friday at 4pm PT, running weekly through the competition. Bring your deck or your questions; it's the same kind of help you'd get in the Discord, just live and face-to-face. <a href="https://4cd.zoom.us/j/81951415734?pwd=wcVIJTmR8dbI3TIA6Os4ezLP8xb6Y9.1" target="_blank" rel="noopener">Join the Friday Zoom &rarr;</a> (Meeting ID 819 5141 5734, passcode <strong>vikings</strong>).</p>
+        <p>Yes — a live Zoom drop-in every Wednesday at 4pm PT, running weekly through the competition. Bring your deck or your questions; it's the same kind of help you'd get in the Discord, just live and face-to-face. <a href="https://4cd.zoom.us/j/81951415734?pwd=wcVIJTmR8dbI3TIA6Os4ezLP8xb6Y9.1" target="_blank" rel="noopener">Join the Wednesday Zoom &rarr;</a> (Meeting ID 819 5141 5734, passcode <strong>vikings</strong>).</p>
       </details>
       <details>
         <summary>Do I keep ownership of my idea?</summary>
@@ -1582,11 +1634,11 @@
           <li>Deck feedback and practice-pitch threads</li>
           <li>Workshop, office-hour, and deadline reminders</li>
           <li>Main Street channels and tech channels, side by side</li>
-          <li>Live Zoom drop-in every Friday at 4pm to work on your application</li>
+          <li>Live Zoom drop-in every Wednesday at 4pm to work on your application</li>
         </ul>
         <div class="apply-actions">
           <a href="https://discord.gg/4DQQQBcjeW" class="cta-btn lg" target="_blank" rel="noopener">Join the Discord →</a>
-          <a href="https://4cd.zoom.us/j/81951415734?pwd=wcVIJTmR8dbI3TIA6Os4ezLP8xb6Y9.1" class="cta-btn ghost lg" target="_blank" rel="noopener">Join Friday Zoom (4pm) →</a>
+          <a href="https://4cd.zoom.us/j/81951415734?pwd=wcVIJTmR8dbI3TIA6Os4ezLP8xb6Y9.1" class="cta-btn ghost lg" target="_blank" rel="noopener">Join Wednesday Zoom (4pm) →</a>
         </div>
       </div>
       <div class="community-mark" aria-hidden="true">
@@ -1634,6 +1686,7 @@
           <li><a href="#timeline">Timeline</a></li>
           <li><a href="#prizes">Prizes</a></li>
           <li><a href="#finalists">Past finalists</a></li>
+          <li><a href="#resources">Resources</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="#community">Community</a></li>
         </ul>
