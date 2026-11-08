@@ -13,7 +13,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>The 4CD Pitch Competition — Nov 20, 2026</title>
-<meta name="description" content="The 4CD Pitch Competition — open to anyone enrolled in any Contra Costa Community College District course, including non-credit Community Education. Cafés, breweries, trades, biotech, health tech, software. Diablo Valley, not Silicon Valley. Applications are open now and close 11:59pm PT on Monday, Nov 2. Live final Nov 20, 2026." />
+<meta name="description" content="The 4CD Pitch Competition — open to anyone enrolled in any Contra Costa Community College District course, including non-credit Community Education. Cafés, breweries, trades, biotech, health tech, software. Diablo Valley, not Silicon Valley. Applications closed Nov 2. Live final Nov 20, 2026." />
 
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="apple-touch-icon" href="assets/favicon-180.png">
@@ -145,6 +145,8 @@
   .cta-btn:hover { background: var(--navy); border-color: var(--navy); color: var(--periwinkle); }
   .cta-btn.ghost { background: transparent; color: var(--navy); border-color: var(--navy); }
   .cta-btn.ghost:hover { background: var(--navy); color: var(--periwinkle); }
+  .cta-btn.disabled, .cta-btn.disabled:hover { opacity: 0.55; cursor: not-allowed; pointer-events: none; background: var(--rule); border-color: var(--rule); color: var(--ink-3); }
+  .hero .cta-btn.disabled, .apply .cta-btn.disabled { background: transparent; border-color: var(--sage); color: var(--sage); }
   .cta-btn.lg { padding: 16px 28px; font-size: 14px; }
 
   @media (max-width: 1240px) {
@@ -894,7 +896,7 @@
       <a href="#faq">FAQ</a>
       <a href="#community">Community</a>
     </nav>
-    <a href="https://forms.cloud.microsoft/r/RB7gvjDQPZ" target="_blank" rel="noopener" class="cta-btn">Apply now</a>
+    <span class="cta-btn disabled" aria-disabled="true">Application closed</span>
   </div>
 </header>
 
@@ -909,7 +911,7 @@
         Cafés, breweries, and nail salons. Construction trades, aviation, and industry. Biotech, health tech, and software. Every kind of business this valley actually runs on belongs on this stage — and one Contra Costa Community College District class, credit or not, makes you eligible.
       </p>
       <div class="hero-actions">
-        <a href="https://forms.cloud.microsoft/r/RB7gvjDQPZ" target="_blank" rel="noopener" class="cta-btn lg">Start your application</a>
+        <span class="cta-btn lg disabled" aria-disabled="true">Application closed</span>
         <a href="https://discord.gg/4DQQQBcjeW" class="cta-btn ghost lg" target="_blank" rel="noopener">Join the Discord</a>
         <a href="#about" class="cta-btn ghost lg">Read the brief</a>
       </div>
@@ -941,7 +943,6 @@
       <h3>Submit your idea</h3>
       <div class="when">Due Mon · Nov 2, 2026 · 11:59pm PT</div>
       <p>A short description of your business idea and a deck of no more than 15 slides. No video, no prior experience required — just current 4CD enrollment.</p>
-      <p class="cell-link"><a href="https://forms.cloud.microsoft/r/RB7gvjDQPZ" target="_blank" rel="noopener">Start your application &rarr;</a></p>
       <p class="cell-link"><a href="https://docs.google.com/presentation/d/17qdEgdfOSC_BQvLUK5mTuSWFQwYwoTi1xpLz_Y_tjoE/edit?usp=sharing" target="_blank" rel="noopener">Get the pitch deck template &rarr;</a></p>
     </div>
     <div class="date-cell">
@@ -1067,8 +1068,8 @@
       <div class="tl-row">
         <div class="tl-date">Sept 15<small>Applications open</small></div>
         <div class="tl-body">
-          <h4>Applications open — the form is live</h4>
-          <p><a href="https://forms.cloud.microsoft/r/RB7gvjDQPZ" target="_blank" rel="noopener"><strong>The application form is open now.</strong></a> If you're not enrolled in a 4CD class yet, this is the window to sign up for one — including any non-credit Community Education course.</p>
+          <h4>Applications opened</h4>
+          <p><strong>The application form is now closed.</strong> Thank you to every student and community member who applied.</p>
         </div>
       </div>
 
@@ -1225,7 +1226,7 @@
         <li><b>Competed before?</b> Welcome back — but your new submission must be a different concept.</li>
         <li><b>Multiple entries</b> Allowed. A finalist still pitches only once at the live event, solo or on a team.</li>
         <li><b>Finalists</b> The top 10 are announced on Friday, Nov 6.</li>
-        <li><b>Where to apply</b> One form for everybody — <a href="https://forms.cloud.microsoft/r/RB7gvjDQPZ" target="_blank" rel="noopener">start your application</a>.</li>
+        <li><b>Where to apply</b> One form for everybody — applications closed Nov 2.</li>
       </ul>
     </div>
 
@@ -1331,8 +1332,59 @@
 <section id="finalists">
   <div class="wrap">
     <div class="section-head">
-      <div class="index">§ 07 — Past finalists</div>
-      <h2>Two years of ventures that <span class="accent">walked off this stage.</span></h2>
+      <div class="index">§ 07 — Finalists</div>
+      <h2>Ten teams. <span class="accent">One stage on Nov 20.</span></h2>
+    </div>
+
+    <!-- ========== 2026 ========== -->
+    <div class="year-block">
+      <div class="year-head">
+        <div class="y">2026</div>
+        <div class="label">The 4CD Pitch Competition · Finalists</div>
+        <div class="meta">Live final · Nov 20, 2026</div>
+      </div>
+      <div class="finalist-grid">
+        <div class="finalist">
+          <div class="rank-badge" style="background:var(--bone); color:var(--navy); border:1px solid var(--rule);">Finalist</div>
+          <h4>Bloom &amp; Brand</h4>
+        </div>
+        <div class="finalist">
+          <div class="rank-badge" style="background:var(--bone); color:var(--navy); border:1px solid var(--rule);">Finalist</div>
+          <h4>FurCatcher</h4>
+        </div>
+        <div class="finalist">
+          <div class="rank-badge" style="background:var(--bone); color:var(--navy); border:1px solid var(--rule);">Finalist</div>
+          <h4>GraftDesk</h4>
+        </div>
+        <div class="finalist">
+          <div class="rank-badge" style="background:var(--bone); color:var(--navy); border:1px solid var(--rule);">Finalist</div>
+          <h4>LingoLens</h4>
+        </div>
+        <div class="finalist">
+          <div class="rank-badge" style="background:var(--bone); color:var(--navy); border:1px solid var(--rule);">Finalist</div>
+          <h4>Loop Locker</h4>
+        </div>
+        <div class="finalist">
+          <div class="rank-badge" style="background:var(--bone); color:var(--navy); border:1px solid var(--rule);">Finalist</div>
+          <h4>Mac and Wings</h4>
+        </div>
+        <div class="finalist">
+          <div class="rank-badge" style="background:var(--bone); color:var(--navy); border:1px solid var(--rule);">Finalist</div>
+          <h4>ReWear Campus</h4>
+        </div>
+        <div class="finalist">
+          <div class="rank-badge" style="background:var(--bone); color:var(--navy); border:1px solid var(--rule);">Finalist</div>
+          <h4>SPACE &amp; STYLE</h4>
+        </div>
+        <div class="finalist">
+          <div class="rank-badge" style="background:var(--bone); color:var(--navy); border:1px solid var(--rule);">Finalist</div>
+          <h4>Spirvo</h4>
+        </div>
+        <div class="finalist">
+          <div class="rank-badge" style="background:var(--bone); color:var(--navy); border:1px solid var(--rule);">Finalist</div>
+          <h4>TeacherAssist</h4>
+        </div>
+      </div>
     </div>
 
     <!-- ========== 2025 ========== -->
@@ -1574,7 +1626,7 @@
       </details>
       <details>
         <summary>How do I apply?</summary>
-        <p>Through one form: <a href="https://forms.cloud.microsoft/r/RB7gvjDQPZ" target="_blank" rel="noopener"><strong>the 2026 application</strong></a>. It asks for a short description of your business idea and a slide presentation of no more than 15 slides — nothing else. Everyone uses the same form, and it closes at <strong>11:59pm PT on Monday, Nov 2</strong>.</p>
+        <p>Through one form: <strong>the 2026 application</strong>. It asks for a short description of your business idea and a slide presentation of no more than 15 slides — nothing else. Everyone uses the same form, and it closes at <strong>11:59pm PT on Monday, Nov 2</strong>.</p>
       </details>
       <details>
         <summary>I'm not a student. Can I still compete?</summary>
@@ -1598,7 +1650,7 @@
       </details>
       <details>
         <summary>What does the application include?</summary>
-        <p>Two things: <strong>a short description of the business idea</strong>, and <strong>a slide presentation of no more than 15 slides</strong>. No video at this stage. Everything is due by <strong>11:59pm PT on Monday, Nov 2</strong>. Finalists then submit a final-draft deck and an optional 1-minute YouTube video. <a href="https://forms.cloud.microsoft/r/RB7gvjDQPZ" target="_blank" rel="noopener">Open the application form &rarr;</a></p>
+        <p>Two things: <strong>a short description of the business idea</strong>, and <strong>a slide presentation of no more than 15 slides</strong>. No video at this stage. Everything is due by <strong>11:59pm PT on Monday, Nov 2</strong>. Finalists then submit a final-draft deck and an optional 1-minute YouTube video.</p>
       </details>
       <details>
         <summary>Is there a pitch deck template?</summary>
@@ -1685,12 +1737,12 @@
 <!-- ============ APPLY ============ -->
 <section id="apply" class="apply">
   <div class="wrap">
-    <div class="deadline">Open now · Due Mon Nov 2 · 11:59pm PT</div>
+    <div class="deadline">Applications closed · Nov 2, 2026</div>
     <h2>Bring an idea.<br><span class="accent">Leave with a deck, a network, and maybe a check.</span></h2>
     <p>Whether you're 16 with an app idea or 46 with a lease you're ready to sign — this is the stage. One 4CD class is all it takes to be eligible, and any class counts. One description, one deck. We'll do the rest.</p>
-    <p class="note-line">The application form is open. Questions while you're filling it in? <a href="https://discord.gg/4DQQQBcjeW" target="_blank" rel="noopener">Join the Discord</a> — organizers and other teams are in there.</p>
+    <p class="note-line">Applications are closed. Want to follow along or get involved? <a href="https://discord.gg/4DQQQBcjeW" target="_blank" rel="noopener">Join the Discord</a> — organizers and other teams are in there.</p>
     <div class="apply-actions">
-      <a href="https://forms.cloud.microsoft/r/RB7gvjDQPZ" target="_blank" rel="noopener" class="cta-btn lg">Start your application &rarr;</a>
+      <span class="cta-btn lg disabled" aria-disabled="true">Application closed</span>
       <a href="https://docs.google.com/presentation/d/17qdEgdfOSC_BQvLUK5mTuSWFQwYwoTi1xpLz_Y_tjoE/edit?usp=sharing" class="cta-btn ghost lg" target="_blank" rel="noopener">Get the deck template</a>
       <a href="https://discord.gg/4DQQQBcjeW" class="cta-btn ghost lg" target="_blank" rel="noopener">Join the Discord</a>
       <a href="mailto:rbuckley@dvc.edu" class="cta-btn ghost lg">Email us a question</a>
@@ -1714,12 +1766,11 @@
       <div>
         <h5>Event</h5>
         <ul>
-          <li><a href="https://forms.cloud.microsoft/r/RB7gvjDQPZ" target="_blank" rel="noopener">Apply now &rarr;</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#room">The Room</a></li>
           <li><a href="#timeline">Timeline</a></li>
           <li><a href="#prizes">Prizes</a></li>
-          <li><a href="#finalists">Past finalists</a></li>
+          <li><a href="#finalists">Finalists</a></li>
           <li><a href="#resources">Resources</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="#community">Community</a></li>
