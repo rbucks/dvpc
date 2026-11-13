@@ -457,6 +457,14 @@
 
   @media (max-width: 760px) { .tl-row { grid-template-columns: 1fr; gap: 8px; } }
 
+  /* ========== AGENDA ========== */
+  .agenda-meta { font-family: var(--narrow); font-weight: 700; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 20px; }
+  .keynote { display: flex; align-items: center; gap: 20px; margin-top: 20px; }
+  .keynote img { width: 112px; height: 112px; border-radius: 50%; object-fit: cover; flex: none; display: block; }
+  .keynote .k-label { font-family: var(--narrow); font-weight: 700; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green); }
+  .keynote .k-name { font-family: var(--narrow); font-weight: 800; font-size: 22px; line-height: 1.2; color: var(--navy); margin-top: 4px; }
+  .keynote .k-role { font-size: 15px; color: var(--ink-2); margin-top: 2px; }
+
   /* ========== PRIZES ========== */
   .prizes-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 12px; }
   .prize {
@@ -888,6 +896,7 @@
       <a href="#about">About</a>
       <a href="#room">The Room</a>
       <a href="#timeline">Timeline</a>
+      <a href="#agenda">Agenda</a>
       <a href="#prizes">Prizes</a>
       <a href="#scoring">Scoring</a>
       <a href="#finalists">Finalists</a>
@@ -1110,11 +1119,64 @@
   </div>
 </section>
 
+<!-- ============ AGENDA ============ -->
+<section id="agenda">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="index">§ 04 — Agenda</div>
+      <h2>The morning of <span class="accent">Nov 20.</span></h2>
+    </div>
+
+    <div>
+      <p class="agenda-meta">Friday, Nov 20, 2026 · Diablo Room · Pleasant Hill campus</p>
+
+      <div class="tl-row">
+        <div class="tl-date">9:00am</div>
+        <div class="tl-body">
+          <h4>Opening</h4>
+        </div>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-date">9:15am</div>
+        <div class="tl-body">
+          <h4>Presentations begin</h4>
+        </div>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-date">11:00am</div>
+        <div class="tl-body">
+          <h4>Judges' deliberation and keynote remarks</h4>
+          <div class="keynote">
+            <picture>
+              <source srcset="assets/images/speakers/bret-sweet.webp" type="image/webp">
+              <img src="assets/images/speakers/bret-sweet.jpg" alt="Bret Sweet" width="640" height="640" loading="lazy" decoding="async">
+            </picture>
+            <div>
+              <div class="k-label">Keynote</div>
+              <div class="k-name">Bret Sweet</div>
+              <div class="k-role">Economic Development Manager, City of Pleasant Hill</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-date">11:30am</div>
+        <div class="tl-body">
+          <h4>Awards and lunch reception</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ PRIZES ============ -->
 <section id="prizes">
   <div class="wrap">
     <div class="section-head">
-      <div class="index">§ 04 — Prizes</div>
+      <div class="index">§ 05 — Prizes</div>
       <h2>Cash prizes, mentorship, and a <span class="accent">real audience.</span></h2>
     </div>
 
@@ -1167,7 +1229,7 @@
 <section id="judges">
   <div class="wrap">
     <div class="section-head">
-      <div class="index">§ 05 — How it's judged</div>
+      <div class="index">§ 06 — How it's judged</div>
       <h2>Local leaders, working entrepreneurs, real <span class="accent">industry seats.</span></h2>
     </div>
 
@@ -1196,7 +1258,7 @@
           <li><div class="who">Separate scores</div><div class="what">Screening results do not carry into the final</div></li>
           <li><div class="who">People's Choice</div><div class="what">Live audience vote, separate from the rubric</div></li>
         </ul>
-        <p style="margin-top:20px; color:var(--ink-3); font-size:13px; font-family:var(--narrow);">The full category-by-category rubric for both stages is published below — <a href="#scoring">see §&nbsp;06, Scoring</a>. Nothing is scored on anything that isn't on it.</p>
+        <p style="margin-top:20px; color:var(--ink-3); font-size:13px; font-family:var(--narrow);">The full category-by-category rubric for both stages is published below — <a href="#scoring">see §&nbsp;07, Scoring</a>. Nothing is scored on anything that isn't on it.</p>
       </div>
     </div>
   </div>
@@ -1206,7 +1268,7 @@
 <section id="scoring">
   <div class="wrap">
     <div class="section-head">
-      <div class="index">§ 06 — Scoring</div>
+      <div class="index">§ 07 — Scoring</div>
       <h2>Fifty points to make the cut. Fifty more <span class="accent">on the stage.</span></h2>
     </div>
 
@@ -1334,7 +1396,7 @@
 <section id="finalists">
   <div class="wrap">
     <div class="section-head">
-      <div class="index">§ 07 — Finalists</div>
+      <div class="index">§ 08 — Finalists</div>
       <h2>Eight teams. <span class="accent">One stage on Nov 20.</span></h2>
     </div>
 
@@ -1509,7 +1571,7 @@
 <section id="gallery">
   <div class="wrap">
     <div class="section-head">
-      <div class="index">§ 08 — Gallery</div>
+      <div class="index">§ 09 — Gallery</div>
       <h2>What the room actually <span class="accent">looks like.</span></h2>
     </div>
 
@@ -1596,7 +1658,7 @@
 <section id="resources">
   <div class="wrap">
     <div class="section-head">
-      <div class="index">§ 09 — Resources</div>
+      <div class="index">§ 10 — Resources</div>
       <h2>Everything you need to <span class="accent">build your pitch.</span></h2>
     </div>
 
@@ -1637,7 +1699,7 @@
 <section id="faq">
   <div class="wrap">
     <div class="section-head">
-      <div class="index">§ 10 — FAQ</div>
+      <div class="index">§ 11 — FAQ</div>
       <h2>Common <span class="accent">questions.</span></h2>
     </div>
 
@@ -1800,6 +1862,7 @@
           <li><a href="#about">About</a></li>
           <li><a href="#room">The Room</a></li>
           <li><a href="#timeline">Timeline</a></li>
+          <li><a href="#agenda">Agenda</a></li>
           <li><a href="#prizes">Prizes</a></li>
           <li><a href="#finalists">Finalists</a></li>
           <li><a href="#resources">Resources</a></li>
