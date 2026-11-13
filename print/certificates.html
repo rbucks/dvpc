@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The 4CD Pitch Competition — 2026 finalist certificates</title>
+<!--
+  One US Letter landscape page per finalist. Edit the FINALISTS list at the
+  bottom of this file to add, remove, or correct a name; the pages are built
+  from it. Print single-sided at actual size.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800;900&family=Archivo+Narrow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  @page { size: 11in 8.5in; margin: 0; }
+  :root {
+    --green: #01775b; --green-deep: #015a45;
+    --sage: #b5dbaf; --sage-soft: #d6ecd2;
+    --navy: #1a3a6c; --navy-deep: #122a4e;
+    --periwinkle: #9aa6d6; --periwinkle-soft: #c5cce8;
+    --paper: #fbfaf5; --bone: #f3f1ea;
+    --ink: #0e1d2c; --ink-2: #36465a; --ink-3: #6b7787;
+    --rule: rgba(26,58,108,0.18);
+    --display: "Anton", Impact, sans-serif;
+    --sans: "Archivo", system-ui, sans-serif;
+    --narrow: "Archivo Narrow", "Archivo", sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #fff; }
+  body { font-family: var(--sans); color: var(--ink); -webkit-font-smoothing: antialiased; }
+
+  .sheet {
+    width: 11in; height: 8.5in; overflow: hidden; padding: 0.4in;
+    background: #fff;
+    print-color-adjust: exact; -webkit-print-color-adjust: exact;
+    page-break-after: always; break-after: page;
+  }
+  .sheet:last-child { page-break-after: auto; break-after: auto; }
+
+  .cert {
+    height: 100%; background: var(--paper);
+    border: 2.5pt solid var(--navy);
+    outline: 0.75pt solid var(--navy); outline-offset: -0.11in;
+    display: grid; grid-template-columns: 2.55in 1fr;
+  }
+
+  /* left band */
+  .band { background: var(--green); color: var(--sage); margin: 0.16in 0 0.16in 0.16in; padding: 0.3in 0.26in; display: flex; flex-direction: column; }
+  .band img { width: 1.25in; height: 1.25in; display: block; }
+  .band .wm { font-family: var(--narrow); font-weight: 700; font-size: 10.5pt; letter-spacing: 0.14em; text-transform: uppercase; color: #fff; line-height: 1.35; margin-top: 0.2in; }
+  .band .date { margin-top: auto; }
+  .band .date .d { font-family: var(--display); font-size: 46pt; line-height: 0.9; color: var(--sage); text-transform: uppercase; }
+  .band .date .y { font-family: var(--display); font-size: 46pt; line-height: 0.9; color: var(--periwinkle-soft); }
+  .band .date .w { font-family: var(--narrow); font-size: 8.5pt; line-height: 1.45; color: var(--sage-soft); margin-top: 0.14in; }
+  .band .date .w b { display: block; color: #fff; font-size: 8.5pt; letter-spacing: 0.1em; text-transform: uppercase; }
+
+  /* body */
+  .main { padding: 0.5in 0.6in 0.42in 0.5in; display: flex; flex-direction: column; min-width: 0; }
+  .kicker { font-family: var(--narrow); font-weight: 700; font-size: 9.5pt; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green); display: flex; align-items: center; gap: 0.12in; }
+  .kicker::before { content: ""; width: 0.45in; height: 1.5pt; background: var(--green); }
+  h1 { font-family: var(--display); font-weight: 400; text-transform: uppercase; font-size: 86pt; line-height: 0.9; color: var(--navy); margin-top: 0.12in; letter-spacing: 0.005em; }
+  .of { font-family: var(--narrow); font-weight: 700; font-size: 13pt; letter-spacing: 0.14em; text-transform: uppercase; color: var(--navy); margin-top: 0.1in; }
+
+  .to { font-family: var(--narrow); font-size: 11pt; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); margin-top: 0.55in; }
+  .name { font-family: var(--display); text-transform: uppercase; font-size: 44pt; line-height: 1; color: var(--green); margin-top: 0.1in; white-space: nowrap; letter-spacing: 0.01em; }
+  .nrule { height: 2.5pt; background: var(--navy); margin-top: 0.14in; }
+  .for { font-size: 13pt; line-height: 1.5; color: var(--ink-2); margin-top: 0.16in; max-width: 6.2in; }
+  .for b { color: var(--navy); font-weight: 700; }
+
+  .sig { margin-top: auto; display: flex; align-items: flex-end; justify-content: space-between; gap: 0.3in; }
+  .sig .who { border-top: 0.75pt solid var(--ink-3); padding-top: 0.08in; min-width: 3.1in; font-family: var(--narrow); font-weight: 700; font-size: 10.5pt; letter-spacing: 0.06em; text-transform: uppercase; color: var(--navy); }
+  .sig .who small { display: block; font-weight: 500; font-size: 8.5pt; letter-spacing: 0.04em; text-transform: none; color: var(--ink-3); margin-top: 0.02in; }
+  .sig .cols { font-family: var(--narrow); font-weight: 700; font-size: 7.5pt; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); text-align: right; line-height: 1.55; }
+</style>
+</head>
+<body>
+
+<template id="cert">
+  <div class="sheet">
+    <div class="cert">
+      <div class="band">
+        <img src="../assets/dvc-logo-simple.svg" alt="">
+        <div class="wm">The 4CD<br>Pitch<br>Competition</div>
+        <div class="date">
+          <div class="d">Nov 20</div>
+          <div class="y">2026</div>
+          <div class="w"><b>The live final</b>Diablo Room · Diablo Valley College<br>Pleasant Hill campus</div>
+        </div>
+      </div>
+      <div class="main">
+        <div class="kicker">Certificate of achievement</div>
+        <h1>Finalist</h1>
+        <div class="of">The 4CD Pitch Competition · 2026</div>
+
+        <div class="to">This certificate is proudly presented to</div>
+        <div class="name" data-name></div>
+        <div class="nrule"></div>
+        <p class="for">for <b data-team></b>, one of eight finalist teams selected to pitch live at The 4CD Pitch Competition, held at Diablo Valley College on November 20, 2026.</p>
+
+        <div class="sig">
+          <div class="who">The 4CD Pitch Competition Committee<small>Contra Costa Community College District</small></div>
+          <div class="cols">Contra Costa College<br>Diablo Valley College<br>Los Medanos College</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+  // One certificate per person. Names and teams match the Finalists section of index.html.
+  const FINALISTS = [
+    ["Araceli Fernandez Teopantitla", "Bloom & Brand"],
+    ["Emmett Guthmore", "GraftDesk"],
+    ["Hasti Noroozi", "LingoLens"],
+    ["Venus Aziz", "Loop Locker"],
+    ["Louis Akins", "Mac and Wings"],
+    ["Arzo Kaifi", "ReWear Campus"],
+    ["Aayush Bhasin", "Spirvo"],
+    ["Suvd Budragchaa", "TeacherAssist"],
+    ["Ravipat Rodphothong", "TeacherAssist"],
+    ["Valentin Albrecht", "TeacherAssist"],
+  ];
+  const tpl = document.getElementById("cert");
+  for (const [name, team] of FINALISTS) {
+    const page = tpl.content.cloneNode(true);
+    page.querySelector("[data-name]").textContent = name;
+    page.querySelector("[data-team]").textContent = team;
+    document.body.appendChild(page);
+  }
+  // Shrink any name that is wider than its line so long names never clip.
+  document.fonts.ready.then(() => {
+    for (const el of document.querySelectorAll(".name")) {
+      let size = 44;
+      while (el.scrollWidth > el.clientWidth && size > 20) el.style.fontSize = (--size) + "pt";
+    }
+  });
+</script>
+</body>
+</html>

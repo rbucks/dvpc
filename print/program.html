@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The 4CD Pitch Competition — 2026 program (half-fold)</title>
+<!--
+  One US Letter sheet, landscape, printed on both sides and folded in half.
+  Page 1 = outside (left half: back cover, right half: front cover).
+  Page 2 = inside  (left half: agenda and judges, right half: finalists and prizes).
+  Print double-sided, flip on the SHORT edge, actual size.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800;900&family=Archivo+Narrow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  @page { size: 11in 8.5in; margin: 0; }
+  :root {
+    --green: #01775b; --green-deep: #015a45;
+    --sage: #b5dbaf; --sage-soft: #d6ecd2;
+    --navy: #1a3a6c; --navy-deep: #122a4e;
+    --periwinkle: #9aa6d6; --periwinkle-soft: #c5cce8;
+    --paper: #fbfaf5; --bone: #f3f1ea;
+    --ink: #0e1d2c; --ink-2: #36465a; --ink-3: #6b7787;
+    --rule: rgba(26,58,108,0.18);
+    --display: "Anton", Impact, sans-serif;
+    --sans: "Archivo", system-ui, sans-serif;
+    --narrow: "Archivo Narrow", "Archivo", sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #fff; }
+  body { font-family: var(--sans); color: var(--ink); -webkit-font-smoothing: antialiased; }
+  h1, h2 { font-family: var(--display); font-weight: 400; text-transform: uppercase; letter-spacing: 0.005em; }
+
+  .sheet {
+    width: 11in; height: 8.5in; overflow: hidden;
+    display: grid; grid-template-columns: 5.5in 5.5in;
+    print-color-adjust: exact; -webkit-print-color-adjust: exact;
+    page-break-after: always; break-after: page;
+  }
+  .sheet:last-child { page-break-after: auto; break-after: auto; }
+  .panel { height: 8.5in; overflow: hidden; display: flex; flex-direction: column; }
+
+  .kicker { font-family: var(--narrow); font-weight: 700; font-size: 8pt; letter-spacing: 0.16em; text-transform: uppercase; color: var(--green); }
+
+  /* ---------- front cover ---------- */
+  .cover { background: var(--green); color: var(--sage); }
+  .cover .bar {
+    background: var(--navy-deep); color: var(--periwinkle);
+    font-family: var(--narrow); font-weight: 700; font-size: 6.5pt; letter-spacing: 0.09em; text-transform: uppercase;
+    padding: 0.42in 0.45in 0.13in; line-height: 1.5;
+  }
+  .cover .bar strong { color: #fff; }
+  .cover .top { display: flex; align-items: center; gap: 0.12in; padding: 0.34in 0.45in 0; }
+  .cover .top img { width: 0.5in; height: 0.5in; }
+  .cover .wordmark { font-family: var(--narrow); font-weight: 700; color: #fff; font-size: 11pt; letter-spacing: 0.14em; text-transform: uppercase; }
+  .cover .yr { margin-left: auto; font-family: var(--narrow); font-weight: 700; font-size: 9pt; letter-spacing: 0.16em; color: var(--sage-soft); }
+  .cover .mid { flex: 1; padding: 0 0.45in; display: flex; flex-direction: column; justify-content: center; }
+  .cover .mid .kicker { color: var(--sage-soft); margin-bottom: 0.14in; display: flex; align-items: center; gap: 0.1in; }
+  .cover .mid .kicker::before { content: ""; width: 0.4in; height: 1.5pt; background: var(--sage); }
+  .cover h1 { font-size: 74pt; line-height: 0.9; color: var(--sage); }
+  .cover h1 em { font-style: normal; color: var(--periwinkle-soft); }
+  .cover .lede { margin-top: 0.2in; font-size: 10.5pt; line-height: 1.45; color: var(--sage-soft); max-width: 4.1in; }
+  .cover .when { background: var(--navy); color: var(--periwinkle-soft); padding: 0.24in 0.45in 0.5in; display: flex; align-items: center; gap: 0.26in; }
+  .cover .when .big { font-family: var(--display); font-size: 38pt; line-height: 0.85; color: var(--periwinkle-soft); white-space: nowrap; }
+  .cover .when .meta { font-family: var(--narrow); font-size: 9pt; line-height: 1.5; }
+  .cover .when .meta b { display: block; color: #fff; font-size: 10pt; letter-spacing: 0.05em; text-transform: uppercase; }
+
+  /* ---------- back cover ---------- */
+  .back { background: var(--paper); padding: 0.55in 0.5in 0; }
+  .back h2 { font-size: 34pt; line-height: 0.95; color: var(--navy); margin-top: 0.1in; }
+  .back h2 em { font-style: normal; color: var(--green); }
+  .back p { font-size: 10.5pt; line-height: 1.5; color: var(--ink-2); margin-top: 0.12in; max-width: 4.2in; }
+  .back p b { color: var(--navy); }
+  .next { margin-top: 0.36in; border: 1.5pt solid var(--navy); display: flex; align-items: center; gap: 0.2in; padding: 0.18in; background: var(--bone); }
+  .next img { width: 1.05in; height: 1.05in; display: block; background: #fff; }
+  .next .t { font-family: var(--display); font-size: 20pt; line-height: 1; color: var(--navy); text-transform: uppercase; }
+  .next .s { font-family: var(--narrow); font-size: 9pt; line-height: 1.4; color: var(--ink-2); margin-top: 0.06in; }
+  .next .u { font-family: var(--narrow); font-weight: 700; font-size: 10pt; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green); margin-top: 0.06in; }
+  .sponsors { margin-top: auto; padding-bottom: 0.3in; }
+  .sponsors .row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.14in; margin-top: 0.1in; }
+  .sponsors .s { border: 0.75pt solid var(--rule); background: #fff; padding: 0.14in 0.16in; }
+  .sponsors .s .logo { height: 0.62in; display: flex; align-items: center; justify-content: center; }
+  .sponsors .s img { max-width: 100%; max-height: 100%; display: block; }
+  .sponsors .s .l { font-family: var(--narrow); font-weight: 700; font-size: 7pt; letter-spacing: 0.13em; text-transform: uppercase; color: var(--ink-3); text-align: center; margin-top: 0.09in; }
+  .back .foot { margin: 0 -0.5in; background: var(--navy-deep); color: var(--periwinkle-soft); padding: 0.18in 0.5in 0.46in; display: flex; align-items: flex-end; justify-content: space-between; gap: 0.2in; }
+  .back .foot .url { font-family: var(--display); font-size: 20pt; line-height: 0.9; color: #fff; }
+  .back .foot .c { font-family: var(--narrow); font-size: 7pt; letter-spacing: 0.1em; text-transform: uppercase; text-align: right; line-height: 1.5; }
+
+  /* ---------- inside ---------- */
+  .inside { background: var(--paper); padding: 0.48in 0.5in 0.45in; }
+  .inside h2 { font-size: 28pt; line-height: 0.95; color: var(--navy); margin-top: 0.07in; }
+  .inside h2 em { font-style: normal; color: var(--green); }
+  .inside.right { background: var(--bone); border-left: 0.75pt solid var(--rule); }
+
+  .agenda { margin-top: 0.18in; }
+  .ag { display: grid; grid-template-columns: 1.2in 1fr; align-items: baseline; gap: 0.12in; padding: 0.12in 0; border-top: 0.75pt solid var(--rule); }
+  .ag:last-child { border-bottom: 0.75pt solid var(--rule); }
+  .ag .t { font-family: var(--display); font-size: 20pt; line-height: 1; color: var(--navy); }
+  .ag .w { font-family: var(--narrow); font-weight: 700; font-size: 12pt; letter-spacing: 0.04em; text-transform: uppercase; color: var(--navy); line-height: 1.2; }
+  .ag .w small { display: block; font-weight: 500; font-size: 8.5pt; letter-spacing: 0; text-transform: none; color: var(--ink-2); margin-top: 0.02in; }
+  .ag.hot { background: var(--sage-soft); margin: 0 -0.12in; padding-left: 0.12in; padding-right: 0.12in; border-top-color: var(--green); }
+  .ag.hot .t { color: var(--green-deep); }
+  .ag.hot + .ag { border-top-color: var(--green); }
+
+  .keynote { margin-top: 0.26in; background: var(--navy); color: #fff; display: flex; align-items: center; gap: 0.18in; padding: 0.16in 0.18in; }
+  .keynote img { width: 0.95in; height: 0.95in; border-radius: 50%; object-fit: cover; flex: none; display: block; border: 2pt solid var(--periwinkle); }
+  .keynote .kicker { color: var(--sage); }
+  .keynote .n { font-family: var(--display); font-size: 21pt; line-height: 1; text-transform: uppercase; margin-top: 0.05in; }
+  .keynote .r { font-family: var(--narrow); font-size: 9pt; line-height: 1.35; color: var(--periwinkle-soft); margin-top: 0.05in; }
+
+  .judges { margin-top: 0.26in; }
+  .judges ul { list-style: none; display: grid; grid-template-columns: 1fr 1fr; column-gap: 0.2in; margin-top: 0.07in; }
+  .judges li { font-family: var(--narrow); font-weight: 700; font-size: 13.5pt; color: var(--navy); padding: 0.09in 0; border-top: 0.75pt solid var(--rule); }
+  .thanks { margin-top: auto; font-family: var(--narrow); font-size: 8.5pt; line-height: 1.45; color: var(--ink-3); border-top: 2pt solid var(--green); padding-top: 0.1in; }
+  .thanks b { color: var(--navy); }
+
+  .teams { margin-top: 0.16in; display: grid; grid-template-columns: 1fr 1fr; column-gap: 0.22in; }
+  .team { border-top: 0.75pt solid var(--rule); padding: 0.12in 0 0.14in; display: flex; flex-direction: column; }
+  .team h3 { font-family: var(--narrow); font-weight: 700; font-size: 14pt; line-height: 1.1; color: var(--navy); }
+  .team p { font-size: 8.8pt; line-height: 1.42; color: var(--ink-2); margin-top: 0.035in; }
+  .team .by { font-family: var(--narrow); font-weight: 700; font-size: 7.6pt; letter-spacing: 0.06em; text-transform: uppercase; color: var(--green); margin-top: 0.06in; line-height: 1.35; }
+  .order { font-family: var(--narrow); font-size: 7.5pt; color: var(--ink-3); margin-top: 0.02in; }
+
+  .prizes { margin-top: auto; }
+  .prizes .grid { display: grid; grid-template-columns: 1.25fr 1fr 1fr 1fr; gap: 0.07in; margin-top: 0.08in; }
+  .prize { border: 1.25pt solid var(--navy); background: var(--paper); padding: 0.09in 0.1in 0.1in; }
+  .prize.first { background: var(--green); border-color: var(--green); }
+  .prize .a { font-family: var(--display); font-size: 19pt; line-height: 0.95; color: var(--navy); }
+  .prize .n { font-family: var(--narrow); font-weight: 700; font-size: 7pt; letter-spacing: 0.06em; text-transform: uppercase; color: var(--navy); margin-top: 0.03in; }
+  .prize .sp { font-family: var(--narrow); font-size: 6.5pt; line-height: 1.25; color: var(--ink-3); margin-top: 0.02in; }
+  .prize.first .a, .prize.first .n { color: var(--sage); }
+  .prize.first .sp { color: var(--sage-soft); }
+</style>
+</head>
+<body>
+
+<!-- ================= PAGE 1 · OUTSIDE ================= -->
+<div class="sheet">
+
+  <!-- back cover (left half) -->
+  <div class="panel back">
+    <div class="kicker">After today</div>
+    <h2>Entrepreneurship never stops <em>at 4CD.</em></h2>
+    <p>The final is one morning. The business is every day after it. Stay in the room: the <b>4CD Pitch Discord</b> is where finalists, mentors, judges, and next year's applicants keep talking. The invite is on the website.</p>
+
+    <div class="next">
+      <img src="../flyers/qr-4cdpitch.png" alt="QR code for 4cdpitch.com">
+      <div>
+        <div class="t">Apply next year</div>
+        <div class="s">Open to anyone enrolled in any 4CD course, credit or non-credit. Dates for the next competition will be posted on the website.</div>
+        <div class="u">4cdpitch.com</div>
+      </div>
+    </div>
+
+    <div class="sponsors">
+      <div class="kicker">Thank you to our prize sponsors</div>
+      <div class="row">
+        <div class="s">
+          <div class="logo"><img src="../assets/sponsors/sunvalley.svg" alt="Sunvalley Shopping Center" style="height:0.6in;"></div>
+          <div class="l">First place prize</div>
+        </div>
+        <div class="s">
+          <div class="logo"><img src="../assets/sponsors/shovels.svg" alt="Shovels" style="height:0.36in;"></div>
+          <div class="l">Second place prize</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot">
+      <div class="url">4cdpitch.com</div>
+      <div class="c">Contra Costa College<br>Diablo Valley College<br>Los Medanos College</div>
+    </div>
+  </div>
+
+  <!-- front cover (right half) -->
+  <div class="panel cover">
+    <div class="bar">A program of the Contra Costa Community College District <strong>(4CD)</strong></div>
+    <div class="top">
+      <img src="../assets/dvc-logo-simple.svg" alt="">
+      <span class="wordmark">The 4CD Pitch Competition</span>
+      <span class="yr">2026</span>
+    </div>
+    <div class="mid">
+      <div class="kicker">The live final · Program</div>
+      <h1>Eight teams.<br>One stage.<br><em>Nov 20.</em></h1>
+      <p class="lede">Three minutes to pitch. Two minutes of questions. One panel of judges, and a room full of the Diablo Valley.</p>
+    </div>
+    <div class="when">
+      <div class="big">Nov 20</div>
+      <div class="meta">
+        <b>Friday, 2026</b>
+        Diablo Room · Diablo Valley College<br>
+        Pleasant Hill campus
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= PAGE 2 · INSIDE ================= -->
+<div class="sheet">
+
+  <!-- inside left -->
+  <div class="panel inside">
+    <div class="kicker">Agenda</div>
+    <h2>The morning of <em>Nov 20.</em></h2>
+
+    <div class="agenda">
+      <div class="ag"><div class="t">8:30am</div><div class="w">Doors open</div></div>
+      <div class="ag"><div class="t">9:00am</div><div class="w">Welcome</div></div>
+      <div class="ag hot"><div class="t">9:15am</div><div class="w">Pitches<small>Eight finalist teams · three minutes each, two for questions</small></div></div>
+      <div class="ag"><div class="t">11:00am</div><div class="w">Judges' deliberation and keynote remarks</div></div>
+      <div class="ag"><div class="t">11:30am</div><div class="w">Awards and lunch reception</div></div>
+    </div>
+
+    <div class="keynote">
+      <img src="../assets/images/speakers/bret-sweet.jpg" alt="Bret Sweet">
+      <div>
+        <div class="kicker">Keynote</div>
+        <div class="n">Bret Sweet</div>
+        <div class="r">Economic Development Manager<br>City of Pleasant Hill</div>
+      </div>
+    </div>
+
+    <div class="judges">
+      <div class="kicker">The judges</div>
+      <ul>
+        <li>Dan Siegel</li>
+        <li>Luther Daniel</li>
+        <li>Ruide Zhu</li>
+        <li>Vasudha Paul</li>
+      </ul>
+    </div>
+
+    <div class="thanks">
+      <b>It takes a village.</b> Thank you to the screening panel, the mentors, the judges, our sponsors, and the 4CD business faculty and staff who made today happen.
+    </div>
+  </div>
+
+  <!-- inside right -->
+  <div class="panel inside right">
+    <div class="kicker">2026 finalists</div>
+    <h2>Eight teams. <em>One stage.</em></h2>
+    <div class="order">Listed alphabetically.</div>
+
+    <div class="teams">
+      <div class="team">
+        <h3>Bloom &amp; Brand</h3>
+        <p>Social media management and simple brand strategy for local small businesses, from $300 a month.</p>
+        <div class="by">Araceli Fernandez Teopantitla · DVC</div>
+      </div>
+      <div class="team">
+        <h3>GraftDesk</h3>
+        <p>An AI receptionist for tradespeople that answers calls, books the job, and texts missed callers back.</p>
+        <div class="by">Emmett Guthmore · DVC</div>
+      </div>
+      <div class="team">
+        <h3>LingoLens</h3>
+        <p>Smart translation glasses that show signs, menus, and books in the wearer's preferred language.</p>
+        <div class="by">Hasti Noroozi · DVC</div>
+      </div>
+      <div class="team">
+        <h3>Loop Locker</h3>
+        <p>Smart rental lockers for dorms and apartments: tools, board games, art supplies, and event essentials.</p>
+        <div class="by">Venus Aziz · LMC</div>
+      </div>
+      <div class="team">
+        <h3>Mac and Wings</h3>
+        <p>Loaded chicken fries, mac and cheese, and chicken sandwiches with sauces inspired by Bay Area cities.</p>
+        <div class="by">Louis Akins · DVC</div>
+      </div>
+      <div class="team">
+        <h3>ReWear Campus</h3>
+        <p>A marketplace where verified students sell textbooks, supplies, and clothing to classmates.</p>
+        <div class="by">Arzo Kaifi · LMC</div>
+      </div>
+      <div class="team">
+        <h3>Spirvo</h3>
+        <p>An AI personal assistant for student life that organizes email, deadlines, schedules, and study plans.</p>
+        <div class="by">Aayush Bhasin · DVC</div>
+      </div>
+      <div class="team">
+        <h3>TeacherAssist</h3>
+        <p>An all-in-one AI platform for teachers: scheduling, student analytics, lesson feedback, and grading help.</p>
+        <div class="by">Suvd Budragchaa, Ravipat Rodphothong &amp; Valentin Albrecht · DVC</div>
+      </div>
+    </div>
+
+    <div class="prizes">
+      <div class="kicker">The prizes</div>
+      <div class="grid">
+        <div class="prize first"><div class="a">$1,000</div><div class="n">First place</div><div class="sp">Sunvalley Shopping Center</div></div>
+        <div class="prize"><div class="a">$500</div><div class="n">Second place</div><div class="sp">Shovels</div></div>
+        <div class="prize"><div class="a">$250</div><div class="n">Third place</div></div>
+        <div class="prize"><div class="a">$50</div><div class="n">People's Choice</div><div class="sp">Audience vote</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
