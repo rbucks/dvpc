@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-fold="v">
 <head>
 <meta charset="utf-8">
 <title>The 4CD Pitch Competition — 2026 program (half-fold)</title>
@@ -132,6 +132,17 @@
   .prize .sp { font-family: var(--narrow); font-size: 6.5pt; line-height: 1.25; color: var(--ink-3); margin-top: 0.02in; }
   .prize.first .a, .prize.first .n { color: var(--sage); }
   .prize.first .sp { color: var(--sage-soft); }
+
+  /* ---------- press mode (?bleed): push edge colour 0.125in past the trim ---------- */
+  html.bleed .sheet { grid-template-columns: 5.625in 5.625in; }
+  html.bleed .panel { height: 8.75in; }
+  html.bleed .cover { padding: 0.125in 0.125in 0.125in 0; }
+  html.bleed .cover .bar { margin: -0.125in -0.125in 0 0; padding-top: 0.545in; padding-right: 0.575in; }
+  html.bleed .cover .when { margin: 0 -0.125in -0.125in 0; padding-bottom: 0.625in; padding-right: 0.575in; }
+  html.bleed .back { padding: 0.675in 0.5in 0.125in 0.625in; }
+  html.bleed .back .foot { margin: 0 -0.5in -0.125in -0.625in; padding-left: 0.625in; padding-bottom: 0.585in; }
+  html.bleed .inside { padding: 0.605in 0.5in 0.575in 0.625in; }
+  html.bleed .inside.right { padding: 0.605in 0.625in 0.575in 0.5in; }
 </style>
 </head>
 <body>
@@ -300,5 +311,6 @@
   </div>
 </div>
 
+<script src="press.js"></script>
 </body>
 </html>

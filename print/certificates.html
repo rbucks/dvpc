@@ -71,6 +71,9 @@
   .sig .who { border-top: 0.75pt solid var(--ink-3); padding-top: 0.08in; min-width: 3.1in; font-family: var(--narrow); font-weight: 700; font-size: 10.5pt; letter-spacing: 0.06em; text-transform: uppercase; color: var(--navy); }
   .sig .who small { display: block; font-weight: 500; font-size: 8.5pt; letter-spacing: 0.04em; text-transform: none; color: var(--ink-3); margin-top: 0.02in; }
   .sig .cols { font-family: var(--narrow); font-weight: 700; font-size: 7.5pt; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); text-align: right; line-height: 1.55; }
+
+  /* ---------- press mode (?bleed): nothing reaches the edge, so only the margin grows ---------- */
+  html.bleed .sheet { padding: 0.525in; }
 </style>
 </head>
 <body>
@@ -135,5 +138,6 @@
     }
   });
 </script>
+<script src="press.js"></script>
 </body>
 </html>

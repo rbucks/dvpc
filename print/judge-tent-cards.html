@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-fold="h">
 <head>
 <meta charset="utf-8">
 <title>The 4CD Pitch Competition — 2026 judges' name tents</title>
@@ -47,6 +47,11 @@
 
   .base { background: var(--green); color: var(--sage-soft); padding: 0.13in 0.6in 0.36in; display: flex; justify-content: space-between; font-weight: 700; font-size: 8.5pt; letter-spacing: 0.14em; text-transform: uppercase; }
   .base b { color: #fff; }
+
+  /* ---------- press mode (?bleed): push edge colour 0.125in past the trim ---------- */
+  html.bleed .sheet::before, html.bleed .sheet::after { display: none; }
+  html.bleed .face { height: 4.375in; padding: 0 0.125in 0.125in; }
+  html.bleed .base { margin: 0 -0.125in -0.125in; padding: 0.13in 0.725in 0.485in; }
 </style>
 </head>
 <body>
@@ -83,5 +88,6 @@
     }
   });
 </script>
+<script src="press.js"></script>
 </body>
 </html>
