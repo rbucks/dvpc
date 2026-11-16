@@ -1,7 +1,8 @@
 # Annual runbook — resetting the site for a new competition year
 
-Everything the site needs for a new cycle lives in four places: `index.html`,
-`assets/images/event/`, `flyers/`, and `slides/`. There is no build step, no framework, and
+Everything the site needs for a new cycle lives in five places: `index.html`,
+`assets/images/event/`, `flyers/`, `slides/`, and `print/` (the event-day
+program, certificates, and judges' name tents — Phase 6c). There is no build step, no framework, and
 no CMS. Edit, preview locally, commit, push — GitHub Pages serves `main` at
 [4cdpitch.com](https://www.4cdpitch.com).
 
@@ -39,7 +40,7 @@ replace. Write them down here before you touch anything:
 | Applications open | Sept 15 | |
 | Application deadline | Mon, Nov 2, 11:59pm PT | |
 | Finalists announced | Fri, Nov 6 | |
-| Live final | Fri, Nov 20, 9:00am | |
+| Live final | Fri, Nov 20 — doors 8:30am, welcome 9:00am, pitches 9:15am | |
 | Year label | 2026 | |
 
 ### Constraints to respect
@@ -364,6 +365,133 @@ graphics" in the print dialog or every slide comes out white.
 The deck is linked from the FAQ ("Is there a flyer I can print about this
 competition?"), and the URL `4cdpitch.com/slides/` depends on the file staying
 at `slides/index.html`. Don't rename it.
+
+---
+
+## Phase 6c — Event-day print pieces
+
+Three documents are printed for the live final. They live in `print/` and, like
+the flyers and the deck, carry their own copy of the palette and do **not**
+read `index.html`.
+
+| Source | Output | Pages | What it is |
+|---|---|---|---|
+| `print/program.html` | `4cd-pitch-YYYY-program.pdf` | 2 | Half-fold program: Letter landscape, page 1 is the outside (back cover left, front cover right), page 2 the inside (agenda, keynote, judges left; finalists, prizes right) |
+| `print/certificates.html` | `4cd-pitch-YYYY-certificates.pdf` | one per finalist **person** | Finalist certificates, Letter landscape |
+| `print/judge-tent-cards.html` | `4cd-pitch-YYYY-judge-tent-cards.pdf` | one per judge | Name tents: Letter landscape folded along the long centre line; the top half prints upside down so the name reads from both sides |
+
+Each also renders a `-press.pdf` version for a print shop (see *Render*
+below). `print/press.js` handles that; `print/render.sh` does all the
+rendering.
+
+### When to do this
+
+Start once finalists are named (Phase 1's "finalists announced" date) and the
+judges and keynote are confirmed. Expect to re-run it several times: in 2026
+two finalists withdrew and two alternates were added, and a judge named a
+stand-in, all in the last two weeks. Every change is an edit plus one
+`print/render.sh`. Leave at least three working days for a print shop.
+
+### Gather the inputs first
+
+Write these down before editing. Ask the organizer for anything you can't find.
+
+| Input | Where it comes from |
+|---|---|
+| Finalist teams: name, founders, college, one-line description | The 2026 finalists `year-block` in `index.html` § Finalists, which you update first (Phase 4). For a late addition, the application export from the Microsoft Form (a CSV the organizer downloads, e.g. `~/Downloads/4CD Business Pitch Competition (Fall YYYY)(Sheet1).csv`, columns *What is your name?*, *Which college(s)…*, *What is the name of your business idea?*, *Describe your business idea…*) and the applicant's pitch deck linked in that row. If the form's description is thin, write the line from the deck. |
+| Agenda times | Organizer. 2026: doors 8:30, welcome 9:00, pitches 9:15, judges' deliberation and keynote 11:00, awards and lunch 11:30. |
+| Pitch format | Organizer. 2026: five minutes to pitch, five for questions. This also appears on the website, the deck, and the full flyer — change all of them together. |
+| Keynote speaker: name, title, photo | Organizer; photo from the speaker's official bio page. |
+| Judges, including any stand-ins | Organizer. |
+| Prize amounts and sponsors | `index.html` § Prizes. |
+
+**Treat applicants' contact details as private.** The CSV holds student email
+addresses; never copy them into the repo.
+
+### What to change in `print/program.html`
+
+- **Year and date** — `grep -n -i "nov 20\|2026" print/program.html`. They
+  appear on the cover, the date strip, and the agenda heading.
+- **Team count** — the word ("Ten") appears three times: the cover `<h1>`, the
+  agenda's 9:15 `<small>` line, and the inside `<h2>`. It must match the
+  number of `.team` blocks and the `<h2>` in `index.html` § Finalists.
+  `grep -n -i -w "eight\|nine\|ten\|eleven\|twelve" print/program.html`.
+- **Cover lede** (`p.lede`) — states the pitch format.
+- **Agenda** — one `div.ag` per row; the pitches row is `div.ag.hot`.
+- **Keynote** — the `.keynote` block. Put the photo at
+  `assets/images/speakers/<first>-<last>.jpg` and `.webp`, cropped square,
+  640px, EXIF stripped:
+  ```bash
+  magick IN.jpg -auto-orient -strip -gravity center -crop "%[fx:min(w,h)]x%[fx:min(w,h)]+0+0" +repage \
+    -resize 640x640 -quality 82 -interlace JPEG assets/images/speakers/first-last.jpg
+  ```
+  The website's Agenda section shows the same photo.
+- **Judges** — the `<ul>` inside `.judges`, one `<li>` each. It lays out in two
+  columns that read left to right.
+- **Finalists** — one `div.team` each (`h3` team, `p` one line, `.by` founders ·
+  college), in alphabetical order. Keep each description to about 100
+  characters so ten or more teams fit. A team name starting with "The" was
+  sorted under its next word in 2026.
+- **Prizes and sponsors** — the `.prize` cards on the inside, and the sponsor
+  logos on the back cover (`assets/sponsors/`).
+- **District logo** — `assets/4cd-logo.png`, the only image the district
+  publishes, 200px wide. It prints at about 210 dpi, slightly soft. If the
+  district's communications office can supply a vector or larger file, swap
+  it in.
+
+### What to change in `print/certificates.html`
+
+Edit the `FINALISTS` list at the bottom of the file: **one row per person**,
+`["Full Name", "Team name"]`. A team of three founders gets three
+certificates — in 2026 ten teams made twelve certificates. The page count of
+the rendered PDF must equal the number of rows. The wording ("one of the YYYY
+finalists") and the date band are in the `<template>`. Long names shrink
+automatically to fit the line.
+
+### What to change in `print/judge-tent-cards.html`
+
+Edit the `JUDGES` list at the bottom. Include confirmed stand-ins as extra
+entries (the organizer prints only the cards needed on the day). Long names
+shrink automatically.
+
+### Render
+
+```bash
+print/render.sh              # all three pieces, standard and press
+print/render.sh --downloads  # ...and copy the PDFs to ~/Downloads
+```
+
+It starts its own local server, renders each piece twice — standard (11×8.5in
+pages, for an office printer) and press (`?bleed`: 0.125in bleed, crop marks,
+fold marks, 11.75×9.25in pages, for a print shop) — and prints a page-count
+table. It also writes a tall PNG preview of every page and prints the folder.
+
+Check the table: program **2**, certificates **= rows in `FINALISTS`**, tent
+cards **= entries in `JUDGES`**. Then **look at every preview page.** Things
+the table cannot catch:
+
+- the program's finalist list running into "The prizes" (trim descriptions,
+  or reduce `.team p` font size slightly);
+- a name or team that wrapped badly;
+- Anton missing (headlines in Impact means fonts didn't load — re-run).
+
+Do not render by hand with a long-lived Chrome profile. In 2026 a reused
+profile served cached HTML and produced a byte-identical PDF of the previous
+version; the script avoids that with a fresh profile and a cache-busting URL.
+
+### Print instructions to pass on
+
+- Print everything at **actual size**, never "fit to page".
+- **Program**: double-sided, flip on the **short edge**, then fold in half.
+- **Tent cards**: card stock, fold along the centre marks.
+- **Press files** are RGB; most shops convert to CMYK automatically, but ask
+  for a proof if the greens must match exactly.
+
+### Ship
+
+Commit the HTML sources and the six PDFs together. The PDFs are published at
+`4cdpitch.com/print/…` (nothing links to them), so judges' names are public
+once pushed.
 
 ---
 
