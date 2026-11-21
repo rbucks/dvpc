@@ -12,8 +12,8 @@
 </script>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>The 4CD Pitch Competition — Nov 20, 2026</title>
-<meta name="description" content="The 4CD Pitch Competition — open to anyone enrolled in any Contra Costa Community College District course, including non-credit Community Education. Cafés, breweries, trades, biotech, health tech, software. Diablo Valley, not Silicon Valley. Applications closed Nov 2. Live final Nov 20, 2026." />
+<title>The 4CD Pitch Competition | November 20, 2026</title>
+<meta name="description" content="See the winners of the 2026 4CD Pitch Competition at Diablo Valley College. The competition is open to everyone enrolled in a Contra Costa Community College District course, including non-credit Community Education." />
 
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="apple-touch-icon" href="assets/favicon-180.png">
@@ -266,9 +266,13 @@
   }
 
   @media (max-width: 900px) {
-    .hero-grid { grid-template-columns: 1fr; }
+    .hero-grid { grid-template-columns: minmax(0, 1fr); }
     .hero-left { padding: 64px 32px 48px; max-width: none; margin-left: 0; }
     .hero-right { padding: 48px 32px 64px; }
+  }
+
+  @media (max-width: 360px) {
+    .hero h1 { font-size: 48px; }
   }
 
   /* ========== KEY DATES RAIL ========== */
@@ -325,8 +329,8 @@
     margin-bottom: 56px;
     align-items: start;
   }
-  .section-head .index { font-family: var(--narrow); font-weight: 700; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--green); padding-top: 12px; }
   .section-head h2 {
+    grid-column: 2;
     font-size: clamp(44px, 6vw, 72px);
     line-height: 0.95;
     color: var(--navy);
@@ -335,6 +339,7 @@
   @media (max-width: 760px) {
     section { padding: 64px 0; }
     .section-head { grid-template-columns: 1fr; gap: 12px; margin-bottom: 36px; }
+    .section-head h2 { grid-column: 1; }
   }
 
   /* ========== ABOUT ========== */
@@ -894,7 +899,7 @@
     </a>
     <nav class="nav">
       <a href="#about">About</a>
-      <a href="#room">The Room</a>
+      <a href="#room">What to Pitch</a>
       <a href="#timeline">Timeline</a>
       <a href="#agenda">Agenda</a>
       <a href="#prizes">Prizes</a>
@@ -905,7 +910,7 @@
       <a href="#faq">FAQ</a>
       <a href="#community">Community</a>
     </nav>
-    <span class="cta-btn disabled" aria-disabled="true">Application closed</span>
+    <span class="cta-btn disabled" aria-disabled="true">Applications closed</span>
   </div>
 </header>
 
@@ -914,29 +919,29 @@
 <section class="hero" style="border-top: none;">
   <div class="hero-grid">
     <div class="hero-left">
-      <div class="eyebrow">2026 · The 4CD Pitch Competition</div>
-      <h1>Pitch your<br>idea to the<br><span class="accent">Diablo Valley.</span></h1>
+      <div class="eyebrow">Diablo Valley College · 2026</div>
+      <h1>The 4CD<br><span class="accent">Pitch Competition</span></h1>
       <p class="hero-lede">
-        Cafés, breweries, and nail salons. Construction trades, aviation, and industry. Biotech, health tech, and software. Every kind of business this valley actually runs on belongs on this stage — and one Contra Costa Community College District class, credit or not, makes you eligible.
+        Thanks to everyone who pitched, mentored, judged, or came to cheer the teams on. You can enter with any kind of business idea if you’re taking a 4CD class, including a non-credit class.
       </p>
       <div class="hero-actions">
-        <span class="cta-btn lg disabled" aria-disabled="true">Application closed</span>
-        <a href="https://4cd.zoom.us/meeting/register/dkcT5bE4Qxe9FdH_a_lLRQ" class="cta-btn lg" target="_blank" rel="noopener">Watch the final live on Zoom</a>
+        <span class="cta-btn lg disabled" aria-disabled="true">Applications closed</span>
+        <a href="#finalists" class="cta-btn lg">See the winners</a>
         <a href="https://discord.gg/4DQQQBcjeW" class="cta-btn ghost lg" target="_blank" rel="noopener">Join the Discord</a>
-        <a href="#about" class="cta-btn ghost lg">Read the brief</a>
+        <a href="#about" class="cta-btn ghost lg">Who can enter?</a>
       </div>
-      <p class="hero-start"><b>Start here</b> Never built a pitch deck? <a href="https://docs.google.com/presentation/d/17qdEgdfOSC_BQvLUK5mTuSWFQwYwoTi1xpLz_Y_tjoE/edit?usp=sharing" target="_blank" rel="noopener">Open the 10-slide pitch deck template&nbsp;&rarr;</a> It has one slide each for the problem, your solution, your customer, your traction, and your ask — just fill in the blanks.</p>
+      <p class="hero-start"><b>Start here</b> Never built a pitch deck? <a href="https://docs.google.com/presentation/d/17qdEgdfOSC_BQvLUK5mTuSWFQwYwoTi1xpLz_Y_tjoE/edit?usp=sharing" target="_blank" rel="noopener">Open the 10-slide pitch deck template&nbsp;&rarr;</a> It walks you through the problem, your solution, your customers, your progress, and what you’re asking for.</p>
     </div>
     <aside class="hero-right">
       <div>
         <div class="save-the-date">
-          <div class="label">Live Final · Save the Date</div>
+          <div class="label">2026 Final</div>
           <div class="day">Nov 20<small>Friday · 2026</small></div>
           <div class="where">
             <strong>Diablo Valley College</strong>
             Diablo Room · Pleasant Hill campus<br>
             Doors 8:30am · Welcome 9:00am · Pitches 9:15am<br>
-            Open to the public · Streaming live on Zoom
+            Open to the public · Streamed on Zoom
           </div>
         </div>
       </div>
@@ -949,24 +954,24 @@
 <section class="dates" style="padding: 0; border-bottom: none;">
   <div class="dates-grid">
     <div class="date-cell">
-      <div class="step">Step 01 · Apply</div>
+      <div class="step">Application</div>
       <h3>Submit your idea</h3>
       <div class="when">Due Mon · Nov 2, 2026 · 11:59pm PT</div>
-      <p>A short description of your business idea and a deck of no more than 15 slides. No video, no prior experience required — just current 4CD enrollment.</p>
+      <p>The application asks for a short description and a deck of up to 15 slides. You don’t need a video or prior experience. You do need to be enrolled in a 4CD class.</p>
       <p class="cell-link"><a href="https://docs.google.com/presentation/d/17qdEgdfOSC_BQvLUK5mTuSWFQwYwoTi1xpLz_Y_tjoE/edit?usp=sharing" target="_blank" rel="noopener">Get the pitch deck template &rarr;</a></p>
     </div>
     <div class="date-cell">
-      <div class="step">Step 02 · Finalists</div>
+      <div class="step">Screening</div>
       <h3>10 teams advance</h3>
       <div class="when">Announced Fri · Nov 6, 2026</div>
-      <p>Selected by the screening panel and notified on Nov 6 — exactly two weeks before the final, so every team gets the full mentoring window.</p>
+      <p>The screening panel chose 10 teams on Nov 6, giving each team two weeks to work with a mentor before the final.</p>
     </div>
     <div class="date-cell">
-      <div class="step">Step 03 · Compete</div>
-      <h3>Live final, on stage</h3>
+      <div class="step">Final</div>
+      <h3>Pitch day</h3>
       <div class="when">Fri · Nov 20, 2026 · 9:00am</div>
-      <p>Five minutes to pitch, five minutes of judges' questions. Cash prizes, audience vote, and reception.</p>
-      <p class="cell-link"><a href="https://4cd.zoom.us/meeting/register/dkcT5bE4Qxe9FdH_a_lLRQ" target="_blank" rel="noopener">Register for the Zoom livestream &rarr;</a></p>
+      <p>Each team had five minutes to pitch and five minutes for judges’ questions. The audience voted for People’s Choice.</p>
+      <p class="cell-link"><a href="#gallery">See photos from the final &rarr;</a></p>
     </div>
   </div>
 </section>
@@ -975,24 +980,23 @@
 <section id="about">
   <div class="wrap">
     <div class="section-head">
-      <div class="index">§ 01 — About</div>
-      <h2>One district. One application. <span class="accent">Every kind of business.</span></h2>
+      <h2>Who can enter?</h2>
     </div>
 
     <div class="about-body">
       <div></div>
       <div class="about-prose">
         <p class="lead">
-          This is a <span class="accent">4CD competition.</span> If you are enrolled in a Contra Costa Community College District course — any course, at any of our colleges — you are eligible to apply.
+          If you’re taking a class in the Contra Costa Community College District, you can enter.
         </p>
         <p>
-          For the past several years, the Contra Costa Community College District has hosted an annual Business Pitch Competition at DVC's Pleasant Hill campus — student founders sharing ventures spanning wellness tech, food sustainability, hardware, and student support. Past winners have gone on to pilot with Contra Costa County agencies and BART.
+          DVC hosts the competition at its Pleasant Hill campus. Past finalists have pitched ideas in wellness, food waste, hardware, and student support. Past winners have gone on to run pilots with Contra Costa County agencies and BART.
         </p>
         <p>
-          For 2026 we've widened the door without leaving the district. Community members are welcome to compete — they just have to be enrolled in a 4CD class. That includes <strong>non-credit Community Education courses</strong>: a ceramics class, a QuickBooks workshop, an ESL course, a welding certificate. One class is enough. Enroll, then apply.
+          One course is enough. A <strong>non-credit Community Education course</strong> counts, including ceramics, QuickBooks, ESL, or welding.
         </p>
         <p>
-          There are no tracks and no categories. Students, dual-enrolled high schoolers, and community members in a non-credit class all fill out the same form and stand on the same stage. What we are actively recruiting is range — see <a href="#room">the room we're trying to build</a>.
+          Students, dual-enrolled high schoolers, and community members enrolled in a non-credit class use the same application. See <a href="#room">the kinds of ideas you can pitch</a>.
         </p>
 
         <div class="cities">
@@ -1018,26 +1022,25 @@
 <section id="room">
   <div class="wrap">
     <div class="section-head">
-      <div class="index">§ 02 — The room</div>
-      <h2>We want a room that looks like <span class="accent">the Diablo Valley.</span></h2>
+      <h2>What can you pitch?</h2>
     </div>
 
     <div class="valley-statement">
       <div>
-        <div class="vs-big">An hour northeast of <span class="accent">Silicon Valley.</span><br>Nothing like it — <span class="accent">on purpose.</span></div>
+        <div class="vs-big">Bring the business you want to build.</div>
         <div class="vs-places">Concord · Pleasant Hill · Martinez · Walnut Creek · Pittsburg · Antioch · Brentwood · Oakley · Clayton · Lafayette · Danville · San Ramon · Moraga · Orinda · Richmond · San Pablo · Pinole</div>
       </div>
       <div class="vs-body">
-        <p>We are not auditioning to be the other valley. We are cafés, breweries, bakeries, and nail salons. We are aviation and industry out past the airfield. We are biotech and health tech in the labs. And we are construction trades — a <em>lot</em> of construction trades.</p>
-        <p>That's the economy people here actually work in, so that's the room we want on this stage. There is no venture-scale requirement and no technical co-founder required. A framing contractor with a hiring plan is a business. A second bakery location is a business. Bring the software too — just don't assume it has a head start. It doesn't.</p>
+        <p>A second bakery location, an electrical business, or a medical device can all be good pitches.</p>
+        <p>You don’t need a technical co-founder or a plan to raise venture capital. Tell the judges who your customers are and what you want to do next.</p>
       </div>
     </div>
 
     <div class="kinds">
       <div class="kinds-head">
-        <div class="mono-tag">One field · every kind of business</div>
-        <h3>One application. One rubric. <span class="accent">One stage.</span></h3>
-        <p>No separate tracks, no beginner bracket, no category handicap. A nail salon expansion and an AI product go into the same pile, in front of the same panel, scored against the same five criteria.</p>
+        <div class="mono-tag">Examples</div>
+        <h3>All teams use the same rubric</h3>
+        <p>There are no separate tracks. Judges use the same five criteria for a nail salon expansion and an AI product.</p>
       </div>
       <div class="kinds-cols">
         <div class="kind-col main">
@@ -1071,8 +1074,7 @@
 <section id="timeline">
   <div class="wrap">
     <div class="section-head">
-      <div class="index">§ 03 — Timeline</div>
-      <h2>The road to <span class="accent">Nov 20.</span></h2>
+      <h2>Key dates</h2>
     </div>
 
     <div>
@@ -1088,31 +1090,31 @@
         <div class="tl-date">Nov 2<small>Deadline · 11:59pm PT</small></div>
         <div class="tl-body">
           <h4>Applications due at 11:59pm</h4>
-          <p>Submit a short description of your business idea and a slide presentation of <strong>no more than 15 slides</strong> by <strong>11:59pm PT on Monday, Nov 2</strong>. No video is required at this stage. Late submissions are not accepted; the screening panel begins review the next morning. Not sure what goes in the deck? <a href="https://docs.google.com/presentation/d/17qdEgdfOSC_BQvLUK5mTuSWFQwYwoTi1xpLz_Y_tjoE/edit?usp=sharing" target="_blank" rel="noopener">Start from the 10-slide pitch deck template</a>.</p>
+          <p>The deadline was <strong>11:59pm PT on Monday, Nov 2</strong>. Applicants submitted a short business description and a deck of <strong>no more than 15 slides</strong>. No video or late entries. The screeners began their review the next morning. <a href="https://docs.google.com/presentation/d/17qdEgdfOSC_BQvLUK5mTuSWFQwYwoTi1xpLz_Y_tjoE/edit?usp=sharing" target="_blank" rel="noopener">Start from the 10-slide pitch deck template</a>.</p>
         </div>
       </div>
 
       <div class="tl-row">
         <div class="tl-date">Nov 6<small>Finalists named</small></div>
         <div class="tl-body">
-          <h4>The 10 finalists announced</h4>
-          <p>Each application is reviewed by two members of a multi-person screening panel; the ten highest-scoring teams advance. Finalists are notified on Friday, Nov 6 — exactly two weeks before the final. Finalists then submit a final-draft deck and an optional 1-minute public YouTube video.</p>
+          <h4>Finalists announced</h4>
+          <p>Two screeners review each application. The 10 teams with the highest scores advance and submit a final deck. They can also submit an optional one-minute public YouTube video.</p>
         </div>
       </div>
 
       <div class="tl-row">
         <div class="tl-date">Nov 6 → 20<small>Mentoring window</small></div>
         <div class="tl-body">
-          <h4>A full two weeks of intensive support</h4>
-          <p>The mentoring window now opens two weeks ahead of the final. Finalists are paired with mentors and given deck reviews, pitch coaching, financial-model review, and dry-run sessions — with Main Street teams matched to operators and lenders, not just startup advisors. Optional drop-in office hours every weekday evening at the DVC business department.</p>
+          <h4>Two weeks of mentoring</h4>
+          <p>Mentors help finalists with their decks, pitches, and financial models. Teams get a practice session. Local business teams can work with operators and lenders. DVC’s business department offered optional evening office hours on weekdays.</p>
         </div>
       </div>
 
       <div class="tl-row highlight">
         <div class="tl-date">Nov 20<small>Live final</small></div>
         <div class="tl-body">
-          <h4>The stage. The judges. The prize.</h4>
-          <p>Five minutes to pitch, five minutes of Q&amp;A. Audience vote runs throughout. Winners announced live; reception immediately following with judges, mentors, and the district's founder and small-business community.</p>
+          <h4>Final presentations and awards</h4>
+          <p>The teams had five minutes to pitch and five minutes for questions. The audience voted during the final, and winners were announced before the reception with judges, mentors, and local business owners.</p>
         </div>
       </div>
     </div>
@@ -1123,8 +1125,7 @@
 <section id="agenda">
   <div class="wrap">
     <div class="section-head">
-      <div class="index">§ 04 — Agenda</div>
-      <h2>The morning of <span class="accent">Nov 20.</span></h2>
+      <h2>Final day schedule</h2>
     </div>
 
     <div>
@@ -1183,8 +1184,7 @@
 <section id="prizes">
   <div class="wrap">
     <div class="section-head">
-      <div class="index">§ 05 — Prizes</div>
-      <h2>Cash prizes, mentorship, and a <span class="accent">real audience.</span></h2>
+      <h2>Prizes</h2>
     </div>
 
     <div class="prizes-grid">
@@ -1192,7 +1192,7 @@
         <div class="place">Grand Prize</div>
         <div class="amount"><sup>$</sup>1,000</div>
         <div class="name">First Place</div>
-        <p>Cash prize, on-stage recognition, and an introduction round to local investors, lenders, and small-business advisors.</p>
+        <p>The winner is recognized on stage and gets introductions to local investors, lenders, and small-business advisors.</p>
         <div class="sponsor">
           <div class="sponsor-label">Sponsored by Sunvalley Shopping Center</div>
           <div class="sponsor-logo"><img class="sv" src="assets/sponsors/sunvalley.svg" alt="Sunvalley Shopping Center"></div>
@@ -1202,7 +1202,7 @@
         <div class="place">Runner-up</div>
         <div class="amount"><sup>$</sup>500</div>
         <div class="name">Second Place</div>
-        <p>Cash prize and continued mentor matching post-event.</p>
+        <p>The team can continue working with mentors after the final.</p>
         <div class="sponsor">
           <div class="sponsor-label">Sponsored by Shovels</div>
           <div class="sponsor-logo"><img class="sh" src="assets/sponsors/shovels.svg" alt="Shovels"></div>
@@ -1232,8 +1232,7 @@
 <section id="judges">
   <div class="wrap">
     <div class="section-head">
-      <div class="index">§ 06 — How it's judged</div>
-      <h2>Local leaders, working entrepreneurs, real <span class="accent">industry seats.</span></h2>
+      <h2>Judges and scoring</h2>
     </div>
 
     <div class="two-col">
@@ -1261,7 +1260,7 @@
           <li><div class="who">Separate scores</div><div class="what">Screening results do not carry into the final</div></li>
           <li><div class="who">People's Choice</div><div class="what">Live audience vote, separate from the rubric</div></li>
         </ul>
-        <p style="margin-top:20px; color:var(--ink-3); font-size:13px; font-family:var(--narrow);">The full category-by-category rubric for both stages is published below — <a href="#scoring">see §&nbsp;07, Scoring</a>. Nothing is scored on anything that isn't on it.</p>
+        <p style="margin-top:20px; color:var(--ink-3); font-size:13px; font-family:var(--narrow);">See the <a href="#scoring">rubrics for both rounds</a>. Judges score the criteria in the rubrics.</p>
       </div>
     </div>
   </div>
@@ -1271,15 +1270,14 @@
 <section id="scoring">
   <div class="wrap">
     <div class="section-head">
-      <div class="index">§ 07 — Scoring</div>
-      <h2>Fifty points to make the cut. Fifty more <span class="accent">on the stage.</span></h2>
+      <h2>Scoring rubrics</h2>
     </div>
 
     <p class="rubric-lede">
-      Scoring happens in two rounds, on two published rubrics. The first is for everybody: every application submitted by 11:59pm PT on Nov 2 is scored on the screening rubric, and the ten highest-scoring teams become the finalists. The second rubric is used only at the live final, and only those ten teams are scored on it. Each round is worth 50 points, and every category is worth 10.
+      Screeners use the first rubric for every application submitted by 11:59pm PT on Nov 2. The 10 teams with the highest scores advance. Judges use the second rubric at the final. Each round is worth 50 points, with 10 points per category.
     </p>
     <p class="rubric-lede tail">
-      <strong>The two scores are completely separate — your screening score does not carry into the final.</strong> Screening decides who gets on stage and nothing more. Squeaking into the ten costs you nothing there, and topping the screening round buys you nothing either: all ten finalists start the final at zero.
+      <strong>All 10 finalists start the final at zero.</strong> Screening scores determine who advances and do not carry over.
     </p>
 
     <div class="rules-strip">
@@ -1290,10 +1288,10 @@
         <li><b>What you submit</b> A short description of the business idea, plus a slide presentation of no more than 15 slides. <a href="https://docs.google.com/presentation/d/17qdEgdfOSC_BQvLUK5mTuSWFQwYwoTi1xpLz_Y_tjoE/edit?usp=sharing" target="_blank" rel="noopener">Start from the pitch deck template</a>.</li>
         <li><b>Team size</b> No more than five people on a team. Solo founders are permitted.</li>
         <li><b>Existing businesses</b> Eligible if the business has less than $25,000 in total assets or annual revenue.</li>
-        <li><b>Competed before?</b> Welcome back — but your new submission must be a different concept.</li>
+        <li><b>Competed before?</b> You can enter again with a different idea.</li>
         <li><b>Multiple entries</b> Allowed. A finalist still pitches only once at the live event, solo or on a team.</li>
         <li><b>Finalists</b> The top 10 are announced on Friday, Nov 6.</li>
-        <li><b>Where to apply</b> One form for everybody — applications closed Nov 2.</li>
+        <li><b>Where to apply</b> Everyone uses the same form. Applications closed Nov 2.</li>
       </ul>
     </div>
 
@@ -1305,7 +1303,7 @@
         </div>
         <div class="max">50<span>pts</span></div>
       </div>
-      <div class="rubric-who"><strong>Everyone</strong> Every application submitted by 11:59pm PT on Nov 2 is scored on this rubric — the written description of the idea and the deck of up to 15 slides. The ten highest scorers advance to the final.</div>
+      <div class="rubric-who"><strong>All applicants</strong> Screeners review the written description and deck of up to 15 slides. The 10 highest-scoring teams advance.</div>
       <table>
         <thead>
           <tr><th scope="col">Category</th><th scope="col">Description</th><th scope="col" class="pts-head">Possible points</th></tr>
@@ -1390,7 +1388,7 @@
     </div>
 
     <p style="margin-top:32px; color:var(--ink-3); font-size:14px; max-width:66ch;">
-      One rubric for everyone. A neighborhood service business and an AI product are scored against the same categories — no category is graded on a curve, and no judge is asked to weigh "scalability" against a business meant to serve one town well. The People's Choice award is decided by the live audience vote and sits outside these rubrics.
+      Judges use the same criteria for every team and don’t grade on a curve. A local service business is not expected to scale like a software company. The audience vote decides People’s Choice separately.
     </p>
   </div>
 </section>
@@ -1399,8 +1397,7 @@
 <section id="finalists">
   <div class="wrap">
     <div class="section-head">
-      <div class="index">§ 08 — Results</div>
-      <h2>Winners <span class="accent">&amp; finalists.</span></h2>
+      <h2>Winners <span class="accent">&amp; finalists</span></h2>
     </div>
 
     <!-- ========== 2026 ========== -->
@@ -1586,8 +1583,7 @@
 <section id="gallery">
   <div class="wrap">
     <div class="section-head">
-      <div class="index">§ 09 — Gallery</div>
-      <h2>What the room actually <span class="accent">looks like.</span></h2>
+      <h2>Photos from the competition</h2>
     </div>
 
     <div class="gallery-meta">
@@ -1630,7 +1626,7 @@
 
     <div class="gallery-meta" style="margin-top:44px;">
       <div class="mono-tag">2024 · DVC Business Pitch Competition</div>
-      <div class="note">Diablo Room · Pleasant Hill campus · November 22, 2024. The last final before the competition went districtwide — same room, same podium, roughly the same nerves.</div>
+      <div class="note">Diablo Room · Pleasant Hill campus · November 22, 2024. The last DVC final before the competition went districtwide.</div>
     </div>
 
     <div class="gallery-grid">
@@ -1711,29 +1707,28 @@
 <section id="resources">
   <div class="wrap">
     <div class="section-head">
-      <div class="index">§ 10 — Resources</div>
-      <h2>Everything you need to <span class="accent">build your pitch.</span></h2>
+      <h2>Pitch resources</h2>
     </div>
 
     <ul class="resources-list">
       <li>
         <a href="https://4cd.zoom.us/meeting/register/dkcT5bE4Qxe9FdH_a_lLRQ" target="_blank" rel="noopener">
-          <span class="r-title">Live final on Zoom</span>
-          <span class="r-desc">Can't make it to the Diablo Room? The Nov 20 final streams live on Zoom, starting at 9:00am PT. Register in advance to get the link.</span>
-          <span class="r-go">Register &rarr;</span>
+          <span class="r-title">2026 Zoom registration</span>
+          <span class="r-desc">The Nov 20 final streamed on Zoom starting at 9:00am PT. This is the original registration link, not a replay.</span>
+          <span class="r-go">Original link &rarr;</span>
         </a>
       </li>
       <li>
         <a href="https://docs.google.com/presentation/d/17qdEgdfOSC_BQvLUK5mTuSWFQwYwoTi1xpLz_Y_tjoE/edit?usp=sharing" target="_blank" rel="noopener">
           <span class="r-title">Pitch deck template</span>
-          <span class="r-desc">A 10-slide Google Slides deck: problem, solution, team, customer, traction, and your ask. View-only &mdash; use File &rarr; Make a copy to start your own.</span>
+          <span class="r-desc">A 10-slide template in Google Slides. To edit it, choose File &rarr; Make a copy.</span>
           <span class="r-go">Open template &rarr;</span>
         </a>
       </li>
       <li>
         <a href="https://4cd.zoom.us/j/81951415734?pwd=wcVIJTmR8dbI3TIA6Os4ezLP8xb6Y9.1" target="_blank" rel="noopener">
           <span class="r-title">Weekly Zoom drop-in</span>
-          <span class="r-desc">Every Wednesday at 4pm PT. Bring your deck or your questions.</span>
+          <span class="r-desc">Wednesdays at 4pm PT during the competition. Bring your deck or any questions.</span>
           <span class="r-go">Join Zoom &rarr;</span>
         </a>
       </li>
@@ -1752,66 +1747,65 @@
 <section id="faq">
   <div class="wrap">
     <div class="section-head">
-      <div class="index">§ 11 — FAQ</div>
-      <h2>Common <span class="accent">questions.</span></h2>
+      <h2>Frequently asked questions</h2>
     </div>
 
     <div class="faq" style="max-width: 920px; margin-left: auto;">
       <details>
         <summary>What does 4CD stand for?</summary>
-        <p>The <strong>Contra Costa Community College District</strong>. It's made up of three colleges — Contra Costa College in San Pablo, Diablo Valley College in Pleasant Hill (plus its San Ramon campus), and Los Medanos College in Pittsburg (plus its Brentwood center) — along with districtwide Community Education. Enrollment at any of them, in any course, makes you eligible to compete.</p>
+        <p>The <strong>Contra Costa Community College District</strong> includes Contra Costa College in San Pablo, Diablo Valley College in Pleasant Hill and San Ramon, Los Medanos College in Pittsburg and Brentwood, and districtwide Community Education. A class at any of them counts.</p>
       </details>
       <details>
         <summary>Who can apply?</summary>
-        <p>Anyone currently enrolled in a Contra Costa Community College District course. That's the only eligibility bar: one active enrollment at DVC, Contra Costa College, or Los Medanos College. Credit students, dual-enrolled high school students, and community members in a non-credit class all use the same application — there are no separate tracks. There are no citizenship or status requirements.</p>
+        <p>Anyone taking a 4CD course can apply. Credit students, dual-enrolled high school students, and non-credit students use the same form. There are no citizenship or status requirements.</p>
       </details>
       <details>
         <summary>How do I apply?</summary>
-        <p>Through one form: <strong>the 2026 application</strong>. It asks for a short description of your business idea and a slide presentation of no more than 15 slides — nothing else. Everyone uses the same form, and it closes at <strong>11:59pm PT on Monday, Nov 2</strong>.</p>
+        <p>The <strong>2026 application</strong> closed at <strong>11:59pm PT on Monday, Nov 2</strong>. Everyone used the same form and submitted a short description and a deck of up to 15 slides.</p>
       </details>
       <details>
         <summary>I'm not a student. Can I still compete?</summary>
-        <p>Yes — enroll in a class and you're eligible. It does not have to be a business class, a full course load, or a credit course. A single non-credit Community Education class counts: cooking, ceramics, computer basics, ESL, QuickBooks, welding, yoga. Register for one 4CD course, keep the enrollment active through Nov 20, and you can apply.</p>
+        <p>Yes. One 4CD class is enough, in any subject. Cooking, ceramics, computer basics, ESL, QuickBooks, welding, and yoga all count. For 2026, you had to keep your enrollment active through Nov 20.</p>
       </details>
       <details>
         <summary>Does it count if the class is non-credit Community Education?</summary>
-        <p>It does. Non-credit Community Education enrollment carries exactly the same eligibility as a credit course — a single Community Education class puts you on the same footing as a full-time credit student, with no separate track and no extra paperwork.</p>
+        <p>Yes. A non-credit Community Education class counts the same as a credit course, with no extra paperwork.</p>
       </details>
       <details>
         <summary>My business isn't tech. Is it still a fit?</summary>
-        <p>It's more than a fit — it's the point. We are actively recruiting Main Street: restaurants, food trucks, salons, landscaping and trades, childcare, retail, cleaning, bookkeeping, repair shops. Brick-and-mortar and service businesses compete on the same stage, in front of the same judges, against the same five scoring criteria as the software and AI teams. You do not need a technical co-founder, a prototype, or a growth chart.</p>
+        <p>Yes. Restaurants, salons, trades, childcare, retail, and other local businesses are all welcome. Judges use the same five criteria for every team. You don’t need a technical co-founder, a prototype, or a growth chart.</p>
       </details>
       <details>
         <summary>Does my idea need to be a real business already?</summary>
-        <p>No — a concept on a single slide is welcome. You may also pitch a business that already exists, as long as it has <strong>less than $25,000 in total assets or annual revenue</strong>. Past that, it has outgrown this competition. The screening rubric scores the description of the idea and the rationale behind it, so an early-stage team is not penalized for having no traction yet — but supporting evidence, where you have it, is worth points.</p>
+        <p>No. You can enter with an idea. If you already run the business, it must have <strong>less than $25,000 in total assets or annual revenue</strong>. Screeners score your idea and reasoning. You don’t lose points for being early, but evidence helps if you have it.</p>
       </details>
       <details>
         <summary>Can I apply with a co-founder or team?</summary>
-        <p>Yes. A team may have <strong>no more than five people</strong>, and solo founders are absolutely permitted. List every team member on the application; only listed members are eligible to present on stage.</p>
+        <p>Yes. A team may have <strong>no more than five people</strong>, and you can also enter on your own. List every team member on the application; only listed members are eligible to present on stage.</p>
       </details>
       <details>
         <summary>What does the application include?</summary>
-        <p>Two things: <strong>a short description of the business idea</strong>, and <strong>a slide presentation of no more than 15 slides</strong>. No video at this stage. Everything is due by <strong>11:59pm PT on Monday, Nov 2</strong>. Finalists then submit a final-draft deck and an optional 1-minute YouTube video.</p>
+        <p><strong>A short description of your business idea</strong> and <strong>a deck of up to 15 slides</strong>. No video is required to apply. The 2026 deadline was <strong>11:59pm PT on Monday, Nov 2</strong>. Finalists then submit a final-draft deck and an optional 1-minute YouTube video.</p>
       </details>
       <details>
         <summary>Is there a pitch deck template?</summary>
-        <p>Yes — <a href="https://docs.google.com/presentation/d/17qdEgdfOSC_BQvLUK5mTuSWFQwYwoTi1xpLz_Y_tjoE/edit?usp=sharing" target="_blank" rel="noopener"><strong>the 10-slide pitch deck template</strong></a>, and it's the best place to start if you've never built a deck. After a title slide, there's one slide each for the problem, your solution, your team, the customer, how you sell to them, how many customers there are, your traction so far, how you'll scale your marketing, and your ask. That leaves room under the 15-slide limit for anything specific to your business. The template is view-only: use <strong>File &rarr; Make a copy</strong> to get your own version in Google Slides, or <strong>File &rarr; Download &rarr; Microsoft PowerPoint</strong> to work in PowerPoint. Using it is optional.</p>
+        <p>Yes. <a href="https://docs.google.com/presentation/d/17qdEgdfOSC_BQvLUK5mTuSWFQwYwoTi1xpLz_Y_tjoE/edit?usp=sharing" target="_blank" rel="noopener"><strong>the 10-slide pitch deck template</strong></a>. After the title slide, there's one slide each for the problem, your solution, your team, the customer, how you sell to them, how many customers there are, your traction so far, how you'll scale your marketing, and your ask. That leaves room under the 15-slide limit for anything specific to your business. The template is view-only: use <strong>File &rarr; Make a copy</strong> to get your own version in Google Slides, or <strong>File &rarr; Download &rarr; Microsoft PowerPoint</strong> to work in PowerPoint. Using it is optional.</p>
       </details>
       <details>
         <summary>Can I submit more than one application?</summary>
-        <p>Yes, you can submit multiple applications. But a finalist <strong>pitches only once at the live event</strong>, whether solo or as part of a team — so if more than one of your entries makes the top ten, you will be asked to choose which one goes on stage.</p>
+        <p>Yes, you can submit multiple applications. You can <strong>pitch only once at the final</strong>, on your own or with a team. If more than one of your entries makes the top 10, choose one to present.</p>
       </details>
       <details>
         <summary>I entered a previous year. Can I compete again?</summary>
-        <p>Yes — past participants are welcome back, including past winners. The one condition is that your new submission must be a <strong>different concept</strong> from the one you pitched before. Come back with something new.</p>
+        <p>Yes, including past winners. Your new entry needs to be a <strong>different idea</strong> from the one you pitched before.</p>
       </details>
       <details>
         <summary>What kind of mentoring do finalists get?</summary>
-        <p>The mentoring window is a full two weeks — it opens when finalists are named on Friday, Nov 6 and runs to the final on Friday, Nov 20. Every finalist team is matched with one or more mentors drawn from 4CD business faculty, alumni founders, past judges, and working local operators. Support includes deck reviews, pitch coaching, financial-model feedback, and live dry-runs in the actual venue. Main Street teams are matched with people who have run storefronts and payrolls, not only startup advisors.</p>
+        <p>In 2026, finalists worked with mentors from Nov 6 through Nov 20. Mentors include 4CD business faculty, alumni founders, past judges, and local business owners. They review decks and financial models, coach pitches, and help teams rehearse in the venue. Local business teams can work with people who’ve run businesses like theirs.</p>
       </details>
       <details>
         <summary>Is there a weekly Zoom session I can join?</summary>
-        <p>Yes — a live Zoom drop-in every Wednesday at 4pm PT, running weekly through the competition. Bring your deck or your questions; it's the same kind of help you'd get in the Discord, just live and face-to-face. <a href="https://4cd.zoom.us/j/81951415734?pwd=wcVIJTmR8dbI3TIA6Os4ezLP8xb6Y9.1" target="_blank" rel="noopener">Join the Wednesday Zoom &rarr;</a> (Meeting ID 819 5141 5734, passcode <strong>vikings</strong>).</p>
+        <p>During the competition, we meet on Wednesdays at 4pm PT on Zoom. Bring your deck or any questions. <a href="https://4cd.zoom.us/j/81951415734?pwd=wcVIJTmR8dbI3TIA6Os4ezLP8xb6Y9.1" target="_blank" rel="noopener">Join the Wednesday Zoom &rarr;</a> (Meeting ID 819 5141 5734, passcode <strong>vikings</strong>).</p>
       </details>
       <details>
         <summary>Do I keep ownership of my idea?</summary>
@@ -1819,33 +1813,33 @@
       </details>
       <details>
         <summary>Is the final event open to the public?</summary>
-        <p>Yes — and we encourage it. The November 20 final is free to attend, and attendance requires no enrollment of any kind. Invite your family, your customers, your potential investors, and your skeptics. The audience vote is real.</p>
+        <p>Yes. The final is free and you don’t have to be enrolled to attend. Invite friends and family. The audience votes for People’s Choice.</p>
       </details>
       <details>
-        <summary>Can I watch the final online?</summary>
-        <p>Yes — the November 20 final streams live on Zoom, starting at 9:00am PT. It's free; register in advance and Zoom will email you the link to join. <a href="https://4cd.zoom.us/meeting/register/dkcT5bE4Qxe9FdH_a_lLRQ" target="_blank" rel="noopener">Register for the Zoom livestream &rarr;</a></p>
+        <summary>Was the 2026 final streamed?</summary>
+        <p>The Nov 20 final streamed live on Zoom at 9:00am PT. There was no charge to watch. You can <a href="#gallery">see photos from the final</a>.</p>
       </details>
       <details>
         <summary>Is there a flyer I can print about this competition?</summary>
-        <p>Yes — two, both sized for US Letter and free to post anywhere on campus or around town. Print at 100% / actual size; don't let the print dialog scale to fit.</p>
+        <p>Yes. Both flyers print on US Letter. Choose 100% or Actual Size in the print dialog.</p>
         <ul class="flyer-links">
           <li><a href="flyers/4cd-pitch-flyer-full.jpg" download><b>Full-page flyer</b> 8.5&times;11in JPEG, 300&nbsp;dpi</a> &nbsp;·&nbsp; <a href="flyers/flyer-full.html">HTML version</a></li>
           <li><a href="flyers/4cd-pitch-flyer-quarter.jpg" download><b>Quarter-page handbills</b> four per 8.5&times;11in sheet, JPEG, 300&nbsp;dpi</a> &nbsp;·&nbsp; <a href="flyers/flyer-quarter.html">HTML version</a></li>
         </ul>
-        <p>The quarter-page sheet has dashed cut lines down the middle — one sheet gives you four handbills. If your printer can't reach the edge of the page, the colored bands will trim slightly; no text will be lost.</p>
+        <p>Cut along the dashed lines for four handbills per page. If your printer leaves a margin, it may trim the colored bands, but not the text.</p>
         <p>There is also an <strong>eleven-slide deck</strong> covering the whole competition, if you're presenting this to a class, a club, or a department meeting.</p>
         <ul class="flyer-links">
           <li><a href="slides/" target="_blank" rel="noopener"><b>Slide deck</b> 11 slides, 16:9, opens in a new tab</a></li>
         </ul>
-        <p>Arrow keys or space to advance, <kbd>F</kbd> for full screen, and the Print button in the bottom bar exports one slide per page as PDF. Nothing to install and nothing to download. To leave the deck, use the <strong>&larr; 4cdpitch.com</strong> link in its top-left corner — or just close the tab.</p>
-        <p>Running a lobby screen or a hallway monitor? There's a single slide sized for that, with the deadline and final date large enough to read from across a room, plus a QR code for anyone who wants the rest of the details.</p>
+        <p>Use the arrow keys or space to advance and <kbd>F</kbd> for full screen. The Print button saves a PDF with one slide per page. Use the <strong>&larr; 4cdpitch.com</strong> link to return here.</p>
+        <p>The screen slide is sized for a lobby or hallway monitor. It shows the deadline, final date, and a QR code to this site.</p>
         <ul class="flyer-links">
           <li><a href="flyers/4cd-pitch-screen-slide.png" download><b>Screen slide</b> 3200&times;1800 PNG, for a digital display or monitor</a> &nbsp;·&nbsp; <a href="flyers/screen-slide.html">HTML version</a></li>
         </ul>
       </details>
       <details>
         <summary>I have a question that isn't here.</summary>
-        <p>Ask it in <a href="https://discord.gg/4DQQQBcjeW" target="_blank" rel="noopener">the Discord</a> — that's the fastest way to reach the organizers, and odds are someone else was wondering the same thing. If you'd rather ask privately, email <a href="mailto:rbuckley@dvc.edu">rbuckley@dvc.edu</a> and we'll get back to you within two business days.</p>
+        <p>Ask in <a href="https://discord.gg/4DQQQBcjeW" target="_blank" rel="noopener">Discord</a> for the fastest reply. If you’d rather ask privately, email <a href="mailto:rbuckley@dvc.edu">rbuckley@dvc.edu</a>. We’ll get back to you within two business days.</p>
       </details>
     </div>
   </div>
@@ -1856,16 +1850,16 @@
   <div class="wrap">
     <div class="community-inner">
       <div class="community-copy">
-        <div class="mono-tag">Discord · Weekly Zoom · Free · Open now</div>
-        <h2>Join the <span class="accent">community.</span></h2>
-        <p>You don't have to wait for the deadline to start. The Discord is where applicants ask the organizers questions, find a co-founder, get a deck torn apart before a judge sees it, and hear about workshops and office hours first.</p>
+        <div class="mono-tag">Free to join</div>
+        <h2>Join the Discord</h2>
+        <p>Use Discord to ask us a question, find teammates, or get feedback on your deck before you pitch.</p>
         <ul class="community-list">
-          <li>Ask the organizers anything — no question is too basic</li>
+          <li>Ask the organizers a question</li>
           <li>Find teammates and co-founders across all three colleges</li>
           <li>Deck feedback and practice-pitch threads</li>
           <li>Workshop, office-hour, and deadline reminders</li>
-          <li>Main Street channels and tech channels, side by side</li>
-          <li>Live Zoom drop-in every Wednesday at 4pm to work on your application</li>
+          <li>Channels for local businesses and tech ideas</li>
+          <li>Wednesday Zoom drop-ins at 4pm PT during the competition</li>
         </ul>
         <div class="apply-actions">
           <a href="https://discord.gg/4DQQQBcjeW" class="cta-btn lg" target="_blank" rel="noopener">Join the Discord →</a>
@@ -1883,12 +1877,12 @@
 <section id="apply" class="apply">
   <div class="wrap">
     <div class="deadline">Applications closed · Nov 2, 2026</div>
-    <h2>Bring an idea.<br><span class="accent">Leave with a deck, a network, and maybe a check.</span></h2>
-    <p>Whether you're 16 with an app idea or 46 with a lease you're ready to sign — this is the stage. One 4CD class is all it takes to be eligible, and any class counts. One description, one deck. We'll do the rest.</p>
-    <p class="note-line">Applications are closed. Want to follow along or get involved? <a href="https://discord.gg/4DQQQBcjeW" target="_blank" rel="noopener">Join the Discord</a> — organizers and other teams are in there.</p>
+    <h2>Have an idea for next time?</h2>
+    <p>Take any 4CD class to qualify. Start with a short description of your idea and a deck of up to 15 slides.</p>
+    <p class="note-line">The 2026 application is closed. <a href="https://discord.gg/4DQQQBcjeW" target="_blank" rel="noopener">Join the Discord</a> to stay in touch with the organizers and other teams.</p>
     <div class="apply-actions">
-      <span class="cta-btn lg disabled" aria-disabled="true">Application closed</span>
-      <a href="https://4cd.zoom.us/meeting/register/dkcT5bE4Qxe9FdH_a_lLRQ" class="cta-btn lg" target="_blank" rel="noopener">Watch the final live on Zoom</a>
+      <span class="cta-btn lg disabled" aria-disabled="true">Applications closed</span>
+      <a href="#finalists" class="cta-btn lg">See the winners</a>
       <a href="https://docs.google.com/presentation/d/17qdEgdfOSC_BQvLUK5mTuSWFQwYwoTi1xpLz_Y_tjoE/edit?usp=sharing" class="cta-btn ghost lg" target="_blank" rel="noopener">Get the deck template</a>
       <a href="https://discord.gg/4DQQQBcjeW" class="cta-btn ghost lg" target="_blank" rel="noopener">Join the Discord</a>
       <a href="mailto:rbuckley@dvc.edu" class="cta-btn ghost lg">Email us a question</a>
@@ -1906,14 +1900,14 @@
           <span class="t">The 4CD Pitch Competition</span>
         </div>
         <p style="max-width: 48ch; margin: 0; color: var(--periwinkle-soft); font-size: 13px; font-family: var(--narrow);">
-          The pitch competition of the Contra Costa Community College District, hosted at Diablo Valley College's Pleasant Hill campus. Open to every student and community member enrolled in a 4CD course. Cafés, trades, industry, biotech, software — Diablo Valley, not Silicon Valley.
+          Hosted by Diablo Valley College at its Pleasant Hill campus. Open to anyone enrolled in a Contra Costa Community College District course.
         </p>
       </div>
       <div>
         <h5>Event</h5>
         <ul>
           <li><a href="#about">About</a></li>
-          <li><a href="#room">The Room</a></li>
+          <li><a href="#room">What to Pitch</a></li>
           <li><a href="#timeline">Timeline</a></li>
           <li><a href="#agenda">Agenda</a></li>
           <li><a href="#prizes">Prizes</a></li>

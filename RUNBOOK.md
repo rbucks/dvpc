@@ -72,8 +72,8 @@ Then check these by eye, because they are worded rather than templated:
 - `<title>` and the `<meta name="description">` in the `<head>`
 - The `KEY DATES RAIL` — three `.date-cell` blocks
 - The `TIMELINE` section — five `.tl-row` blocks
-- The `§ 03 — Timeline` heading, which names the final's date
-- The `.rules-strip` entry-rules panel in `§ 06 — Scoring`
+- The final’s date in the Timeline section (`#timeline`)
+- The `.rules-strip` entry-rules panel in Scoring (`#scoring`)
 - The `.deadline` line in the `APPLY` CTA
 - The FAQ entry "How do I apply?", which repeats the deadline
 
@@ -101,7 +101,7 @@ the rules were:
 Anything that changed needs updating in **both** places, which must always
 agree:
 
-1. The `.rules-strip` panel at the top of `§ 06 — Scoring` — the one-glance
+1. The `.rules-strip` panel at the top of Scoring (`#scoring`) — the one-glance
    summary
 2. The FAQ entries — "Does my idea need to be a real business already?", "Can I
    apply with a co-founder or team?", "What does the application include?",
@@ -129,7 +129,7 @@ Where they are in `index.html`:
 
 1. The nav button in the `TOP BAR`
 2. The hero button
-3. The `Step 01 · Apply` cell in the `KEY DATES RAIL` (`p.cell-link`)
+3. The `Application` cell in the `KEY DATES RAIL` (`p.cell-link`)
 4. The `Sept 15` row in the `TIMELINE`
 5. The `Where to apply` bullet in `.rules-strip`
 6. FAQ — "How do I apply?"
@@ -314,14 +314,14 @@ Open it at <http://localhost:8777/slides/>. Arrow keys or space advance,
 | # | Slide | Pulls from |
 |---|---|---|
 | 1 | Cover | Hero + save-the-date card |
-| 2 | About | § 01 — eligibility, the three colleges |
-| 3 | The Room | § 02 — Main Street vs science & product |
-| 4 | Timeline | § 03 — all five dates |
-| 5 | Prizes | § 04 — four prize cards + caveat |
-| 6 | Scoring | § 05–06 — both rubrics, five categories each |
-| 7 | Finalists | § 07 — last year's four winners |
-| 8 | Gallery | § 08 — three photos from `assets/images/event/` |
-| 9 | FAQ | § 09 — eight rules as Q&A |
+| 2 | About | `#about`: eligibility and the three colleges |
+| 3 | The Room | `#room`: Main Street, trades, science and product |
+| 4 | Timeline | `#timeline`: all five dates |
+| 5 | Prizes | `#prizes`: four prize cards and caveat |
+| 6 | Scoring | `#judges` / `#scoring`: both rubrics, five categories each |
+| 7 | Finalists | `#finalists`: last year's four winners |
+| 8 | Gallery | `#gallery`: three photos from `assets/images/event/` |
+| 9 | FAQ | `#faq`: eight rules as Q&A |
 | 10 | Community | Discord and what it's for |
 | 11 | Closing | URL + the three key dates |
 
@@ -398,12 +398,12 @@ Write these down before editing. Ask the organizer for anything you can't find.
 
 | Input | Where it comes from |
 |---|---|
-| Finalist teams: name, founders, college, one-line description | The 2026 finalists `year-block` in `index.html` § Finalists, which you update first (Phase 4). For a late addition, the application export from the Microsoft Form (a CSV the organizer downloads, e.g. `~/Downloads/4CD Business Pitch Competition (Fall YYYY)(Sheet1).csv`, columns *What is your name?*, *Which college(s)…*, *What is the name of your business idea?*, *Describe your business idea…*) and the applicant's pitch deck linked in that row. If the form's description is thin, write the line from the deck. |
+| Finalist teams: name, founders, college, one-line description | The 2026 finalists `year-block` in `#finalists` in `index.html`, which you update first (Phase 4). For a late addition, the application export from the Microsoft Form (a CSV the organizer downloads, e.g. `~/Downloads/4CD Business Pitch Competition (Fall YYYY)(Sheet1).csv`, columns *What is your name?*, *Which college(s)…*, *What is the name of your business idea?*, *Describe your business idea…*) and the applicant's pitch deck linked in that row. If the form's description is thin, write the line from the deck. |
 | Agenda times | Organizer. 2026: doors 8:30, welcome 9:00, pitches 9:15, judges' deliberation and keynote 11:00, awards and lunch 11:30. |
 | Pitch format | Organizer. 2026: five minutes to pitch, five for questions. This also appears on the website, the deck, and the full flyer — change all of them together. |
 | Keynote speaker: name, title, photo | Organizer; photo from the speaker's official bio page. |
 | Judges, including any stand-ins | Organizer. |
-| Prize amounts and sponsors | `index.html` § Prizes. |
+| Prize amounts and sponsors | `#prizes` in `index.html`. |
 
 **Treat applicants' contact details as private.** The CSV holds student email
 addresses; never copy them into the repo.
@@ -414,7 +414,7 @@ addresses; never copy them into the repo.
   appear on the cover, the date strip, and the agenda heading.
 - **Team count** — the word ("Ten") appears three times: the cover `<h1>`, the
   agenda's 9:15 `<small>` line, and the inside `<h2>`. It must match the
-  number of `.team` blocks and the `<h2>` in `index.html` § Finalists.
+  number of `.team` blocks and the current year’s cards under `#finalists` in `index.html`.
   `grep -n -i -w "eight\|nine\|ten\|eleven\|twelve" print/program.html`.
 - **Cover lede** (`p.lede`) — states the pitch format.
 - **Agenda** — one `div.ag` per row; the pitches row is `div.ag.hot`.
@@ -497,10 +497,10 @@ once pushed.
 
 ## Phase 7 — Judges, mentors, and sponsors
 
-- `§ 05 — How it's judged` has a `.panel-list` of past judges. Add the previous
+- Judges (`#judges`) has a `.panel-list` of past judges. Add the previous
   year's panel; the note underneath says when the new panel is announced —
   update that month.
-- The scoring rubrics in `§ 06` come from the official rubric document. Do not
+- The scoring rubrics in `#scoring` come from the official rubric document. Do not
   reword them to fit the layout. If the rubric changes, change the tables, the
   `tfoot` totals, and the `.rubric-head .max` badge together.
 
@@ -536,9 +536,8 @@ single most consequential number on the page.
 
 ---
 
-## Section numbering
+## Section headings and navigation
 
-Sections are numbered `§ 01` through `§ 09` in `.section-head .index`. If you
-add or remove one, renumber the rest and update the nav links in `.topbar`.
-There are nine nav links; the nav hides below 1080px because a tenth would
-overflow the bar. If you add one, re-test the top bar at 1100px.
+Use a plain heading for each section rather than numbering it. Keep section IDs
+stable so navigation and shared links keep working. If you change the nav,
+check the top bar just above the desktop breakpoint and at a wide viewport.
